@@ -5,16 +5,16 @@ export interface OptionQuestion {
 }
 
 export interface ArrayQuestion {
-  definitionQuestion: string;
+  definition: string;
   id: string;
-  optionQuestion: OptionQuestion[];
+  options: OptionQuestion[];
 }
 
 export const getQuestion: ArrayQuestion[] = [
   {
-    definitionQuestion: '1st item question definition placeholder',
+    definition: '1st item question definition placeholder',
     id: 'q1',
-    optionQuestion: [
+    options: [
       { answer: '1st item answer placeholder 1', value: false, id: '1' },
       { answer: '1st item answer placeholder 2', value: true, id: '2' },
       { answer: '1st item answer placeholder 3', value: false, id: '3' },
@@ -22,9 +22,9 @@ export const getQuestion: ArrayQuestion[] = [
     ],
   },
   {
-    definitionQuestion: '2nd item question definition placeholder',
+    definition: '2nd item question definition placeholder',
     id: 'q2',
-    optionQuestion: [
+    options: [
       { answer: '2nd item answer placeholder 1', value: false, id: '5' },
       { answer: '2nd item answer placeholder 2', value: false, id: '6' },
       { answer: '2nd item answer placeholder 3', value: false, id: '7' },
