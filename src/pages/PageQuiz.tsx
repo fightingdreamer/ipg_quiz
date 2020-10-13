@@ -11,7 +11,7 @@ import { ListQuestion } from '../components/ListQuestion';
 export function PageQuiz() {
   return (
     <>
-      <ListQuestion />;
+      <ListQuestion />
     </>
   );
 }
