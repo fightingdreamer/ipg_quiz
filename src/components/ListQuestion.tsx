@@ -16,6 +16,16 @@ export const ListQuestion = () => {
   const [currentCheck, setCheck] = useState({} as OptionQuestion);
   const objectQuestion = getQuestion[currentQuestion];
 
+  // time & question settings
+
+  const [currentTime, setTime] = useState(20);
+  const [currentData, setData] = useState({
+    currentTime: 20,
+    statusTime: 'stop',
+    setQuestion: null,
+    activeQuestion: '',
+  });
+
   // hooks update
   const handleQuestion = (correctAnswer: boolean) => {
     if (correctAnswer) {
@@ -37,25 +47,34 @@ export const ListQuestion = () => {
           Game over, score: {currentScore} out of {getQuestion.length}
         </h2>
       ) : (
-        <div>
-          <h2>
-            question # {currentQuestion + 1} {objectQuestion.definition}
-          </h2>
-          <ul>
-            {objectQuestion.options.map((question) => (
-              <li key={question.id}>
-                <input
-                  type="radio"
-                  value={'option-' + question.id}
-                  checked={question.id === currentCheck.id}
-                  onChange={() => setCheck(question)}
-                />
-                {' # id:'} {question.id} {question.answer}
-              </li>
-            ))}
-          </ul>
-          <button onClick={() => handleQuestion(currentCheck.value)}>Button placeholder</button>
-        </div>
+        <>
+          {currentData && currentData.activeQuestion !== '' ? (
+            <div>
+              <h2>
+                {objectQuestion.definition} (question: {currentQuestion + 1} / {getQuestion.length})
+              </h2>
+              <ul>
+                {objectQuestion.options.map((answer) => (
+                  <li key={answer.id}>
+                    <button onClick={() => setCheck(answer)}>{answer.answer}</button>
+                  </li>
+                ))}
+              </ul>
+              <div>
+                <div>{currentTime}</div>
+              </div>
+              <button onClick={() => handleQuestion(currentCheck.value)}>Button placeholder</button>
+            </div>
+          ) : (
+            <button
+              onClick={() => {
+                setData({ ...currentData, activeQuestion: 'q1' });
+              }}
+            >
+              Start
+            </button>
+          )}
+        </>
       )}
     </>
   );
