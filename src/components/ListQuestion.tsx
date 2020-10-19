@@ -26,6 +26,15 @@ export const ListQuestion = () => {
     activeQuestion: '',
   });
 
+  const timer = () => {
+    let count = currentData.currentTime;
+    const int = setInterval(() => {
+      setTime(count - 1);
+      count = count - 1;
+      if (count < 1) clearInterval(int);
+    }, 1000);
+  };
+
   // hooks update
   const handleQuestion = (correctAnswer: boolean) => {
     if (correctAnswer) {
@@ -69,6 +78,7 @@ export const ListQuestion = () => {
             <button
               onClick={() => {
                 setData({ ...currentData, activeQuestion: 'q1' });
+                timer();
               }}
             >
               Start
