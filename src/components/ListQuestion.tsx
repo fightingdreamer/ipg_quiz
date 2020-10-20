@@ -60,12 +60,15 @@ export const ListQuestion = () => {
           {currentData && currentData.activeQuestion !== '' ? (
             <div>
               <h2>
-                {objectQuestion.definition} (question: {currentQuestion + 1} / {getQuestion.length})
+                {objectQuestion.id} - {objectQuestion.definition} (question: {currentQuestion + 1} /{' '}
+                {getQuestion.length})
               </h2>
               <ul>
                 {objectQuestion.options.map((answer) => (
                   <li key={answer.id}>
-                    <button onClick={() => setCheck(answer)}>{answer.answer}</button>
+                    <button onClick={() => setCheck(answer)}>
+                      name id: {answer.id} - {answer.answer}
+                    </button>
                   </li>
                 ))}
               </ul>
