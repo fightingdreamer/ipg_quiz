@@ -18,16 +18,16 @@ export const ListQuestion = () => {
 
   // time & question settings
 
-  const [currentTime, setTime] = useState(20);
+  const [setCurrentTime, setTime] = useState(20);
   const [currentData, setData] = useState({
-    currentTime: 20,
+    setCurrentTime: 20,
     statusTime: 'stop',
     setQuestion: null,
     activeQuestion: '',
   });
 
   const timer = () => {
-    let count = currentData.currentTime;
+    let count = currentData.setCurrentTime;
     const int = setInterval(() => {
       setTime(count - 1);
       count = count - 1;
@@ -73,7 +73,7 @@ export const ListQuestion = () => {
                 ))}
               </ul>
               <div>
-                <div>{currentTime}</div>
+                <div>{setCurrentTime}</div>
               </div>
               <button onClick={() => handleQuestion(currentCheck.value)}>Button placeholder</button>
             </div>
