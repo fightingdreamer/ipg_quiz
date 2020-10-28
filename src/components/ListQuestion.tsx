@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 // utils
 
-import { OptionQuestion, getQuestion } from '../utils/getQuestion';
+import { getQuestion } from '../utils/getQuestion';
 
 // code
 
@@ -13,7 +13,6 @@ export const ListQuestion = () => {
   const [currentScore, setScore] = useState(0);
   const [currentQuestion, setQuestion] = useState(0);
   const [currentStatus, setStatus] = useState(false);
-  const [currentCheck, setCheck] = useState({} as OptionQuestion);
   const objectQuestion = getQuestion[currentQuestion];
 
   // time & question settings
@@ -66,7 +65,7 @@ export const ListQuestion = () => {
               <ul>
                 {objectQuestion.options.map((answer) => (
                   <li key={answer.id}>
-                    <button onClick={() => setCheck(answer)}>
+                    <button onClick={() => handleQuestion(answer.value)}>
                       name id: {answer.id} - {answer.answer}
                     </button>
                   </li>
@@ -75,7 +74,6 @@ export const ListQuestion = () => {
               <div>
                 <div>{setCurrentTime}</div>
               </div>
-              <button onClick={() => handleQuestion(currentCheck.value)}>Button placeholder</button>
             </div>
           ) : (
             <button
