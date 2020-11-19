@@ -57,11 +57,14 @@ export const ListQuestion = () => {
       ) : (
         <>
           {currentData && currentData.activeQuestion !== '' ? (
-            <div>
-              <h2>
-                {objectQuestion.id} - {objectQuestion.definition} (question: {currentQuestion + 1} /{' '}
-                {getQuestion.length})
-              </h2>
+            <div className="quiz-wrapper">
+              <div className="quiz-definition">
+                <h2>
+                  {objectQuestion.id} - {objectQuestion.definition} (question: {currentQuestion + 1}{' '}
+                  / {getQuestion.length})
+                </h2>
+                <div>{setCurrentTime}</div>
+              </div>
               <ul>
                 {objectQuestion.options.map((answer) => (
                   <li key={answer.id}>
@@ -71,9 +74,6 @@ export const ListQuestion = () => {
                   </li>
                 ))}
               </ul>
-              <div>
-                <div>{setCurrentTime}</div>
-              </div>
             </div>
           ) : (
             <button

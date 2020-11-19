@@ -1,7 +1,23 @@
 /* INTERFACE */
 
 .App {
-  display: grid;
-  place-items: center;
-  height: 100vh;
+  @include grid-center;
+  @include full-screen;
+}
+
+.quiz-wrapper {
+  @include grid-center;
+  @include full-screen;
+  position: relative;
+
+  .quiz-definition {
+    @include grid-center;
+    position: absolute;
+  }
+
+  ul {
+    @include grid-center;
+    @include full-screen;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
