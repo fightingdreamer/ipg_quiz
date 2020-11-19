@@ -12,6 +12,7 @@
 
   .quiz-definition {
     @include grid-center;
+    @include ui-terminal-font;
     position: absolute;
   }
 

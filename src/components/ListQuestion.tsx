@@ -69,7 +69,9 @@ export const ListQuestion = () => {
                 {objectQuestion.options.map((answer) => (
                   <li key={answer.id}>
                     <button onClick={() => handleQuestion(answer.value)}>
-                      name id: {answer.id} - {answer.answer}
+                      <span>
+                        name id: {answer.id} - {answer.answer}
+                      </span>
                     </button>
                   </li>
                 ))}
