@@ -2,7 +2,13 @@
 
 button {
   @include ui-terminal-font;
+  padding: $helper-space;
+  width: auto;
+  cursor: pointer;
+  border: 10px dotted silver;
   span {
-    display: inline-block;
+    @include flex-center;
+    padding: $helper-space;
+    font-size: $helper-space;
   }
 }

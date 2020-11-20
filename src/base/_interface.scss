@@ -10,10 +10,20 @@
   @include full-screen;
   position: relative;
 
+  .quiz-panel {
+    @include flex-row;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: $helper-space;
+  }
+
   .quiz-definition {
     @include grid-center;
     @include ui-terminal-font;
     position: absolute;
+    padding: $helper-space;
+    font-size: $helper-space;
   }
 
   ul {
