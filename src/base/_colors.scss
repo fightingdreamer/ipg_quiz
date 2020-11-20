@@ -1,3 +1,13 @@
-// COLORS
+// NORD
 
 @import "../../node_modules/nord/src/sass/nord.scss";
+
+// UI-Terminal
+
+:root {
+  --terminal-light: #fff;
+  --terminal-text: rgba(128, 255, 128, 0.8);
+  --terminal-center: #11581e;
+  --terminal-outer: #041607;
+  --terminal-gradient: radial-gradient(var(--terminal-center), var(--terminal-outer));
+}

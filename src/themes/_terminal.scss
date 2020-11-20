@@ -1,0 +1,9 @@
+// UI-Terminal
+
+@mixin terminal-text-shadow {
+  text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.App {
+  background-image: var(--terminal-gradient);
+}
