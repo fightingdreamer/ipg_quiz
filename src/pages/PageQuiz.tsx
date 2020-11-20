@@ -11,6 +11,8 @@ import { ListQuestion } from '../components/ListQuestion';
 export function PageQuiz() {
   return (
     <>
+      <div className="quiz-noise"></div>
+      <div className="quiz-overlay"></div>
       <ListQuestion />
     </>
   );

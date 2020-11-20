@@ -5,7 +5,6 @@ button {
   padding: $helper-space;
   width: auto;
   cursor: pointer;
-  border: 10px dotted silver;
   span {
     @include flex-center;
     padding: $helper-space;

@@ -1,0 +1,13 @@
+// SVG
+
+svg {
+  border: 1px solid black;
+}
+line {
+  stroke: #000;
+  stroke-linecap: round;
+  outline: 0;
+}
+line.back {
+  stroke-dasharray: 2, 2;
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 40 40" width="200px" height="200px" focusable="false">
+  <line x1="-15" y1="15" x2="-5" y2="5" class="back"/>
+  <line x1="5" y1="15" x2="15" y2="5"/>
+  <line x1="-15" y1="-5" x2="-5" y2="-15"/>
+  <line x1="5" y1="-5" x2="15" y2="-15"/>
+  <line x1="-15" y1="15" x2="5" y2="15"/>
+  <line x1="-15" y1="-5" x2="5" y2="-5"/>
+  <line x1="-5" y1="5" x2="15" y2="5" class="back"/>
+  <line x1="-5" y1="-15" x2="15" y2="-15"/>
+  <line x1="-15" y1="15" x2="-15" y2="-5"/>
+  <line x1="5" y1="15" x2="5" y2="-5"/>
+  <line x1="-5" y1="5" x2="-5" y2="-15" class="back"/>
+  <line x1="15" y1="5" x2="15" y2="-15"/>
+</svg>

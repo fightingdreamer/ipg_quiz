@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 // utils
 
 import { getQuestion } from '../utils/getQuestion';
+import { ReactComponent as Logo } from '../img/cube.svg';
 
 // code
 
@@ -51,9 +52,17 @@ export const ListQuestion = () => {
   return (
     <>
       {currentStatus ? (
-        <h2>
-          Game over, score: {currentScore} out of {getQuestion.length}
-        </h2>
+        <div className="quiz-result">
+          <h2>
+            Game over, score: {currentScore} out of {getQuestion.length}
+          </h2>
+          <button className="btn-action">
+            <span>Action</span>
+          </button>
+          <button className="btn-side">
+            <span>Side</span>
+          </button>
+        </div>
       ) : (
         <>
           {currentData && currentData.activeQuestion !== '' ? (
@@ -82,14 +91,20 @@ export const ListQuestion = () => {
               </ul>
             </div>
           ) : (
-            <button
-              onClick={() => {
-                setData({ ...currentData, activeQuestion: 'q1' });
-                timer();
-              }}
-            >
-              <span>Start</span>
-            </button>
+            <>
+              <div className="quiz-logo">
+                <Logo />
+              </div>
+              <button
+                className="btn-action"
+                onClick={() => {
+                  setData({ ...currentData, activeQuestion: 'q1' });
+                  timer();
+                }}
+              >
+                <span>Start</span>
+              </button>
+            </>
           )}
         </>
       )}

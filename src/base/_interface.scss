@@ -3,6 +3,14 @@
 .App {
   @include grid-center;
   @include full-screen;
+  position: relative;
+}
+
+.quiz-overlay,
+.quiz-noise {
+  @include full-screen;
+  position: absolute;
+  z-index: -1;
 }
 
 .quiz-wrapper {
@@ -24,11 +32,21 @@
     position: absolute;
     padding: $helper-space;
     font-size: $helper-space;
+    h2 {
+      padding: $helper-space;
+    }
   }
 
   ul {
     @include grid-center;
     @include full-screen;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.quiz-result {
+  h2 {
+    text-align: center;
+    padding: $helper-space;
   }
 }
