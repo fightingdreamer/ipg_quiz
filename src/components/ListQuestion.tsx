@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 // utils
 
 import { getQuestion } from '../utils/getQuestion';
-import { ReactComponent as Logo } from '../img/cube.svg';
+import { QuizStart } from '../components/QuizStart';
 
 // code
 
@@ -91,20 +91,12 @@ export const ListQuestion = () => {
               </ul>
             </div>
           ) : (
-            <>
-              <div className="quiz-logo">
-                <Logo />
-              </div>
-              <button
-                className="btn-action"
-                onClick={() => {
-                  setData({ ...currentData, activeQuestion: 'q1' });
-                  timer();
-                }}
-              >
-                <span>Start</span>
-              </button>
-            </>
+            <QuizStart
+              onClick={() => {
+                setData({ ...currentData, activeQuestion: 'q1' });
+                timer();
+              }}
+            />
           )}
         </>
       )}
