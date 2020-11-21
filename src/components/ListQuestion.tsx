@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 
-// utils
+// components & utils
 
-import { getQuestion } from '../utils/getQuestion';
 import { QuizStart } from '../components/QuizStart';
+import { getQuestion } from '../utils/getQuestion';
 
 // code
 
@@ -79,15 +79,25 @@ export const ListQuestion = () => {
                 </h2>
               </div>
               <ul>
-                {objectQuestion.options.map((answer) => (
-                  <li key={answer.id}>
-                    <button onClick={() => handleQuestion(answer.value)}>
-                      <span>
-                        name id: {answer.id} - {answer.answer}
-                      </span>
-                    </button>
-                  </li>
-                ))}
+                {objectQuestion.options.map((answer) => {
+                  const question = `name id: ${answer.id} - ${answer.answer}`;
+                  const charCounter = question.length;
+                  return (
+                    <li key={answer.id}>
+                      <button onClick={() => handleQuestion(answer.value)}>
+                        <span
+                          className="quiz-type"
+                          style={{
+                            width: `${charCounter}ch`,
+                            animation: `typing 2s steps(${charCounter})`,
+                          }}
+                        >
+                          {question}
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ) : (

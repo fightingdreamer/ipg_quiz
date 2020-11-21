@@ -1,13 +1,12 @@
 // BUTTON
 
 button {
+  @include flex-center;
   @include ui-terminal-font;
   padding: $helper-space;
-  width: auto;
+  width: 100%;
   cursor: pointer;
   span {
-    @include flex-center;
-    padding: $helper-space;
     font-size: $helper-space;
   }
 }

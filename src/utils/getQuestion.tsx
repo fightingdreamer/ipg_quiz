@@ -17,7 +17,7 @@ const currentJson = [
     name: 'correct answer',
     definition: 'mocked definition',
     level: 'medium',
-    randomName: ['wrong answer', 'wrong answer', 'wrong answer'],
+    randomName: ['6chars', '20charsTxt20charsTxt', '30charsTxt30charsTxt30charsTxt'],
   },
   {
     id: '1',
@@ -42,10 +42,10 @@ currentJson.forEach((question) => {
     id: 'question id: ' + question.id,
     level: question.level,
     options: [
-      { answer: question.name, value: true, id: '1' },
-      { answer: question.randomName[0], value: false, id: '2' },
-      { answer: question.randomName[1], value: false, id: '3' },
-      { answer: question.randomName[2], value: false, id: '4' },
+      { answer: question.name, value: true, id: question.id + '1' },
+      { answer: question.randomName[0], value: false, id: question.id + '2' },
+      { answer: question.randomName[1], value: false, id: question.id + '3' },
+      { answer: question.randomName[2], value: false, id: question.id + '4' },
     ],
   });
 });
