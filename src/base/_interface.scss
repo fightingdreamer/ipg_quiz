@@ -10,13 +10,18 @@
 .quiz-noise {
   @include full-screen;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
+}
+
+.quiz-start {
+  z-index: 2;
 }
 
 .quiz-wrapper {
   @include grid-center;
   @include full-screen;
   position: relative;
+  z-index: 2;
 
   .quiz-panel {
     @include flex-row;
@@ -28,7 +33,6 @@
 
   .quiz-definition {
     @include grid-center;
-    @include ui-terminal-font;
     position: absolute;
     padding: $helper-space;
     font-size: $helper-space;
@@ -45,6 +49,7 @@
 }
 
 .quiz-result {
+  z-index: 2;
   h2 {
     text-align: center;
     padding: $helper-space;

@@ -2,7 +2,8 @@
 
 button {
   @include flex-center;
-  @include ui-terminal-font;
+  background: transparent;
+  border: 0;
   padding: $helper-space;
   width: 100%;
   cursor: pointer;

@@ -5,9 +5,12 @@
 // UI-Terminal
 
 :root {
-  --terminal-light: #fff;
-  --terminal-text: rgba(128, 255, 128, 0.8);
-  --terminal-center: #11581e;
-  --terminal-outer: #041607;
+  --terminal-light: rgba(255, 255, 255, 1);
+  --terminal-green: rgba(128, 255, 128, 0.8);
+  --terminal-shadow: rgba(51, 255, 51, 1);
+  --terminal-scan: rgba(32, 128, 32, 1);
+  --terminal-center: rgba(17, 88, 30, 1);
+  --terminal-outer: rgba(4, 22, 7, 1);
+  --terminal-dark: rgba(0, 0, 0, 1);
   --terminal-gradient: radial-gradient(var(--terminal-center), var(--terminal-outer));
 }
