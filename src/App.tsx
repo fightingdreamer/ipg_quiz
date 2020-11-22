@@ -8,7 +8,7 @@ import { PageQuiz } from './pages/PageQuiz';
 
 // styles
 
-import './App.scss';
+import './styles/App.scss';
 
 // code
 

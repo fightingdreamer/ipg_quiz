@@ -1,5 +1,12 @@
+// packages
+
 import React from 'react';
-import { ReactComponent as Logo } from '../img/cube.svg';
+
+// components
+
+import { ReactComponent as Logo } from '../styles/img/cube.svg';
+
+// code
 
 export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   return (

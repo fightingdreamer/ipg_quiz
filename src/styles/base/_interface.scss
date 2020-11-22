@@ -13,6 +13,9 @@
   z-index: 0;
 }
 
+.quiz-wrapper,
+.quiz-result,
+.quiz-theme,
 .quiz-start {
   z-index: 2;
 }
@@ -21,7 +24,6 @@
   @include grid-center;
   @include full-screen;
   position: relative;
-  z-index: 2;
 
   .quiz-panel {
     @include flex-row;
@@ -49,7 +51,6 @@
 }
 
 .quiz-result {
-  z-index: 2;
   h2 {
     text-align: center;
     padding: $helper-space;

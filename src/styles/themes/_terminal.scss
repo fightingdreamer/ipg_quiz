@@ -1,0 +1,38 @@
+// UI-Terminal
+
+.App {
+  @include terminal-font;
+  @include terminal-text;
+  @include terminal-shadow;
+  background-image: var(--terminal-gradient);
+}
+
+.quiz-noise {
+  @include background-noise;
+  z-index: 0;
+}
+
+.quiz-overlay {
+  @include background-overlay;
+  z-index: 1;
+}
+
+.quiz-overlay::before {
+  @include full-screen;
+  @include terminal-gradient;
+  @include animation-scan;
+  pointer-events: none;
+}
+
+.quiz-type {
+  @include terminal-text;
+  @include terminal-shadow;
+}
+
+button {
+  span {
+    @include terminal-font;
+    @include terminal-text;
+    @include terminal-shadow;
+  }
+}
