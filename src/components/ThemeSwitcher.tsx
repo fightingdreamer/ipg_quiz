@@ -5,6 +5,7 @@ import React from 'react';
 // components
 
 import { useThemeSwitcher } from 'react-css-theme-switcher';
+import ThemeRadio from '../components/ThemeRadio';
 
 // code
 
@@ -31,6 +32,7 @@ export const ThemeSwitcher = () => {
         <button onClick={toggleDarkMode}>
           <span>Switch to...</span>
         </button>
+        <ThemeRadio />
       </div>
     </>
   );
