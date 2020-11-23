@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import Radio, { RadioProps } from '@material-ui/core/Radio';
@@ -18,22 +18,24 @@ export default function ThemeRadio() {
   const uiTerminal = 'terminal';
   const uiCyberpunk = 'cyberpunk';
   const uiIsometric = 'isometric';
+  const themes = [uiMaterial, uiTerminal, uiCyberpunk, uiIsometric];
 
-  const [selectedValue, setSelectedValue] = React.useState(uiTerminal);
-
-  if (!setSelectedValue) {
-    console.log(`Selected value: ${setSelectedValue}`);
-  }
-
+  const [currentValue, setValue] = useState(uiMaterial);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
+    const body = document.body;
+    const value = event.target.value;
+    if (value === uiMaterial || uiTerminal || uiCyberpunk || uiIsometric) {
+      body.classList.remove(...themes);
+      body.classList.toggle(value);
+      setValue(value);
+    }
   };
 
   return (
     <div>
       <GreenRadio
         className="quiz-radio"
-        checked={selectedValue === uiMaterial}
+        checked={currentValue === uiMaterial}
         onChange={handleChange}
         value={uiMaterial}
         name={`ui-${uiMaterial}-theme`}
@@ -41,7 +43,7 @@ export default function ThemeRadio() {
       />
       <GreenRadio
         className="quiz-radio"
-        checked={selectedValue === uiTerminal}
+        checked={currentValue === uiTerminal}
         onChange={handleChange}
         value={uiTerminal}
         name={`ui-${uiTerminal}-theme`}
@@ -49,7 +51,7 @@ export default function ThemeRadio() {
       />
       <GreenRadio
         className="quiz-radio"
-        checked={selectedValue === uiCyberpunk}
+        checked={currentValue === uiCyberpunk}
         onChange={handleChange}
         value={uiCyberpunk}
         name={`ui-${uiCyberpunk}-theme`}
@@ -57,7 +59,7 @@ export default function ThemeRadio() {
       />
       <GreenRadio
         className="quiz-radio"
-        checked={selectedValue === uiIsometric}
+        checked={currentValue === uiIsometric}
         onChange={handleChange}
         value={uiIsometric}
         name={`ui-${uiIsometric}-theme`}
