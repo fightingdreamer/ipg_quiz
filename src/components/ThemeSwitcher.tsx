@@ -17,7 +17,10 @@ export const ThemeSwitcher = () => {
     return <div>Loading styles...</div>;
   }
 
-  console.log(isDarkMode);
+  if (isDarkMode) {
+    console.log(`Dark mode status: ${isDarkMode}`);
+  }
+
   const toggleDarkMode = () => {
     setIsDarkMode((previous) => {
       switcher({ theme: previous ? themes.light : themes.dark });

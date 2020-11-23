@@ -14,34 +14,54 @@ const GreenRadio = withStyles({
 })((props: RadioProps) => <Radio color="default" {...props} />);
 
 export default function ThemeRadio() {
-  const [selectedValue, setSelectedValue] = React.useState('a');
+  const uiMaterial = 'material';
+  const uiTerminal = 'terminal';
+  const uiCyberpunk = 'cyberpunk';
+  const uiIsometric = 'isometric';
+
+  const [selectedValue, setSelectedValue] = React.useState(uiTerminal);
+
+  if (!setSelectedValue) {
+    console.log(`Selected value: ${setSelectedValue}`);
+  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedValue(event.target.value);
+    console.log(event.target.value);
   };
 
   return (
     <div>
       <GreenRadio
-        checked={selectedValue === 'a'}
+        className="quiz-radio"
+        checked={selectedValue === uiMaterial}
         onChange={handleChange}
-        value="a"
-        name="radio-button-demo"
-        inputProps={{ 'aria-label': 'A' }}
+        value={uiMaterial}
+        name={`ui-${uiMaterial}-theme`}
+        inputProps={{ 'aria-label': `User Interface Theme: ${uiMaterial}` }}
       />
       <GreenRadio
-        checked={selectedValue === 'b'}
+        className="quiz-radio"
+        checked={selectedValue === uiTerminal}
         onChange={handleChange}
-        value="b"
-        name="radio-button-demo"
-        inputProps={{ 'aria-label': 'B' }}
+        value={uiTerminal}
+        name={`ui-${uiTerminal}-theme`}
+        inputProps={{ 'aria-label': `User Interface Theme: ${uiTerminal}` }}
       />
       <GreenRadio
-        checked={selectedValue === 'c'}
+        className="quiz-radio"
+        checked={selectedValue === uiCyberpunk}
         onChange={handleChange}
-        value="c"
-        name="radio-button-demo"
-        inputProps={{ 'aria-label': 'C' }}
+        value={uiCyberpunk}
+        name={`ui-${uiCyberpunk}-theme`}
+        inputProps={{ 'aria-label': `User Interface Theme: ${uiCyberpunk}` }}
+      />
+      <GreenRadio
+        className="quiz-radio"
+        checked={selectedValue === uiIsometric}
+        onChange={handleChange}
+        value={uiIsometric}
+        name={`ui-${uiIsometric}-theme`}
+        inputProps={{ 'aria-label': `User Interface Theme: ${uiIsometric}` }}
       />
     </div>
   );
