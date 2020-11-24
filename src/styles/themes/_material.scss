@@ -3,9 +3,25 @@
 .App {
   &.material {
     @include material-font;
+    background: $nord4;
+    color: $nord0;
+    line {
+      stroke: $nord10;
+    }
     button {
-      span {
-        @include material-font;
+      @include material-font;
+      &.btn-cta {
+        border: $helper-space / 8 solid transparent;
+        background: $nord10;
+        span {
+          color: $nord4;
+        }
+      }
+      &.btn-side {
+        border: $helper-space / 8 solid $nord10;
+        span {
+          color: $nord10;
+        }
       }
     }
   }

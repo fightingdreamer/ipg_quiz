@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 
 // components & utils
 
+import { BtnCta, BtnSide } from './BtnSet';
 import { QuizStart } from '../components/QuizStart';
 import { getQuestion } from '../utils/getQuestion';
 
@@ -56,12 +57,8 @@ export const ListQuestion = () => {
           <h2>
             Game over, score: {currentScore} out of {getQuestion.length}
           </h2>
-          <button className="btn-action">
-            <span>Action</span>
-          </button>
-          <button className="btn-side">
-            <span>Side</span>
-          </button>
+          <BtnCta />
+          <BtnSide />
         </div>
       ) : (
         <>

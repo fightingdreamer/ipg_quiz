@@ -27,6 +27,10 @@
       @include terminal-shadow;
     }
 
+    line {
+      stroke: var(--terminal-green);
+    }
+
     button {
       span {
         @include terminal-font;

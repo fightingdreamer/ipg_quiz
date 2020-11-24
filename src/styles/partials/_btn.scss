@@ -7,6 +7,13 @@ button {
   padding: $helper-space;
   width: 100%;
   cursor: pointer;
+  &.btn-cta,
+  &.btn-side {
+    margin: $helper-space / 2;
+  }
+  &:focus {
+    outline: 0;
+  }
   span {
     font-size: $helper-space;
   }

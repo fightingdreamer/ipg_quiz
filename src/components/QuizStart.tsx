@@ -5,7 +5,7 @@ import React from 'react';
 // components
 
 import { ReactComponent as Logo } from '../styles/img/cube.svg';
-import BtnStart from './BtnStart';
+import { BtnCta } from './BtnSet';
 
 // code
 
@@ -16,7 +16,7 @@ export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
         <Logo />
       </div>
       <div className="quiz-btn" onClick={onClick}>
-        <BtnStart />
+        <BtnCta />
       </div>
     </div>
   );
