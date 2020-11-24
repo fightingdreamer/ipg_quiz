@@ -11,14 +11,13 @@
     button {
       @include material-font;
       &.btn-cta {
-        border: $helper-space / 8 solid transparent;
         background: $nord10;
         span {
           color: $nord4;
         }
       }
       &.btn-side {
-        border: $helper-space / 8 solid $nord10;
+        border-color: $nord10;
         span {
           color: $nord10;
         }

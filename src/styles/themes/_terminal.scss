@@ -32,10 +32,20 @@
     }
 
     button {
-      span {
-        @include terminal-font;
-        @include terminal-text;
-        @include terminal-shadow;
+      @include terminal-font;
+      @include terminal-text;
+      @include terminal-shadow;
+      &.btn-cta {
+        background: var(--terminal-green);
+        span {
+          color: $nord0;
+        }
+      }
+      &.btn-side {
+        border-color: var(--terminal-green);
+        span {
+          color: var(--terminal-green);
+        }
       }
     }
   }

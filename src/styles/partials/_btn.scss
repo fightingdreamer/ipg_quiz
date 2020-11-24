@@ -9,7 +9,9 @@ button {
   cursor: pointer;
   &.btn-cta,
   &.btn-side {
-    margin: $helper-space / 2;
+    margin: ($helper-space / 2) 0;
+    border: $helper-space / 8 solid transparent;
+    background: transparent;
   }
   &:focus {
     outline: 0;
