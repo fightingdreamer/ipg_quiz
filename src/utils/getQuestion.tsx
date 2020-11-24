@@ -2,12 +2,14 @@ export interface OptionQuestion {
   answer: string;
   value: boolean;
   id: string;
+  lang: string;
 }
 
 export interface ArrayQuestion {
   definition: string;
   id: string;
   level: string;
+  lang: string;
   options: OptionQuestion[];
 }
 
@@ -15,23 +17,26 @@ const currentJson = [
   {
     id: '0',
     name: 'correct answer',
-    definition: 'mocked definition',
-    level: 'medium',
-    randomName: ['6chars', '20charsTxt20charsTxt', '30charsTxt30charsTxt30charsTxt'],
+    definition: 'The quick brown fox jumps over the lazy dog',
+    level: 'easy',
+    lang: 'en',
+    randomName: ['wrong answer', 'quartz sphinx', '32charsTxt 32charsTxt 32charsTxt'],
   },
   {
     id: '1',
-    name: 'correct answer',
-    definition: 'mocked definition',
-    level: 'easy',
-    randomName: ['wrong answer', 'wrong answer', 'wrong answer'],
+    name: 'dobra odpowiedź',
+    definition: 'Zażółć gęślą jaźń',
+    level: 'medium',
+    lang: 'pl',
+    randomName: ['nóż pędź bóść', 'txt32liter txt32liter txt32liter', 'zła odpowiedź'],
   },
   {
     id: '2',
-    name: 'correct answer',
-    definition: 'mocked definition',
+    name: 'pravilen odgovor',
+    definition: 'Šerif bo za domačo vajo spet kuhal žgance',
     level: 'hard',
-    randomName: ['wrong answer', 'wrong answer', 'wrong answer'],
+    lang: 'si',
+    randomName: ['fraza32črk fraza32črk fraza32črk', 'napačen odgovor', 'kožušček'],
   },
 ];
 
@@ -41,11 +46,12 @@ currentJson.forEach((question) => {
     definition: question.definition,
     id: 'question id: ' + question.id,
     level: question.level,
+    lang: question.lang,
     options: [
-      { answer: question.name, value: true, id: question.id + '1' },
-      { answer: question.randomName[0], value: false, id: question.id + '2' },
-      { answer: question.randomName[1], value: false, id: question.id + '3' },
-      { answer: question.randomName[2], value: false, id: question.id + '4' },
+      { answer: question.name, value: true, lang: question.lang, id: question.id + '1' },
+      { answer: question.randomName[0], value: false, lang: question.lang, id: question.id + '2' },
+      { answer: question.randomName[1], value: false, lang: question.lang, id: question.id + '3' },
+      { answer: question.randomName[2], value: false, lang: question.lang, id: question.id + '4' },
     ],
   });
 });

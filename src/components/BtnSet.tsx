@@ -12,7 +12,7 @@ export const BtnCta = () => {
 export const BtnSide = () => {
   return (
     <Button className="btn-side" variant="outlined">
-      Game over
+      Side button
     </Button>
   );
 };

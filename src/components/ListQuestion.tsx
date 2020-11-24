@@ -65,19 +65,21 @@ export const ListQuestion = () => {
           {currentData && currentData.activeQuestion !== '' ? (
             <div className="quiz-wrapper">
               <div className="quiz-panel">
-                <div>
-                  (question: {currentQuestion + 1} / {getQuestion.length})
+                <div className="quiz-status">
+                  <span>{currentQuestion + 1}</span>
+                  <span> / </span>
+                  <span>{getQuestion.length}</span>
                 </div>
-                <div>{setCurrentTime}</div>
+                <div className="quiz-counter">
+                  <span>{setCurrentTime}</span>
+                </div>
               </div>
               <div className="quiz-definition">
-                <h2>
-                  {objectQuestion.id} - {objectQuestion.definition}
-                </h2>
+                <h2>{objectQuestion.definition}</h2>
               </div>
               <ul>
                 {objectQuestion.options.map((answer) => {
-                  const question = `name id: ${answer.id} - ${answer.answer}`;
+                  const question = answer.answer;
                   const charCounter = question.length;
                   return (
                     <li key={answer.id}>
