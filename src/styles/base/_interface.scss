@@ -10,14 +10,26 @@
 .quiz-noise {
   @include full-screen;
   position: absolute;
+}
+
+.quiz-noise {
   z-index: 0;
+}
+
+.quiz-overlay {
+  z-index: 1;
 }
 
 .quiz-wrapper,
 .quiz-result,
-.quiz-theme,
 .quiz-start {
   z-index: 2;
+}
+
+.quiz-theme {
+  z-index: 3;
+  position: absolute;
+  top: 0;
 }
 
 .quiz-wrapper {
@@ -27,7 +39,7 @@
 
   .quiz-panel {
     @include flex-row;
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100vw;
     padding: $helper-space;

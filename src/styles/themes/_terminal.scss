@@ -9,12 +9,10 @@
 
 .quiz-noise {
   @include background-noise;
-  z-index: 0;
 }
 
 .quiz-overlay {
   @include background-overlay;
-  z-index: 1;
 }
 
 .quiz-overlay::before {
