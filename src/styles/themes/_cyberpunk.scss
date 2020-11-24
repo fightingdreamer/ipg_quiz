@@ -1,0 +1,27 @@
+// UI-Material
+
+.App {
+  &.cyberpunk {
+    @include cyberpunk-font;
+    background: transparent;
+    color: transparent;
+    line {
+      stroke: transparent;
+    }
+    button {
+      @include cyberpunk-font;
+      &.btn-cta {
+        background: transparent;
+        span {
+          color: transparent;
+        }
+      }
+      &.btn-side {
+        border-color: transparent;
+        span {
+          color: transparent;
+        }
+      }
+    }
+  }
+}

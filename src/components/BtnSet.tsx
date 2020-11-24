@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 export const BtnCta = () => {
   return (
     <Button className="btn-cta" variant="contained">
-      Call to action
+      Play
     </Button>
   );
 };
@@ -12,7 +12,7 @@ export const BtnCta = () => {
 export const BtnSide = () => {
   return (
     <Button className="btn-side" variant="outlined">
-      Side
+      Game over
     </Button>
   );
 };

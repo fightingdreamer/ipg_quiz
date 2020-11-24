@@ -1,4 +1,9 @@
+// packages
+
 import React, { useState } from 'react';
+
+// UI-Material components
+
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import Radio, { RadioProps } from '@material-ui/core/Radio';
@@ -12,6 +17,8 @@ const GreenRadio = withStyles({
   },
   checked: {},
 })((props: RadioProps) => <Radio color="default" {...props} />);
+
+// code
 
 export default function ThemeRadio() {
   const uiMaterial = 'material';
