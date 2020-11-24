@@ -14,7 +14,7 @@ import './styles/App.scss';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App material">
       <PageQuiz />
     </div>
   );

@@ -1,0 +1,12 @@
+// UI-Material
+
+.App {
+  &.material {
+    @include material-font;
+    button {
+      span {
+        @include material-font;
+      }
+    }
+  }
+}

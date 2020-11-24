@@ -22,11 +22,11 @@ export default function ThemeRadio() {
 
   const [currentValue, setValue] = useState(uiMaterial);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const body = document.body;
+    const app = document.querySelectorAll('.App');
     const value = event.target.value;
     if (value === uiMaterial || uiTerminal || uiCyberpunk || uiIsometric) {
-      body.classList.remove(...themes);
-      body.classList.toggle(value);
+      app[0].classList.remove(...themes);
+      app[0].classList.toggle(value);
       setValue(value);
     }
   };
