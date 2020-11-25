@@ -7,6 +7,8 @@ import React, { useState } from 'react';
 import { BtnCta, BtnSide } from './BtnSet';
 import { QuizStart } from '../components/QuizStart';
 import { getQuestion } from '../utils/getQuestion';
+import TimerIcon from '@material-ui/icons/Timer';
+import ArrowRightOutlinedIcon from '@material-ui/icons/ArrowRightOutlined';
 
 // code
 
@@ -67,11 +69,13 @@ export const ListQuestion = () => {
               <div className="quiz-panel">
                 <div className="quiz-status">
                   <span>{currentQuestion + 1}</span>
-                  <span> / </span>
+                  <ArrowRightOutlinedIcon className="quiz-arrow" />
                   <span>{getQuestion.length}</span>
                 </div>
                 <div className="quiz-counter">
                   <span>{setCurrentTime}</span>
+                  <ArrowRightOutlinedIcon className="quiz-arrow" />
+                  <TimerIcon className="quiz-timer" />
                 </div>
               </div>
               <div className="quiz-definition">

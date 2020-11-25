@@ -1,10 +1,12 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 export const BtnCta = () => {
   return (
-    <Button className="btn-cta" variant="contained">
-      Play
+    <Button disableRipple className="btn-cta" variant="contained">
+      <span>Play</span>
+      <PlayArrowIcon className="quiz-play" />
     </Button>
   );
 };
@@ -12,7 +14,7 @@ export const BtnCta = () => {
 export const BtnSide = () => {
   return (
     <Button className="btn-side" variant="outlined">
-      Side button
+      <span>Side button</span>
     </Button>
   );
 };

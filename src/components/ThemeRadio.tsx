@@ -4,19 +4,7 @@ import React, { useState } from 'react';
 
 // UI-Material components
 
-import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
-import Radio, { RadioProps } from '@material-ui/core/Radio';
-
-const GreenRadio = withStyles({
-  root: {
-    color: green[400],
-    '&$checked': {
-      color: green[600],
-    },
-  },
-  checked: {},
-})((props: RadioProps) => <Radio color="default" {...props} />);
+import Radio from '@material-ui/core/Radio';
 
 // code
 
@@ -40,7 +28,7 @@ export default function ThemeRadio() {
 
   return (
     <div>
-      <GreenRadio
+      <Radio
         className="quiz-radio"
         checked={currentValue === uiMaterial}
         onChange={handleChange}
@@ -48,7 +36,7 @@ export default function ThemeRadio() {
         name={`ui-${uiMaterial}-theme`}
         inputProps={{ 'aria-label': `User Interface Theme: ${uiMaterial}` }}
       />
-      <GreenRadio
+      <Radio
         className="quiz-radio"
         checked={currentValue === uiTerminal}
         onChange={handleChange}
@@ -56,22 +44,24 @@ export default function ThemeRadio() {
         name={`ui-${uiTerminal}-theme`}
         inputProps={{ 'aria-label': `User Interface Theme: ${uiTerminal}` }}
       />
-      <GreenRadio
+      <Radio
         className="quiz-radio"
+        disabled
         checked={currentValue === uiCyberpunk}
         onChange={handleChange}
         value={uiCyberpunk}
         name={`ui-${uiCyberpunk}-theme`}
-        inputProps={{ 'aria-label': `User Interface Theme: ${uiCyberpunk}` }}
+        inputProps={{ 'aria-label': `disabled User Interface Theme: ${uiCyberpunk}` }}
       />
-      <GreenRadio
+      {/* <Radio
+        disabled
         className="quiz-radio"
         checked={currentValue === uiIsometric}
         onChange={handleChange}
         value={uiIsometric}
         name={`ui-${uiIsometric}-theme`}
         inputProps={{ 'aria-label': `User Interface Theme: ${uiIsometric}` }}
-      />
+      /> */}
     </div>
   );
 }

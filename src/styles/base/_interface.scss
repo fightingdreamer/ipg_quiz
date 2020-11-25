@@ -43,6 +43,15 @@
     top: 0;
     width: 100vw;
     padding: $helper-space;
+    .quiz-status,
+    .quiz-counter {
+      @include flex-center;
+    }
+    .quiz-arrow,
+    .quiz-timer {
+      width: $helper-space;
+      height: $helper-space;
+    }
   }
 
   .quiz-definition {

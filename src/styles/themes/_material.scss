@@ -23,5 +23,15 @@
         }
       }
     }
+    .MuiRadio-colorSecondary:not(.Mui-disabled) {
+      color: $nord10;
+    }
+    .MuiIconButton-colorSecondary:hover {
+      background-color: var(--material-hover);
+    }
+    .quiz-arrow,
+    .quiz-timer {
+      fill: $nord10;
+    }
   }
 }
