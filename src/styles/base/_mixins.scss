@@ -27,10 +27,33 @@ $helper-space: 1rem;
   height: 100vh;
 }
 
+@mixin border-default($direction) {
+  border-#{$direction}: $helper-space / 8 solid transparent;
+}
+
+@mixin border-radius {
+  border-radius: 0;
+}
+
+@mixin strong-shadow {
+  box-shadow: 0px 0px 41px -7px rgba(0, 0, 0, 0.15);
+}
+
+@mixin light-shadow {
+  box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+}
+
+// UI-Material
+
+@mixin border-material($direction) {
+  border-#{$direction}: $helper-space / 8 solid $nord10;
+}
+
 // UI-Terminal
 
 @mixin terminal-shadow {
-  text-shadow: 0 0 1ex rgba(var(--terminal-shadow), 0.8), 0 0 2px rgba(var(--terminal-light), 0.8);
+  // values to fix
+  text-shadow: 0 0 1ex rgba(var(--terminal-shadow), 0.8), 0 0 $helper-space / 8 rgba(var(--default-light), 0.8);
 }
 
 @mixin terminal-text {
@@ -59,9 +82,9 @@ $helper-space: 1rem;
 @mixin background-overlay {
   background: repeating-linear-gradient(
     180deg,
-    var(--terminal-dark) 0,
-    rgba(var(--terminal-dark), 0.8) 50%,
-    var(--terminal-dark) 100%
+    var(--default-dark) 0,
+    rgba(var(--default-dark), 0.8) 50%,
+    var(--default-dark) 100%
   );
   background-size: auto $helper-space / 4;
   &::before {

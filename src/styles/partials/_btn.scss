@@ -9,6 +9,7 @@ button {
   cursor: pointer;
   &.btn-cta,
   &.btn-side {
+    @include border-radius;
     margin: ($helper-space / 2) 0;
     border: $helper-space / 8 solid transparent;
     background: transparent;
@@ -17,6 +18,12 @@ button {
     outline: 0;
   }
   span {
-    font-size: $helper-space;
+    font-size: $helper-space * 1.25;
+  }
+}
+
+.quiz-btn {
+  button {
+    margin: 0;
   }
 }

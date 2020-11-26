@@ -5,11 +5,14 @@
     @include material-font;
     background: $nord4;
     color: $nord0;
+
     line {
       stroke: $nord10;
     }
+
     button {
       @include material-font;
+      color: $nord10;
       &.btn-cta {
         background: $nord10;
         span {
@@ -17,18 +20,55 @@
         }
       }
       &.btn-side {
+        background: $nord6;
         border-color: $nord10;
         span {
           color: $nord10;
         }
       }
     }
+
+    .quiz-start {
+      @include strong-shadow;
+      background: $nord6;
+      .quiz-logo {
+        border-color: $nord10;
+      }
+    }
+
+    .quiz-theme {
+      @include strong-shadow;
+      background: $nord6;
+      @include border-material(top);
+    }
+
+    .quiz-wrapper {
+      .quiz-panel {
+        @include strong-shadow;
+        @include border-material(bottom);
+        background: $nord6;
+      }
+      .quiz-definition {
+        @include strong-shadow;
+        @include border-material(top);
+        @include border-material(bottom);
+        background: $nord6;
+      }
+      ul {
+        li {
+          @include light-shadow;
+        }
+      }
+    }
+
     .MuiRadio-colorSecondary:not(.Mui-disabled) {
       color: $nord10;
     }
+
     .MuiIconButton-colorSecondary:hover {
       background-color: var(--material-hover);
     }
+
     .quiz-arrow,
     .quiz-timer {
       fill: $nord10;
