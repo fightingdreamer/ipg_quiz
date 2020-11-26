@@ -7,8 +7,8 @@ import React, { useState } from 'react';
 import { BtnCta, BtnSide } from './BtnSet';
 import { QuizStart } from '../components/QuizStart';
 import { getQuestion } from '../utils/getQuestion';
-import TimerIcon from '@material-ui/icons/Timer';
-import ArrowRightOutlinedIcon from '@material-ui/icons/ArrowRightOutlined';
+import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
+import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
 
 // code
 
@@ -55,13 +55,27 @@ export const ListQuestion = () => {
   return (
     <>
       {currentStatus ? (
-        <div className="quiz-result">
-          <h2>
-            Game over, score: {currentScore} out of {getQuestion.length}
-          </h2>
-          <BtnCta />
-          <BtnSide />
-        </div>
+        <>
+          <div className="quiz-panel">
+            <div className="quiz-status">
+              <span>{currentQuestion + 1}</span>
+              <ArrowRightTwoToneIcon className="quiz-arrow" />
+              <span>{getQuestion.length}</span>
+            </div>
+            <div className="quiz-counter">
+              <span>{setCurrentTime}</span>
+              <ArrowRightTwoToneIcon className="quiz-arrow" />
+              <TimerTwoToneIcon className="quiz-timer" />
+            </div>
+          </div>
+          <div className="quiz-result">
+            <h2>
+              Game over, score: {currentScore} out of {getQuestion.length}
+            </h2>
+            <BtnCta />
+            <BtnSide />
+          </div>
+        </>
       ) : (
         <>
           {currentData && currentData.activeQuestion !== '' ? (
@@ -69,13 +83,13 @@ export const ListQuestion = () => {
               <div className="quiz-panel">
                 <div className="quiz-status">
                   <span>{currentQuestion + 1}</span>
-                  <ArrowRightOutlinedIcon className="quiz-arrow" />
+                  <ArrowRightTwoToneIcon className="quiz-arrow" />
                   <span>{getQuestion.length}</span>
                 </div>
                 <div className="quiz-counter">
                   <span>{setCurrentTime}</span>
-                  <ArrowRightOutlinedIcon className="quiz-arrow" />
-                  <TimerIcon className="quiz-timer" />
+                  <ArrowRightTwoToneIcon className="quiz-arrow" />
+                  <TimerTwoToneIcon className="quiz-timer" />
                 </div>
               </div>
               <div className="quiz-definition">

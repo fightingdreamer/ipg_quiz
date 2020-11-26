@@ -12,12 +12,12 @@ import { ListQuestion } from '../components/ListQuestion';
 export function PageQuiz() {
   return (
     <>
-      <div className="quiz-theme">
-        <ThemeRadio />
-      </div>
       <div className="quiz-noise"></div>
       <div className="quiz-overlay"></div>
       <ListQuestion />
+      <div className="quiz-theme">
+        <ThemeRadio />
+      </div>
     </>
   );
 }
