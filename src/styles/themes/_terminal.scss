@@ -37,13 +37,12 @@
 
     .quiz-overlay {
       @include background-overlay;
-    }
-
-    .quiz-overlay::before {
-      @include full-screen;
-      @include terminal-gradient;
-      @include animation-scan;
-      pointer-events: none;
+      &::before {
+        @include full-screen;
+        @include terminal-gradient;
+        @include animation-scan;
+        pointer-events: none;
+      }
     }
 
     // icons
@@ -79,6 +78,29 @@
 
       .MuiIconButton-colorSecondary:hover {
         background-color: var(--material-hover);
+      }
+    }
+
+    .quiz-wrapper {
+      place-items: self-start;
+      align-content: start;
+      height: calc(80vh - #{$helper-space});
+      .quiz-definition {
+        place-items: self-start;
+        position: relative;
+        padding: 0;
+        h2 {
+          text-align: left;
+        }
+      }
+      ul {
+        @include auto-fit;
+        place-items: self-start;
+        grid-template-columns: repeat(1, 1fr);
+        position: relative;
+        li {
+          @include auto-fit;
+        }
       }
     }
 

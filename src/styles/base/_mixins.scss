@@ -27,6 +27,11 @@ $helper-space: 1rem;
   height: 100vh;
 }
 
+@mixin auto-fit {
+  width: auto;
+  height: auto;
+}
+
 // border & box-shadow
 
 @mixin border-default($direction) {
