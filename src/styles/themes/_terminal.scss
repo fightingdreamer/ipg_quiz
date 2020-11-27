@@ -7,6 +7,30 @@
     @include terminal-shadow;
     background-image: var(--terminal-gradient);
 
+    // common
+
+    line {
+      stroke: rgba(128, 255, 128, 1);
+    }
+
+    button {
+      @include terminal-font;
+      &.btn-cta {
+        @include terminal-background;
+        span {
+          color: var(--default-dark);
+        }
+      }
+      &.btn-side {
+        border-color: rgba(128, 255, 128, 1);
+        span {
+          color: rgba(128, 255, 128, 1);
+        }
+      }
+    }
+
+    // overlays
+
     .quiz-noise {
       @include background-noise;
     }
@@ -22,31 +46,45 @@
       pointer-events: none;
     }
 
+    // icons
+
+    .quiz-audio,
+    .quiz-menu,
+    .quiz-arrow,
+    .quiz-timer {
+      fill: var(--default-dark);
+    }
+
+    // quiz content
+
+    .quiz-panel {
+      @include terminal-background;
+      span {
+        color: var(--default-dark);
+      }
+    }
+
+    .quiz-start {
+      .quiz-logo {
+        border: $helper-space / 8 solid rgba(128, 255, 128, 1);
+      }
+    }
+
+    .quiz-theme {
+      @include terminal-background;
+
+      .MuiRadio-colorSecondary:not(.Mui-disabled) {
+        color: var(--default-dark);
+      }
+
+      .MuiIconButton-colorSecondary:hover {
+        background-color: var(--material-hover);
+      }
+    }
+
     .quiz-type {
       @include terminal-text;
       @include terminal-shadow;
-    }
-
-    line {
-      stroke: var(--terminal-green);
-    }
-
-    button {
-      @include terminal-font;
-      @include terminal-text;
-      @include terminal-shadow;
-      &.btn-cta {
-        background: var(--terminal-green);
-        span {
-          color: $nord0;
-        }
-      }
-      &.btn-side {
-        border-color: var(--terminal-green);
-        span {
-          color: var(--terminal-green);
-        }
-      }
     }
   }
 }

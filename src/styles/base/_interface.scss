@@ -20,6 +20,7 @@
   z-index: 1;
 }
 
+.quiz-panel,
 .quiz-wrapper,
 .quiz-result,
 .quiz-start {
@@ -95,6 +96,7 @@
 
 .quiz-result {
   h2 {
+    font-size: $helper-space * 1.5;
     text-align: center;
     padding: $helper-space;
   }

@@ -15,7 +15,7 @@ export default function ThemeRadio() {
   const uiIsometric = 'isometric';
   const themes = [uiMaterial, uiTerminal, uiCyberpunk, uiIsometric];
 
-  const [currentValue, setValue] = useState(uiMaterial);
+  const [currentValue, setValue] = useState(uiTerminal);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const app = document.querySelectorAll('.App');
     const value = event.target.value;
@@ -28,6 +28,7 @@ export default function ThemeRadio() {
 
   return (
     <div>
+      {/* UI-Material theme */}
       <Radio
         className="quiz-radio"
         checked={currentValue === uiMaterial}
@@ -36,6 +37,7 @@ export default function ThemeRadio() {
         name={`ui-${uiMaterial}-theme`}
         inputProps={{ 'aria-label': `User Interface Theme: ${uiMaterial}` }}
       />
+      {/* UI-Terminal theme */}
       <Radio
         className="quiz-radio"
         checked={currentValue === uiTerminal}
@@ -44,7 +46,8 @@ export default function ThemeRadio() {
         name={`ui-${uiTerminal}-theme`}
         inputProps={{ 'aria-label': `User Interface Theme: ${uiTerminal}` }}
       />
-      <Radio
+      {/* UI-Cyberpunk theme placeholder */}
+      {/* <Radio
         className="quiz-radio"
         disabled
         checked={currentValue === uiCyberpunk}
@@ -52,7 +55,8 @@ export default function ThemeRadio() {
         value={uiCyberpunk}
         name={`ui-${uiCyberpunk}-theme`}
         inputProps={{ 'aria-label': `disabled User Interface Theme: ${uiCyberpunk}` }}
-      />
+      /> */}
+      {/* UI-Isometric theme placeholder */}
       {/* <Radio
         disabled
         className="quiz-radio"

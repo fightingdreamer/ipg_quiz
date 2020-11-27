@@ -5,7 +5,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 export const BtnCta = () => {
   return (
     <Button disableRipple className="btn-cta" variant="contained">
-      <span>Play</span>
+      Play
       <PlayArrowIcon className="quiz-play" />
     </Button>
   );
@@ -14,7 +14,7 @@ export const BtnCta = () => {
 export const BtnSide = () => {
   return (
     <Button className="btn-side" variant="outlined">
-      <span>Side button</span>
+      Side button
     </Button>
   );
 };

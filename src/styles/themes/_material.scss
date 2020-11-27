@@ -6,6 +6,8 @@
     background: $nord4;
     color: $nord0;
 
+    // common
+
     line {
       stroke: $nord10;
     }
@@ -28,9 +30,20 @@
       }
     }
 
+    // icons
+
+    .quiz-audio,
+    .quiz-menu,
+    .quiz-arrow,
+    .quiz-timer {
+      fill: $nord10;
+    }
+
+    // quiz content
+
     .quiz-panel {
       @include strong-shadow;
-      @include border-material(bottom);
+      @include material-border(bottom);
       background: $nord6;
     }
 
@@ -42,24 +55,10 @@
       }
     }
 
-    .quiz-wrapper {
-      .quiz-definition {
-        @include strong-shadow;
-        @include border-material(top);
-        @include border-material(bottom);
-        background: $nord6;
-      }
-      ul {
-        li {
-          @include light-shadow;
-        }
-      }
-    }
-
     .quiz-theme {
       @include strong-shadow;
       background: $nord6;
-      @include border-material(top);
+      @include material-border(top);
 
       .MuiRadio-colorSecondary:not(.Mui-disabled) {
         color: $nord10;
@@ -70,11 +69,18 @@
       }
     }
 
-    .quiz-audio,
-    .quiz-menu,
-    .quiz-arrow,
-    .quiz-timer {
-      fill: $nord10;
+    .quiz-wrapper {
+      .quiz-definition {
+        @include strong-shadow;
+        @include material-border(top);
+        @include material-border(bottom);
+        background: $nord6;
+      }
+      ul {
+        li {
+          @include light-shadow;
+        }
+      }
     }
   }
 }
