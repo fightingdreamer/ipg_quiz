@@ -88,9 +88,15 @@
       .quiz-definition {
         place-items: self-start;
         position: relative;
+        margin-top: $helper-space / 2;
         padding: 0;
         h2 {
+          font-size: $helper-space * 1.25;
           text-align: left;
+          &::before {
+            content: "Q:";
+            margin-right: 1ch;
+          }
         }
       }
       ul {
@@ -98,15 +104,21 @@
         place-items: self-start;
         grid-template-columns: repeat(1, 1fr);
         position: relative;
+        padding: $helper-space;
         li {
           @include auto-fit;
+          &::before {
+            content: "A:";
+          }
+          button {
+            .quiz-type {
+              @include terminal-text;
+              @include terminal-shadow;
+              @include animation-blink;
+            }
+          }
         }
       }
-    }
-
-    .quiz-type {
-      @include terminal-text;
-      @include terminal-shadow;
     }
   }
 }

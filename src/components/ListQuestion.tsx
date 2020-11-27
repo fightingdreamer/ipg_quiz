@@ -98,7 +98,7 @@ export const ListQuestion = () => {
               <ul>
                 {objectQuestion.options.map((answer) => {
                   const question = answer.answer;
-                  const charCounter = question.length;
+                  const charCounter = question.length + 1;
                   return (
                     <li key={answer.id}>
                       <button onClick={() => handleQuestion(answer.value)}>
@@ -106,7 +106,7 @@ export const ListQuestion = () => {
                           className="quiz-type"
                           style={{
                             width: `${charCounter}ch`,
-                            animation: `typing 2s steps(${charCounter})`,
+                            animation: `animation-typing 2s steps(${charCounter}), blink 0.5s step-end 5 alternate`,
                           }}
                         >
                           {question}

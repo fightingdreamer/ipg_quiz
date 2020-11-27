@@ -92,9 +92,12 @@ $helper-space: 1rem;
 
 // animations
 
-@keyframes typing {
-  from {
-    width: 0;
+@mixin animation-blink {
+  border-right: 1ch solid transparent;
+  @keyframes blink {
+    50% {
+      border-color: var(--terminal-green);
+    }
   }
 }
 
@@ -108,6 +111,12 @@ $helper-space: 1rem;
     100% {
       background-position: 0 100vh;
     }
+  }
+}
+
+@keyframes animation-typing {
+  from {
+    width: 0;
   }
 }
 
