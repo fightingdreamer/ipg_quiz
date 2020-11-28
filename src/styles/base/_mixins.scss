@@ -120,6 +120,10 @@ $helper-space: 1rem;
   }
 }
 
+@mixin transition-all {
+  transition: all 0.25s linear;
+}
+
 // UI-Material
 
 @mixin material-border($direction) {

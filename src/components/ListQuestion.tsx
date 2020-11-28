@@ -101,7 +101,7 @@ export const ListQuestion = () => {
                   const charCounter = question.length + 1;
                   return (
                     <li key={answer.id}>
-                      <button onClick={() => handleQuestion(answer.value)}>
+                      <button className="btn-side" onClick={() => handleQuestion(answer.value)}>
                         <span
                           className="quiz-type"
                           style={{

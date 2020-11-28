@@ -9,7 +9,7 @@
     // common
 
     line {
-      stroke: $nord10;
+      stroke: $nord13;
     }
 
     button {
@@ -23,7 +23,7 @@
       }
       &.btn-side {
         background: $nord6;
-        border-color: $nord10;
+        border-color: $nord13;
         span {
           color: $nord10;
         }
@@ -79,6 +79,21 @@
       ul {
         li {
           @include light-shadow;
+          @include transition-all;
+          &:hover {
+            background: $nord13;
+            button {
+              @include transition-all;
+              border: 2px solid $nord10;
+              &:hover {
+                background: $nord10;
+                span {
+                  @include transition-all;
+                  color: $nord4;
+                }
+              }
+            }
+          }
         }
       }
     }
