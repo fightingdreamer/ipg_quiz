@@ -7,6 +7,10 @@
     @include terminal-shadow;
     background-image: var(--terminal-gradient);
 
+    .MuiButtonBase-root {
+      cursor: url("../img/terminal-cursor.png"), pointer;
+    }
+
     // common
 
     line {
@@ -46,6 +50,10 @@
     }
 
     // icons
+
+    .material-icon {
+      display: none;
+    }
 
     .quiz-audio,
     .quiz-menu,
@@ -111,6 +119,7 @@
             content: "A:";
           }
           button {
+            border-color: transparent;
             .quiz-type {
               @include terminal-text;
               @include terminal-shadow;

@@ -6,7 +6,6 @@ button {
   border: 0;
   padding: $helper-space;
   width: 100%;
-  cursor: pointer;
   &.btn-cta,
   &.btn-side {
     @include border-radius;
