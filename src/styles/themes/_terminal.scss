@@ -7,16 +7,6 @@
     @include terminal-shadow;
     background-image: var(--terminal-gradient);
 
-    .quiz-select {
-      .css-8e9wle-control,
-      .css-1y20v6-menu {
-        cursor: url("../img/terminal-click.png"), pointer;
-      }
-    }
-    .MuiButtonBase-root {
-      cursor: url("../img/terminal-click.png"), pointer;
-    }
-
     // common
 
     line {
@@ -59,6 +49,15 @@
 
     .material-icon {
       display: none;
+    }
+
+    .quiz-icons {
+      @include flex-center;
+    }
+
+    .nes-icon {
+      margin: 0 $helper-space / 2;
+      cursor: url("../img/terminal-click.png"), pointer;
     }
 
     .quiz-audio,
@@ -108,7 +107,7 @@
         margin-top: $helper-space / 2;
         padding: 0;
         h2 {
-          font-size: $helper-space * 1.25;
+          font-size: $helper-space * 1.5;
           text-align: left;
           &::before {
             content: "Q:";
@@ -130,6 +129,7 @@
           button {
             border-color: transparent;
             .quiz-type {
+              font-size: $helper-space * 1.5;
               @include terminal-text;
               @include terminal-shadow;
               @include animation-blink;
@@ -137,6 +137,30 @@
           }
         }
       }
+    }
+
+    // customization
+
+    .nes-container {
+      @include flex-center;
+      padding: 1.25rem;
+      &::after {
+        @include border-radius;
+        border-color: var(--terminal-green);
+        border-width: $helper-space / 8;
+        margin: 0 (-$helper-space / 8);
+      }
+    }
+
+    .quiz-select {
+      .css-8e9wle-control,
+      .css-bmm19l-option {
+        cursor: url("../img/terminal-click.png"), pointer;
+      }
+    }
+
+    .MuiButtonBase-root {
+      cursor: url("../img/terminal-click.png"), pointer;
     }
   }
 }

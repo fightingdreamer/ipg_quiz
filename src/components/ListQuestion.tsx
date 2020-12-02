@@ -12,8 +12,13 @@ import { QuizStart } from '../components/QuizStart';
 import { getQuestion } from '../utils/getQuestion';
 
 // UI-Material components
+
 import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
+
+// UI-Terminal components
+
+import { SocialSet } from './SocialSet';
 
 // code
 
@@ -79,6 +84,7 @@ export const ListQuestion = () => {
             </h2>
             <BtnCta />
             <BtnSide />
+            <SocialSet />
           </div>
         </>
       ) : (
