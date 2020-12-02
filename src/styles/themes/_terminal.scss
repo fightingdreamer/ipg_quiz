@@ -7,8 +7,14 @@
     @include terminal-shadow;
     background-image: var(--terminal-gradient);
 
+    .quiz-select {
+      .css-8e9wle-control,
+      .css-1y20v6-menu {
+        cursor: url("../img/terminal-click.png"), pointer;
+      }
+    }
     .MuiButtonBase-root {
-      cursor: url("../img/terminal-cursor.png"), pointer;
+      cursor: url("../img/terminal-click.png"), pointer;
     }
 
     // common
@@ -66,6 +72,9 @@
 
     .quiz-panel {
       @include terminal-background;
+      .quiz-select {
+        width: $helper-space * 12;
+      }
       span {
         color: var(--default-dark);
       }

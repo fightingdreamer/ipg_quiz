@@ -1,8 +1,18 @@
+// packages
+
 import React from 'react';
+
+// UI-Material components
+
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import VolumeOffTwoToneIcon from '@material-ui/icons/VolumeOffTwoTone';
 import VolumeUpTwoToneIcon from '@material-ui/icons/VolumeUpTwoTone';
+
+// UI-Terminal components
+
 import { Icon } from 'nes-react';
+
+// code
 
 export const IconSet = () => {
   return (

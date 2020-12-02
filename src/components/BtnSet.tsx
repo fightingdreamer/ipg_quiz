@@ -1,6 +1,13 @@
+// packages
+
 import React from 'react';
+
+// UI-Material components
+
 import Button from '@material-ui/core/Button';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+
+// code
 
 export const BtnCta = () => {
   return (

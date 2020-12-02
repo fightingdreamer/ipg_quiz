@@ -2,11 +2,16 @@
 
 import React, { useState } from 'react';
 
-// components & utils
+// components
 
 import { BtnCta, BtnSide } from './BtnSet';
 import { QuizStart } from '../components/QuizStart';
+
+// utils
+
 import { getQuestion } from '../utils/getQuestion';
+
+// UI-Material components
 import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
 
