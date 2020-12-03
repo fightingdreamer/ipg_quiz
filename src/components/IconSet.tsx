@@ -1,6 +1,10 @@
 // packages
 
-import React from 'react';
+import React, { useContext } from 'react';
+
+// React Context API
+
+import ThemeContext from '../context/ThemeContext';
 
 // UI-Material components
 
@@ -15,15 +19,25 @@ import { Icon } from 'nes-react';
 // code
 
 export const IconSet = () => {
+  const { isMaterial, isTerminal } = useContext(ThemeContext);
+
   return (
     <div className="quiz-icons">
-      <MenuTwoToneIcon className="quiz-menu material-icon" />
-      <VolumeOffTwoToneIcon className="quiz-audio material-icon" />
-      <VolumeUpTwoToneIcon className="quiz-audio material-icon" />
-      <Icon icon="trophy" small className="quiz-trophy terminal-icon" />
-      <Icon icon="star" small className="quiz-star terminal-icon" />
-      <Icon icon="star" half small className="quiz-star terminal-icon" />
-      <Icon icon="star" empty small className="quiz-star terminal-icon" />
+      {isMaterial && (
+        <>
+          <MenuTwoToneIcon className="quiz-menu material-icon" />
+          <VolumeOffTwoToneIcon className="quiz-audio material-icon" />
+          <VolumeUpTwoToneIcon className="quiz-audio material-icon" />
+        </>
+      )}
+      {isTerminal && (
+        <>
+          <Icon icon="trophy" small className="quiz-trophy terminal-icon" />
+          <Icon icon="star" small className="quiz-star terminal-icon" />
+          <Icon icon="star" half small className="quiz-star terminal-icon" />
+          <Icon icon="star" empty small className="quiz-star terminal-icon" />
+        </>
+      )}
     </div>
   );
 };

@@ -1,6 +1,10 @@
 // packages
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+
+// React Context API
+
+import ThemeContext from '../context/ThemeContext';
 
 // components
 
@@ -28,6 +32,10 @@ export const ListQuestion = () => {
   const [currentQuestion, setQuestion] = useState(0);
   const [currentStatus, setStatus] = useState(false);
   const objectQuestion = getQuestion[currentQuestion];
+
+  // use React Context API
+
+  const { isTerminal } = useContext(ThemeContext);
 
   // time & question settings
 
@@ -109,7 +117,8 @@ export const ListQuestion = () => {
               <ul>
                 {objectQuestion.options.map((answer) => {
                   const question = answer.answer;
-                  const charCounter = question.length + 4; // UI-Terminal brackets outer space fix
+                  const charCounter = question.length + (isTerminal ? 4 : 0); // UI-Terminal brackets outer space fix
+
                   return (
                     <li key={answer.id}>
                       <button className="btn-side" onClick={() => handleQuestion(answer.value)}>

@@ -1,6 +1,10 @@
 // packages
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+
+// React Context API
+
+import ThemeContext from '../context/ThemeContext';
 
 // UI-Material components
 
@@ -9,13 +13,16 @@ import Radio from '@material-ui/core/Radio';
 // code
 
 export default function ThemeRadio() {
+  // theme settings
   const uiMaterial = 'material';
   const uiTerminal = 'terminal';
   const uiCyberpunk = 'cyberpunk';
   const uiIsometric = 'isometric';
   const themes = [uiMaterial, uiTerminal, uiCyberpunk, uiIsometric];
+  const { setTheme } = useContext(ThemeContext);
+  const [currentValue, setValue] = useState(uiTerminal); // default active theme
 
-  const [currentValue, setValue] = useState(uiTerminal);
+  // theme switch
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const app = document.querySelectorAll('.App');
     const value = event.target.value;
@@ -23,6 +30,8 @@ export default function ThemeRadio() {
       app[0].classList.remove(...themes);
       app[0].classList.toggle(value);
       setValue(value);
+      setTheme(value);
+      console.log(`active theme: ${value}`);
     }
   };
 

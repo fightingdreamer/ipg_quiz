@@ -2,6 +2,10 @@
 
 import React from 'react';
 
+// React Context API
+
+import { ThemeProvider } from './context/ThemeContext';
+
 // pages
 
 import { PageQuiz } from './pages/PageQuiz';
@@ -15,7 +19,9 @@ import './styles/App.scss';
 function App() {
   return (
     <div className="App terminal">
-      <PageQuiz />
+      <ThemeProvider>
+        <PageQuiz />
+      </ThemeProvider>
     </div>
   );
 }
