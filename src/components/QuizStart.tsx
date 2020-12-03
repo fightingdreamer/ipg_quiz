@@ -5,7 +5,7 @@ import React from 'react';
 // components
 
 import { ReactComponent as Logo } from '../styles/img/cube.svg';
-import { BtnCta } from './BtnSet';
+import { MaterialBtnCta } from './BtnSet';
 import { IconSet } from './IconSet';
 import { SelectSet } from './SelectSet';
 
@@ -23,8 +23,9 @@ export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
           <Logo />
         </div>
         <div className="quiz-btn" onClick={onClick}>
-          <BtnCta />
+          <MaterialBtnCta />
         </div>
+        {/* enter your name input placeholder */}
       </div>
     </>
   );

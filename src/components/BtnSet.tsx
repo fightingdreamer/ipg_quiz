@@ -1,27 +1,34 @@
 // packages
 
 import React from 'react';
+// import React, { useContext } from 'react';
+
+// React Context API
+
+// import ThemeContext from '../context/ThemeContext';
 
 // UI-Material components
 
-import Button from '@material-ui/core/Button';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import { BtnCta, BtnSide } from './btn/MaterialBtn';
+
+// UI-Terminal components
+
+// import placeholder
 
 // code
 
-export const BtnCta = () => {
+export const MaterialBtnCta = () => {
   return (
-    <Button disableRipple className="btn-cta" variant="contained">
-      Play
-      <PlayArrowIcon className="quiz-play" />
-    </Button>
+    <>
+      <BtnCta />
+    </>
   );
 };
 
-export const BtnSide = () => {
+export const MaterialBtnSide = () => {
   return (
-    <Button className="btn-side" variant="outlined">
-      Side button
-    </Button>
+    <>
+      <BtnSide />
+    </>
   );
 };
