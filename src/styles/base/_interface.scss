@@ -12,21 +12,6 @@
   position: absolute;
 }
 
-.quiz-noise {
-  z-index: 0;
-}
-
-.quiz-overlay {
-  z-index: 1;
-}
-
-.quiz-panel,
-.quiz-wrapper,
-.quiz-result,
-.quiz-start {
-  z-index: 2;
-}
-
 .quiz-panel {
   @include flex-row;
   position: fixed;
@@ -89,7 +74,6 @@
 
 .quiz-theme {
   @include grid-center;
-  z-index: 3;
   position: fixed;
   bottom: 0;
   width: 100vw;

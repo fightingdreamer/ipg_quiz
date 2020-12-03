@@ -93,10 +93,11 @@ $helper-space: 1rem;
 // animations
 
 @mixin animation-blink {
+  border-left: 1ch solid transparent;
   border-right: 1ch solid transparent;
   @keyframes blink {
     50% {
-      border-color: var(--terminal-green);
+      border-right-color: var(--terminal-green);
     }
   }
 }
@@ -121,7 +122,7 @@ $helper-space: 1rem;
 }
 
 @mixin transition-all {
-  transition: all 0.25s linear;
+  transition: all 0.35s linear;
 }
 
 // UI-Material

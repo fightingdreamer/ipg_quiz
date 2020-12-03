@@ -109,7 +109,7 @@ export const ListQuestion = () => {
               <ul>
                 {objectQuestion.options.map((answer) => {
                   const question = answer.answer;
-                  const charCounter = question.length + 1;
+                  const charCounter = question.length + 4; // UI-Terminal brackets outer space fix
                   return (
                     <li key={answer.id}>
                       <button className="btn-side" onClick={() => handleQuestion(answer.value)}>

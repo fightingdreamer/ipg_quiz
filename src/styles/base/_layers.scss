@@ -1,0 +1,27 @@
+// LAYERS
+
+:root {
+  --z-top: 3;
+  --z-above: 2;
+  --z-default: 1;
+  --z-below: 0;
+}
+
+.quiz-noise {
+  z-index: var(--z-below);
+}
+
+.quiz-overlay {
+  z-index: var(--z-default);
+}
+
+.quiz-panel,
+.quiz-wrapper,
+.quiz-result,
+.quiz-start {
+  z-index: var(--z-above);
+}
+
+.quiz-theme {
+  z-index: var(--z-top);
+}

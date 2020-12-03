@@ -20,6 +20,8 @@
     "jsx": "react",
     "noImplicitAny": false
   },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Recommended",
   "include": [
     "src", "index.tsx"
   ]

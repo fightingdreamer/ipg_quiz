@@ -123,16 +123,58 @@
         padding: $helper-space;
         li {
           @include auto-fit;
-          &::before {
-            content: "A:";
+          font-size: $helper-space * 1.5;
+          &:nth-child(1) {
+            &::before {
+              content: "A:";
+            }
+          }
+          &:nth-child(2) {
+            &::before {
+              content: "B:";
+            }
+          }
+          &:nth-child(3) {
+            &::before {
+              content: "C:";
+            }
+          }
+          &:nth-child(4) {
+            &::before {
+              content: "D:";
+            }
           }
           button {
             border-color: transparent;
+            padding: 0;
+            margin-left: -1ch;
+            margin-right: -1ch;
             .quiz-type {
-              font-size: $helper-space * 1.5;
               @include terminal-text;
               @include terminal-shadow;
               @include animation-blink;
+              font-size: $helper-space * 1.5;
+              &::before,
+              &::after {
+                @include transition-all;
+                opacity: 0;
+              }
+              &::before {
+                content: "[";
+              }
+              &::after {
+                content: "]";
+              }
+            }
+            &:hover {
+              .quiz-type {
+                color: var(--default-light);
+                text-transform: uppercase;
+                &::before,
+                &::after {
+                  opacity: 1;
+                }
+              }
             }
           }
         }
