@@ -1,27 +1,28 @@
 // packages
 
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
-// components
+// React Context API
 
-import Select from 'react-select'; // external input control
-import nesTheme from 'react-select-nes-css-theme'; // external theme object
+import ThemeContext from '../context/ThemeContext';
+
+// UI-Material components
+
+import { MaterialSelect } from './select/MaterialSelect';
+
+// UI-Terminal components
+
+import { TerminalSelect } from './select/TerminalSelect';
 
 // code
 
 export const SelectSet = () => {
-  const [currentValue, setValue] = useState();
+  const { isMaterial, isTerminal } = useContext(ThemeContext);
 
   return (
-    <Select
-      className="quiz-select"
-      value={currentValue}
-      styles={nesTheme} // external theme object passed as a prop
-      onChange={setValue}
-      options={[
-        { value: 0, label: '1' },
-        { value: 1, label: '2' },
-      ]}
-    />
+    <>
+      {isMaterial && <MaterialSelect />}
+      {isTerminal && <TerminalSelect />}
+    </>
   );
 };

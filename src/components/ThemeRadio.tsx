@@ -31,7 +31,6 @@ export default function ThemeRadio() {
       app[0].classList.toggle(value);
       setValue(value);
       setTheme(value);
-      console.log(`active theme: ${value}`);
     }
   };
 

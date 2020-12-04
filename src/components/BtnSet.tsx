@@ -20,10 +20,10 @@ export const BtnCta = () => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
 
   return (
-    <div className="btn-wrapper">
+    <>
       {isMaterial && <MaterialBtnCta />}
       {isTerminal && <TerminalBtnCta />}
-    </div>
+    </>
   );
 };
 
@@ -31,9 +31,9 @@ export const BtnSide = () => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
 
   return (
-    <div className="btn-wrapper">
+    <>
       {isMaterial && <MaterialBtnSide />}
       {isTerminal && <TerminalBtnSide />}
-    </div>
+    </>
   );
 };

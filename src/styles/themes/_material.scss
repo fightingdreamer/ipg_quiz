@@ -47,6 +47,10 @@
       background: $nord6;
     }
 
+    .quiz-select {
+      width: $helper-space * 10;
+    }
+
     .quiz-start {
       @include strong-shadow;
       background: $nord6;
