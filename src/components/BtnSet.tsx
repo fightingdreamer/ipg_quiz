@@ -1,34 +1,39 @@
 // packages
 
-import React from 'react';
-// import React, { useContext } from 'react';
+import React, { useContext } from 'react';
 
 // React Context API
 
-// import ThemeContext from '../context/ThemeContext';
+import ThemeContext from '../context/ThemeContext';
 
 // UI-Material components
 
-import { BtnCta, BtnSide } from './btn/MaterialBtn';
+import { MaterialBtnCta, MaterialBtnSide } from './btn/MaterialBtn';
 
 // UI-Terminal components
 
-// import placeholder
+import { TerminalBtnCta, TerminalBtnSide } from './btn/TerminalBtn';
 
 // code
 
-export const MaterialBtnCta = () => {
+export const BtnCta = () => {
+  const { isMaterial, isTerminal } = useContext(ThemeContext);
+
   return (
-    <>
-      <BtnCta />
-    </>
+    <div className="btn-wrapper">
+      {isMaterial && <MaterialBtnCta />}
+      {isTerminal && <TerminalBtnCta />}
+    </div>
   );
 };
 
-export const MaterialBtnSide = () => {
+export const BtnSide = () => {
+  const { isMaterial, isTerminal } = useContext(ThemeContext);
+
   return (
-    <>
-      <BtnSide />
-    </>
+    <div className="btn-wrapper">
+      {isMaterial && <MaterialBtnSide />}
+      {isTerminal && <TerminalBtnSide />}
+    </div>
   );
 };

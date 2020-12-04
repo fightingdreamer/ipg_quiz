@@ -8,7 +8,7 @@ import ThemeContext from '../context/ThemeContext';
 
 // components
 
-import { MaterialBtnCta, MaterialBtnSide } from './BtnSet';
+import { BtnCta, BtnSide } from './BtnSet';
 import { QuizStart } from '../components/QuizStart';
 
 // utils
@@ -90,8 +90,8 @@ export const ListQuestion = () => {
             <h2>
               Game over, score: {currentScore} out of {getQuestion.length}
             </h2>
-            <MaterialBtnCta />
-            <MaterialBtnSide />
+            <BtnCta />
+            <BtnSide />
             <SocialSet />
           </div>
         </>

@@ -19,6 +19,7 @@ import './styles/App.scss';
 function App() {
   return (
     <div className="App terminal">
+      {/* default active theme */}
       <ThemeProvider>
         <PageQuiz />
       </ThemeProvider>

@@ -1,11 +1,6 @@
 // packages
 
 import React from 'react';
-// import React, { useContext } from 'react';
-
-// React Context API
-
-// import ThemeContext from '../../context/ThemeContext';
 
 // UI-Material components
 
@@ -14,7 +9,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 // code
 
-export const BtnCta = () => {
+export const MaterialBtnCta = () => {
   return (
     <Button disableRipple className="btn-cta" variant="contained">
       Play
@@ -23,7 +18,7 @@ export const BtnCta = () => {
   );
 };
 
-export const BtnSide = () => {
+export const MaterialBtnSide = () => {
   return (
     <Button className="btn-side" variant="outlined">
       Side button
