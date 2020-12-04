@@ -10,6 +10,7 @@ import ThemeContext from '../context/ThemeContext';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
 
 // UI-Terminal components
 
@@ -26,6 +27,7 @@ export const SocialSet = () => {
         <>
           <FacebookIcon fontSize="large" className="quiz-facebook material-icon" />
           <TwitterIcon fontSize="large" className="quiz-twitter material-icon" />
+          <FavoriteTwoToneIcon fontSize="large" className="quiz-heart material-icon" />
         </>
       )}
       {isTerminal && (

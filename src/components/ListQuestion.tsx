@@ -19,10 +19,16 @@ import { getQuestion } from '../utils/getQuestion';
 
 import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
+import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
+import HelpTwoToneIcon from '@material-ui/icons/HelpTwoTone';
 
 // UI-Terminal components
 
 import { SocialSet } from './SocialSet';
+
+// Custom components
+
+import ItemQuestion from './ItemQuestion';
 
 // code
 
@@ -75,15 +81,8 @@ export const ListQuestion = () => {
       {currentStatus ? (
         <>
           <div className="quiz-panel">
-            <div className="quiz-status">
-              <span>{currentQuestion + 1}</span>
-              <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
-              <span>{getQuestion.length}</span>
-            </div>
-            <div className="quiz-counter">
-              <span>{setCurrentTime}</span>
-              <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
-              <TimerTwoToneIcon fontSize="default" className="quiz-timer" />
+            <div className="quiz-user">
+              <AccountCircleTwoToneIcon fontSize="default" className="quiz-user" />
             </div>
           </div>
           <div className="quiz-result">
@@ -100,42 +99,29 @@ export const ListQuestion = () => {
           {currentData && currentData.activeQuestion !== '' ? (
             <div className="quiz-wrapper">
               <div className="quiz-panel">
-                <div className="quiz-status">
-                  <span>{currentQuestion + 1}</span>
-                  <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
-                  <span>{getQuestion.length}</span>
+                <div className="quiz-user">
+                  <AccountCircleTwoToneIcon fontSize="default" className="quiz-user" />
                 </div>
                 <div className="quiz-counter">
                   <span>{setCurrentTime}</span>
                   <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
                   <TimerTwoToneIcon fontSize="default" className="quiz-timer" />
                 </div>
+                <div className="quiz-status">
+                  <HelpTwoToneIcon fontSize="default" className="quiz-help" />
+                  <span>{currentQuestion + 1}</span>
+                  <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
+                  <span>{getQuestion.length}</span>
+                </div>
               </div>
               <div className="quiz-definition">
                 <h2>{objectQuestion.definition}</h2>
               </div>
-              <ul>
-                {objectQuestion.options.map((answer) => {
-                  const question = answer.answer;
-                  const charCounter = question.length + (isTerminal ? 4 : 0); // UI-Terminal brackets outer space fix
-
-                  return (
-                    <li key={answer.id}>
-                      <button className="btn-side" onClick={() => handleQuestion(answer.value)}>
-                        <span
-                          className="quiz-type"
-                          style={{
-                            width: `${charCounter}ch`,
-                            animation: `animation-typing 2s steps(${charCounter}), blink 0.5s step-end 5 alternate`,
-                          }}
-                        >
-                          {question}
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
+              <ItemQuestion
+                options={objectQuestion.options}
+                handleValue={handleQuestion}
+                isTerminal={isTerminal}
+              />
             </div>
           ) : (
             <QuizStart

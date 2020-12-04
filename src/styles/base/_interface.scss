@@ -3,6 +3,9 @@
 .App {
   @include grid-center;
   @include full-screen;
+  @include transition-all;
+  @include animation-opacity;
+  animation: intro linear 0.35s;
   position: relative;
 }
 
@@ -87,7 +90,7 @@
 .quiz-result {
   @include border-radius;
   border: $helper-space / 8 solid transparent;
-  padding: $helper-space;
+  padding: $helper-space * 2;
   h2 {
     font-size: $helper-space * 1.5;
     text-align: center;

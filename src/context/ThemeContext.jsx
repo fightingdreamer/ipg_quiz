@@ -7,7 +7,7 @@ import React, { createContext, useState } from 'react';
 const ThemeContext = createContext();
 
 const ThemeProvider = (props) => {
-  const [theme, setTheme] = useState('terminal'); // default active theme
+  const [theme, setTheme] = useState('material'); // default active theme
 
   const isTerminal = theme === 'terminal';
   const isMaterial = theme === 'material';

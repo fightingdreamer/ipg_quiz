@@ -32,11 +32,18 @@
 
     // icons
 
-    .quiz-audio,
-    .quiz-menu,
-    .quiz-arrow,
-    .quiz-timer {
+    .MuiSvgIcon-root {
+      font-size: $helper-space * 1.75;
       fill: $nord10;
+    }
+
+    .quiz-play {
+      fill: $nord13;
+    }
+
+    .MuiSvgIcon-fontSizeLarge {
+      fill: $nord10;
+      font-size: $helper-space * 2;
     }
 
     // quiz content
@@ -103,6 +110,7 @@
     }
 
     .quiz-result {
+      background: $nord6;
       border-color: $nord10;
     }
   }
