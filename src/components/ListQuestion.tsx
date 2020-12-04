@@ -77,13 +77,13 @@ export const ListQuestion = () => {
           <div className="quiz-panel">
             <div className="quiz-status">
               <span>{currentQuestion + 1}</span>
-              <ArrowRightTwoToneIcon className="quiz-arrow" />
+              <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
               <span>{getQuestion.length}</span>
             </div>
             <div className="quiz-counter">
               <span>{setCurrentTime}</span>
-              <ArrowRightTwoToneIcon className="quiz-arrow" />
-              <TimerTwoToneIcon className="quiz-timer" />
+              <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
+              <TimerTwoToneIcon fontSize="default" className="quiz-timer" />
             </div>
           </div>
           <div className="quiz-result">
@@ -102,13 +102,13 @@ export const ListQuestion = () => {
               <div className="quiz-panel">
                 <div className="quiz-status">
                   <span>{currentQuestion + 1}</span>
-                  <ArrowRightTwoToneIcon className="quiz-arrow" />
+                  <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
                   <span>{getQuestion.length}</span>
                 </div>
                 <div className="quiz-counter">
                   <span>{setCurrentTime}</span>
-                  <ArrowRightTwoToneIcon className="quiz-arrow" />
-                  <TimerTwoToneIcon className="quiz-timer" />
+                  <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
+                  <TimerTwoToneIcon fontSize="default" className="quiz-timer" />
                 </div>
               </div>
               <div className="quiz-definition">

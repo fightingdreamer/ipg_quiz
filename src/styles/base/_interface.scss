@@ -85,9 +85,17 @@
 }
 
 .quiz-result {
+  @include border-radius;
+  border: $helper-space / 8 solid transparent;
+  padding: $helper-space;
   h2 {
     font-size: $helper-space * 1.5;
     text-align: center;
     padding: $helper-space;
   }
+}
+
+.quiz-social {
+  @include flex-center;
+  padding: $helper-space;
 }

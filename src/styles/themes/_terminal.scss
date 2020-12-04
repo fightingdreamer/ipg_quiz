@@ -177,18 +177,11 @@
       }
     }
 
-    // customization
-
-    .nes-container {
-      @include flex-center;
-      padding: 1.25rem;
-      &::after {
-        @include border-radius;
-        border-color: var(--terminal-green);
-        border-width: $helper-space / 8;
-        margin: 0 (-$helper-space / 8);
-      }
+    .quiz-result {
+      border-color: var(--terminal-green);
     }
+
+    // customization
 
     .quiz-select {
       .css-8e9wle-control,

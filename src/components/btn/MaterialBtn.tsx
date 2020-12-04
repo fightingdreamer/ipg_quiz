@@ -13,7 +13,7 @@ export const MaterialBtnCta = () => {
   return (
     <Button disableRipple className="btn-cta" variant="contained">
       Play
-      <PlayArrowIcon className="quiz-play" />
+      <PlayArrowIcon fontSize="default" className="quiz-play" />
     </Button>
   );
 };
