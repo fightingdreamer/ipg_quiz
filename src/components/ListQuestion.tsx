@@ -6,10 +6,11 @@ import React, { useContext, useState } from 'react';
 
 import ThemeContext from '../context/ThemeContext';
 
-// components
+// custom components
 
-import { BtnCta, BtnSide } from './BtnSet';
 import { QuizStart } from '../components/QuizStart';
+import ItemQuestion from './ItemQuestion';
+import QuizResult from './QuizResult';
 
 // utils
 
@@ -21,14 +22,6 @@ import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
 import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
 import HelpTwoToneIcon from '@material-ui/icons/HelpTwoTone';
-
-// UI-Terminal components
-
-import { SocialSet } from './SocialSet';
-
-// Custom components
-
-import ItemQuestion from './ItemQuestion';
 
 // code
 
@@ -85,14 +78,7 @@ export const ListQuestion = () => {
               <AccountCircleTwoToneIcon fontSize="default" className="quiz-user" />
             </div>
           </div>
-          <div className="quiz-result">
-            <h2>
-              Game over, score: {currentScore} out of {getQuestion.length}
-            </h2>
-            <BtnCta />
-            <BtnSide />
-            <SocialSet />
-          </div>
+          <QuizResult currentScore={currentScore} totalQuestion={getQuestion.length} />
         </>
       ) : (
         <>
