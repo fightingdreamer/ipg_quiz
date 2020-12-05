@@ -9,19 +9,14 @@ import ThemeContext from '../context/ThemeContext';
 // custom components
 
 import { QuizStart } from '../components/QuizStart';
+import QuizPanel from './QuizPanel';
+import QuizDefinition from './QuizDefinition';
 import ItemQuestion from './ItemQuestion';
 import QuizResult from './QuizResult';
 
 // utils
 
 import { getQuestion } from '../utils/getQuestion';
-
-// UI-Material components
-
-import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
-import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
-import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
-import HelpTwoToneIcon from '@material-ui/icons/HelpTwoTone';
 
 // code
 
@@ -33,11 +28,9 @@ export const ListQuestion = () => {
   const objectQuestion = getQuestion[currentQuestion];
 
   // use React Context API
-
   const { isTerminal } = useContext(ThemeContext);
 
   // time & question settings
-
   const [setCurrentTime, setTime] = useState(20);
   const [currentData, setData] = useState({
     setCurrentTime: 20,
@@ -73,36 +66,23 @@ export const ListQuestion = () => {
     <>
       {currentStatus ? (
         <>
-          <div className="quiz-panel">
-            <div className="quiz-user">
-              <AccountCircleTwoToneIcon fontSize="default" className="quiz-user" />
-            </div>
-          </div>
+          <QuizPanel
+            setCurrentTime={setCurrentTime}
+            currentQuestion={currentQuestion}
+            totalQuestion={getQuestion.length}
+          />
           <QuizResult currentScore={currentScore} totalQuestion={getQuestion.length} />
         </>
       ) : (
         <>
           {currentData && currentData.activeQuestion !== '' ? (
             <div className="quiz-wrapper">
-              <div className="quiz-panel">
-                <div className="quiz-user">
-                  <AccountCircleTwoToneIcon fontSize="default" className="quiz-user" />
-                </div>
-                <div className="quiz-counter">
-                  <span>{setCurrentTime}</span>
-                  <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
-                  <TimerTwoToneIcon fontSize="default" className="quiz-timer" />
-                </div>
-                <div className="quiz-status">
-                  <HelpTwoToneIcon fontSize="default" className="quiz-help" />
-                  <span>{currentQuestion + 1}</span>
-                  <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow" />
-                  <span>{getQuestion.length}</span>
-                </div>
-              </div>
-              <div className="quiz-definition">
-                <h2>{objectQuestion.definition}</h2>
-              </div>
+              <QuizPanel
+                setCurrentTime={setCurrentTime}
+                currentQuestion={currentQuestion}
+                totalQuestion={getQuestion.length}
+              />
+              <QuizDefinition definitionQuestion={objectQuestion.definition} />
               <ItemQuestion
                 options={objectQuestion.options}
                 handleValue={handleQuestion}
