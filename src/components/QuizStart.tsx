@@ -4,9 +4,10 @@ import React from 'react';
 
 // components
 
-import { ReactComponent as Logo } from '../styles/img/cube.svg';
 import { SelectSet } from './SelectSet';
 import { IconSet } from './IconSet';
+import { ReactComponent as Logo } from '../styles/img/cube-lines.svg';
+import { LogoCube } from './LogoCube';
 import QuizInput from './QuizInput';
 import { BtnCta } from './BtnSet';
 
@@ -22,6 +23,7 @@ export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
       <div className="quiz-start">
         <div className="quiz-logo">
           <Logo />
+          <LogoCube value="any" index="any" />
         </div>
         <form className="quiz-form" noValidate autoComplete="off">
           <div className="quiz-input">
