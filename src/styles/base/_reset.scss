@@ -1,7 +1,17 @@
 /* RESET */
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
 }
 
 html,
@@ -119,14 +129,6 @@ ul {
 blockquote,
 q {
     quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: "";
-    content: none;
 }
 
 table {

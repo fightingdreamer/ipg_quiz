@@ -5,9 +5,10 @@ import React from 'react';
 // components
 
 import { ReactComponent as Logo } from '../styles/img/cube.svg';
-import { BtnCta } from './BtnSet';
-import { IconSet } from './IconSet';
 import { SelectSet } from './SelectSet';
+import { IconSet } from './IconSet';
+import QuizInput from './QuizInput';
+import { BtnCta } from './BtnSet';
 
 // code
 
@@ -22,10 +23,14 @@ export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
         <div className="quiz-logo">
           <Logo />
         </div>
-        <div className="quiz-btn" onClick={onClick}>
-          <BtnCta />
-        </div>
-        {/* enter your name input placeholder */}
+        <form className="quiz-form" noValidate autoComplete="off">
+          <div className="quiz-input">
+            <QuizInput />
+          </div>
+          <div className="quiz-btn" onClick={onClick}>
+            <BtnCta />
+          </div>
+        </form>
       </div>
     </>
   );

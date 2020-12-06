@@ -93,6 +93,7 @@ $helper-space: 1rem;
 // animations
 
 @mixin animation-opacity {
+  animation: intro linear 0.35s;
   @keyframes intro {
     0% {
       opacity: 0;
@@ -106,7 +107,7 @@ $helper-space: 1rem;
 @mixin animation-blink {
   border-left: 1ch solid transparent;
   border-right: 1ch solid transparent;
-  @keyframes blink {
+  @keyframes animation-blink {
     50% {
       border-right-color: var(--terminal-green);
     }
@@ -114,8 +115,8 @@ $helper-space: 1rem;
 }
 
 @mixin animation-scan {
-  animation: scan 7.5s linear 0s infinite;
-  @keyframes scan {
+  animation: terminal-scan 7.5s linear 0s infinite;
+  @keyframes terminal-scan {
     0% {
       background-position: 0 -100vh;
     }
@@ -142,6 +143,14 @@ $helper-space: 1rem;
   border-#{$direction}: $helper-space / 8 solid $nord10;
 }
 
+@mixin material-cursor {
+  cursor: url("./../img/material-cursor.svg"), default;
+}
+
+@mixin material-pointer {
+  cursor: url("./../img/material-pointer.svg"), pointer;
+}
+
 // UI-Terminal
 
 @mixin terminal-border($direction) {
@@ -158,4 +167,8 @@ $helper-space: 1rem;
 
 @mixin terminal-text {
   color: var(--terminal-green);
+}
+
+@mixin terminal-pointer {
+  cursor: url("./../img/terminal-pointer.png"), pointer;
 }

@@ -53,7 +53,7 @@
 
     .nes-icon {
       margin: 0 $helper-space / 2;
-      cursor: url("../img/terminal-click.png"), pointer;
+      @include terminal-pointer;
     }
 
     .quiz-audio,
@@ -186,12 +186,12 @@
     .quiz-select {
       .css-8e9wle-control,
       .css-bmm19l-option {
-        cursor: url("../img/terminal-click.png"), pointer;
+        @include terminal-pointer;
       }
     }
 
     .MuiButtonBase-root {
-      cursor: url("../img/terminal-click.png"), pointer;
+      @include terminal-pointer;
     }
   }
 }

@@ -26,7 +26,7 @@ export const ItemQuestion = ({
                 className="quiz-type"
                 style={{
                   width: `${charCounter}ch`,
-                  animation: `animation-typing 2s steps(${charCounter}), blink 0.5s step-end 5 alternate`,
+                  animation: `animation-typing 2s steps(${charCounter}), animation-blink 0.5s step-end 5 alternate`,
                 }}
               >
                 {question}
