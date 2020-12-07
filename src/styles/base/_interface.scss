@@ -21,9 +21,29 @@
   width: 100vw;
   padding: $helper-space;
   @include border-default(bottom);
-  .quiz-status,
-  .quiz-counter {
+  .quiz-user,
+  .quiz-counter,
+  .quiz-status {
     @include flex-center;
+    width: calc(100% / 3);
+  }
+  .quiz-user {
+    justify-content: flex-start;
+    .quiz-player {
+      margin-left: $helper-space * 0.75;
+    }
+  }
+  .quiz-counter {
+    span {
+      width: 2ch;
+      text-align: right;
+    }
+  }
+  .quiz-status {
+    justify-content: flex-end;
+    .quiz-help {
+      margin: 0 ($helper-space / 2);
+    }
   }
 }
 

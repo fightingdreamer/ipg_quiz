@@ -5,6 +5,7 @@
     @include terminal-font;
     @include terminal-text;
     @include terminal-shadow;
+    @include terminal-cursor;
     background-image: var(--terminal-gradient);
 
     // common

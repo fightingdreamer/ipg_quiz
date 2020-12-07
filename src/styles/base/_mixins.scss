@@ -237,6 +237,10 @@ $helper-space: 1rem;
   color: var(--terminal-green);
 }
 
+@mixin terminal-cursor {
+  cursor: url("./../img/terminal-cursor.png"), pointer;
+}
+
 @mixin terminal-pointer {
   cursor: url("./../img/terminal-pointer.png"), pointer;
 }

@@ -9,6 +9,11 @@
 
     // common
 
+    ::selection {
+      background: $nord10;
+      color: $nord6;
+    }
+
     line {
       stroke: $nord13;
     }
@@ -34,6 +39,12 @@
 
     // icons
 
+    .quiz-icons {
+      .material-icon {
+        margin: 0 ($helper-space / 4);
+      }
+    }
+
     .MuiSvgIcon-root {
       @include material-pointer;
       font-size: $helper-space * 1.75;
@@ -48,6 +59,7 @@
     .MuiSvgIcon-fontSizeLarge {
       fill: $nord10;
       font-size: $helper-space * 2;
+      margin: 0 ($helper-space / 2);
     }
 
     // quiz content
@@ -60,6 +72,9 @@
 
     .quiz-select {
       width: $helper-space * 10;
+      * {
+        @include material-pointer;
+      }
     }
 
     .quiz-start {
@@ -86,6 +101,13 @@
       }
       .quiz-form {
         @include flex-row;
+      }
+    }
+
+    .quiz-btn {
+      button {
+        padding: $helper-space / 2 ($helper-space * 2);
+        line-height: 1.8;
       }
     }
 
@@ -139,12 +161,49 @@
 
     // customization
 
+    .MuiInput-underline {
+      &:before {
+        border-color: $nord10;
+      }
+      &:after {
+        border-color: $nord13;
+      }
+      &:hover:not(.Mui-disabled):before {
+        border-color: $nord0;
+      }
+    }
+    .MuiOutlinedInput-root {
+      @include border-radius;
+    }
+    .MuiOutlinedInput-notchedOutline {
+      border-color: $nord10;
+    }
+    .PrivateNotchedOutline-legendLabelled-3 > span {
+      padding-right: 23px;
+    }
+    .MuiInputLabel-outlined.MuiInputLabel-shrink {
+      background: $nord6;
+      color: $nord0;
+      padding: ($helper-space / 8) ($helper-space * 0.75);
+      transform: translate(10px, -6px) scale(0.7);
+    }
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border: $helper-space / 8 solid $nord13;
+      top: -4px;
+    }
     .MuiFormLabel-root {
       @include material-font;
     }
     .MuiInputBase-input {
-      background: $nord6;
       @include material-font;
+      background: $nord6;
+      color: $nord0;
     }
   }
+}
+
+.MuiPopover-root .MuiMenuItem-root {
+  @include material-font;
+  @include material-pointer;
+  color: $nord0;
 }
