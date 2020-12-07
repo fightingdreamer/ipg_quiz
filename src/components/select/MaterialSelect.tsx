@@ -18,7 +18,7 @@ export const MaterialSelect = () => {
   };
 
   return (
-    <div className="quiz-select">
+    <div className="quiz-select desktop-only">
       <FormControl fullWidth>
         <Select value={currentValue} onChange={handleChange}>
           <MenuItem hidden value={'default'}>

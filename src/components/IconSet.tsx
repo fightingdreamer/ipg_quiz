@@ -25,8 +25,14 @@ export const IconSet = () => {
     <div className="quiz-icons">
       {isMaterial && (
         <>
-          <VolumeOffTwoToneIcon fontSize="default" className="quiz-audio material-icon" />
-          <VolumeUpTwoToneIcon fontSize="default" className="quiz-audio material-icon" />
+          <VolumeOffTwoToneIcon
+            fontSize="default"
+            className="quiz-audio material-icon desktop-only"
+          />
+          <VolumeUpTwoToneIcon
+            fontSize="default"
+            className="quiz-audio material-icon desktop-only"
+          />
           <MenuTwoToneIcon fontSize="default" className="quiz-menu material-icon" />
         </>
       )}

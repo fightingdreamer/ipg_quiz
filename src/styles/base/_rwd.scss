@@ -1,0 +1,40 @@
+// BREAKPOINTS
+
+$device-xs: 480px;
+$device-sm: 768px;
+$device-md: 960px;
+$device-lg: 1280px;
+
+@mixin mobile-portrait {
+    @media screen and (max-width: #{$device-xs - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile-landscape {
+    @media screen and (min-width: #{$device-xs}) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media screen and (max-width: #{$device-md - 1px}) {
+        @content;
+    }
+}
+
+// HELPERS
+
+.App {
+    .desktop-only {
+        @include tablet-landscape {
+            display: none;
+        }
+    }
+}
+
+@mixin mobile-fit {
+    @include mobile-portrait {
+        width: 100%;
+    }
+}

@@ -21,12 +21,15 @@ export const ItemQuestion = ({
 
         return (
           <li key={answer.id}>
-            <button className="btn-side" onClick={() => handleValue(answer.value)}>
+            <button
+              className="btn-side MuiButton-root MuiButton-outlined"
+              onClick={() => handleValue(answer.value)}
+            >
               <span
                 className="quiz-type"
                 style={{
                   width: `${charCounter}ch`,
-                  animation: `animation-typing 2s steps(${charCounter}), animation-blink 0.5s step-end 5 alternate`,
+                  animation: `animation-typing 1s steps(${charCounter}), animation-blink 0.5s step-end 5 alternate`,
                 }}
               >
                 {question}

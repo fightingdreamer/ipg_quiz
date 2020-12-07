@@ -207,8 +207,8 @@ $helper-space: 1rem;
 
 // UI-Material
 
-@mixin material-border($direction) {
-  border-#{$direction}: $helper-space / 8 solid $nord10;
+@mixin material-border($direction, $width) {
+  border-#{$direction}: $width solid $nord10;
 }
 
 @mixin material-cursor {

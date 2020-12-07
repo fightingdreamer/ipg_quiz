@@ -55,6 +55,11 @@
   }
 }
 
+.quiz-input {
+  @include mobile-fit;
+  width: auto;
+}
+
 .quiz-wrapper {
   @include grid-center;
   @include full-screen;

@@ -66,7 +66,7 @@
 
     .quiz-panel {
       @include strong-shadow;
-      @include material-border(bottom);
+      @include material-border(bottom, $helper-space / 8);
       background: $nord6;
     }
 
@@ -78,10 +78,16 @@
     }
 
     .quiz-start {
-      @include strong-shadow;
+      padding: $helper-space * 1.5;
       background: $nord6;
       border-color: $nord10;
-      padding: $helper-space * 1.5;
+      @include mobile-landscape {
+        @include strong-shadow;
+      }
+      @include mobile-portrait {
+        border: 0;
+        background: transparent;
+      }
       .quiz-logo {
         .cube-wrapper {
           .cube-item {
@@ -104,8 +110,16 @@
       }
     }
 
+    .quiz-input {
+      .MuiFormControl-root {
+        @include mobile-fit;
+      }
+    }
+
     .quiz-btn {
+      @include mobile-fit;
       button {
+        @include mobile-fit;
         padding: $helper-space / 2 ($helper-space * 2);
         line-height: 1.8;
       }
@@ -113,7 +127,7 @@
 
     .quiz-theme {
       @include strong-shadow;
-      @include material-border(top);
+      @include material-border(top, $helper-space / 8);
       background: $nord6;
 
       .MuiRadio-colorSecondary:not(.Mui-disabled) {
@@ -128,14 +142,25 @@
     .quiz-wrapper {
       .quiz-definition {
         @include strong-shadow;
-        @include material-border(top);
-        @include material-border(bottom);
+        @include material-border(top, $helper-space / 8);
+        @include material-border(bottom, $helper-space / 8);
         background: $nord6;
+        h2 {
+          font-size: $helper-space * 1.5;
+        }
       }
       ul {
         li {
           @include light-shadow;
           @include transition-all;
+          &:nth-child(odd) {
+            @include material-border(right, $helper-space / 16);
+            @include material-border(left, $helper-space / 8);
+          }
+          &:nth-child(even) {
+            @include material-border(right, $helper-space / 8);
+            @include material-border(left, $helper-space / 16);
+          }
           &:hover {
             background: $nord13;
             button {
