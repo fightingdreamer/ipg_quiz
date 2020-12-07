@@ -8,9 +8,9 @@ button {
   width: 100%;
   &.btn-cta,
   &.btn-side {
+    @include border-all;
     @include border-radius;
     margin: ($helper-space / 2) 0;
-    border: $helper-space / 8 solid transparent;
     background: transparent;
   }
   &:focus {

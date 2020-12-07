@@ -28,9 +28,10 @@
 }
 
 .quiz-start {
+  @include grid-center;
+  @include border-all;
   .quiz-logo {
-    border: $helper-space / 8 solid transparent;
-    border-bottom: 0;
+    @include border-all;
   }
 }
 
@@ -88,7 +89,7 @@
 
 .quiz-result {
   @include border-radius;
-  border: $helper-space / 8 solid transparent;
+  @include border-all;
   padding: $helper-space * 2;
   h2 {
     font-size: $helper-space * 1.5;

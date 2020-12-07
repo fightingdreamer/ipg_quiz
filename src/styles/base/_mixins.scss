@@ -34,6 +34,10 @@ $helper-space: 1rem;
 
 // border & box-shadow
 
+@mixin border-all {
+  border: $helper-space / 8 solid transparent;
+}
+
 @mixin border-default($direction) {
   border-#{$direction}: $helper-space / 8 solid transparent;
 }
@@ -136,6 +140,70 @@ $helper-space: 1rem;
 @mixin transition-all {
   transition: all 0.35s linear;
 }
+
+// cube layers animation
+
+@mixin animation-slice($x, $y, $z) {
+  .cube-x#{$x}.cube-y#{$y}.cube-z#{$z} {
+    z-index: (-#{$x});
+    animation-name: h#{$x}w#{$y}l#{$z};
+    animation-timing-function: ease;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes h#{$x}w#{$y}l#{$z} {
+    0% {
+      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
+    }
+    14% {
+      transform: translate(
+        ($y * -50% - 50%) + ($z * 100% - 50%),
+        ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 50 - 25%)
+      );
+    }
+    28% {
+      transform: translate(
+        ($y * -100% + 50%) + ($z * 100% - 50%),
+        ($x * 50 - 200%) + ($y * 50% - 75%) + ($z * 50 - 25%)
+      );
+    }
+    43% {
+      transform: translate(
+        ($y * -100% - 100%) + ($z * 100% + 100%),
+        ($x * 100 - 400%) + ($y * 50% - 50%) + ($z * 50 + 50%)
+      );
+    }
+    57% {
+      transform: translate(
+        ($y * -100% - 100%) + ($z * 50% + 200%),
+        ($x * 100 - 400%) + ($y * 50% - 50%) + ($z * 25 + 100%)
+      );
+    }
+    71% {
+      transform: translate(
+        ($y * -50% - 200%) + ($z * 50% + 200%),
+        ($x * 100 - 375%) + ($y * 25% - 25%) + ($z * 25 + 100%)
+      );
+    }
+    85% {
+      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
+    }
+    100% {
+      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
+    }
+  }
+}
+@mixin generate-slice() {
+  @for $x from 1 to 4 {
+    @for $y from 1 to 4 {
+      @for $z from 1 to 4 {
+        @include animation-slice($x, $y, $z);
+      }
+    }
+  }
+}
+
+@include generate-slice();
 
 // UI-Material
 

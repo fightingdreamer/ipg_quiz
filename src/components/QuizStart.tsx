@@ -1,6 +1,10 @@
 // packages
 
-import React from 'react';
+import React, { useContext } from 'react';
+
+// React Context API
+
+import ThemeContext from '../context/ThemeContext';
 
 // components
 
@@ -14,6 +18,8 @@ import { BtnCta } from './BtnSet';
 // code
 
 export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+  const { isMaterial, isTerminal } = useContext(ThemeContext);
+
   return (
     <>
       <div className="quiz-panel">
@@ -22,8 +28,8 @@ export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
       </div>
       <div className="quiz-start">
         <div className="quiz-logo">
-          <Logo />
-          <LogoCube value="any" index="any" />
+          {isMaterial && <LogoCube value="any" index="any" />}
+          {isTerminal && <Logo />}
         </div>
         <form className="quiz-form" noValidate autoComplete="off">
           <div className="quiz-input">

@@ -7,9 +7,9 @@ import React from 'react';
 export const LogoLayers = () => {
   return (
     <>
-      <div className="cube-layer cube-top">Top</div>
-      <div className="cube-layer cube-left">Left</div>
-      <div className="cube-layer cube-right">Right</div>
+      <div className="cube-layer cube-top"></div>
+      <div className="cube-layer cube-left"></div>
+      <div className="cube-layer cube-right"></div>
     </>
   );
 };

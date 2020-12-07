@@ -65,8 +65,27 @@
     .quiz-start {
       @include strong-shadow;
       background: $nord6;
+      border-color: $nord10;
+      padding: $helper-space * 1.5;
       .quiz-logo {
-        border-color: $nord10;
+        .cube-wrapper {
+          .cube-item {
+            .cube-layer {
+              &.cube-top {
+                background: $nord10;
+              }
+              &.cube-left {
+                background: $nord13;
+              }
+              &.cube-right {
+                background: $nord0;
+              }
+            }
+          }
+        }
+      }
+      .quiz-form {
+        @include flex-row;
       }
     }
 
@@ -116,6 +135,16 @@
     .quiz-result {
       background: $nord6;
       border-color: $nord10;
+    }
+
+    // customization
+
+    .MuiFormLabel-root {
+      @include material-font;
+    }
+    .MuiInputBase-input {
+      background: $nord6;
+      @include material-font;
     }
   }
 }
