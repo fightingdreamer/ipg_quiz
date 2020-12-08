@@ -5,6 +5,7 @@ import React from 'react';
 // React Context API
 
 import { ThemeProvider } from './context/ThemeContext';
+import { UserProvider } from './context/UserContext';
 
 // pages
 
@@ -21,7 +22,9 @@ function App() {
     <div className="App material">
       {/* default active theme */}
       <ThemeProvider>
-        <PageQuiz />
+        <UserProvider>
+          <PageQuiz />
+        </UserProvider>
       </ThemeProvider>
     </div>
   );
