@@ -26,13 +26,18 @@
         background: $nord10;
         span {
           color: $nord4;
+          font-weight: 500;
         }
       }
       &.btn-side {
         background: $nord6;
         border-color: $nord13;
+        @include mobile-portrait {
+          background: $nord13;
+        }
         span {
           color: $nord10;
+          font-weight: 500;
         }
       }
     }
@@ -42,6 +47,9 @@
     .quiz-icons {
       .material-icon {
         margin: 0 ($helper-space / 4);
+        @include mobile-portrait {
+          margin: 0;
+        }
       }
     }
 
@@ -68,6 +76,9 @@
       @include strong-shadow;
       @include material-border(bottom, $helper-space / 8);
       background: $nord6;
+      @include mobile-portrait {
+        height: 12vh;
+      }
     }
 
     .quiz-select {
@@ -129,6 +140,9 @@
       @include strong-shadow;
       @include material-border(top, $helper-space / 8);
       background: $nord6;
+      @include mobile-portrait {
+        height: 12vh;
+      }
 
       .MuiRadio-colorSecondary:not(.Mui-disabled) {
         color: $nord10;
@@ -140,26 +154,54 @@
     }
 
     .quiz-wrapper {
+      @include mobile-portrait {
+        place-items: self-start;
+        align-content: start;
+        height: 80vh;
+      }
       .quiz-definition {
         @include strong-shadow;
         @include material-border(top, $helper-space / 8);
         @include material-border(bottom, $helper-space / 8);
         background: $nord6;
+        @include mobile-portrait {
+          place-items: center;
+          position: relative;
+          height: 16vh;
+          background: $nord10;
+          color: $nord6;
+          padding: 0;
+        }
         h2 {
-          font-size: $helper-space * 1.5;
+          font-size: $helper-space;
+          @include mobile-portrait {
+            padding: $helper-space / 2;
+          }
         }
       }
       ul {
+        @include mobile-portrait {
+          place-items: center;
+          grid-template-columns: repeat(1, 1fr);
+          position: relative;
+          height: 60vh;
+        }
         li {
           @include light-shadow;
           @include transition-all;
           &:nth-child(odd) {
             @include material-border(right, $helper-space / 16);
             @include material-border(left, $helper-space / 8);
+            @include mobile-portrait {
+              border: 0;
+            }
           }
           &:nth-child(even) {
             @include material-border(right, $helper-space / 8);
             @include material-border(left, $helper-space / 16);
+            @include mobile-portrait {
+              border: 0;
+            }
           }
           &:hover {
             background: $nord13;
@@ -175,6 +217,10 @@
               }
             }
           }
+          @include mobile-portrait {
+            height: 15vh;
+            font-size: $helper-space / 2;
+          }
         }
       }
     }
@@ -182,6 +228,11 @@
     .quiz-result {
       background: $nord6;
       border-color: $nord10;
+      @include mobile-portrait {
+        background: transparent;
+        border-color: transparent;
+        padding: $helper-space;
+      }
     }
 
     // customization

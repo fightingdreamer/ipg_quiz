@@ -117,9 +117,16 @@
   @include border-all;
   padding: $helper-space * 2;
   h2 {
-    font-size: $helper-space * 1.5;
+    @include text-uppercase;
     text-align: center;
-    padding: $helper-space;
+    font-size: $helper-space * 1.75;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: $helper-space * 1.25;
+    text-align: center;
+    padding: $helper-space / 2;
+    margin-bottom: $helper-space * 1.5;
   }
 }
 

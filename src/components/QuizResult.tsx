@@ -18,9 +18,10 @@ export const QuizResult = ({
 }) => {
   return (
     <div className="quiz-result">
-      <h2>
-        Game over, score: {currentScore} out of {totalQuestion}
-      </h2>
+      <h2>Game over</h2>
+      <h3>
+        score: {currentScore} / {totalQuestion}
+      </h3>
       <BtnCta />
       <BtnSide />
       <SocialSet />

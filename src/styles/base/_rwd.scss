@@ -17,6 +17,12 @@ $device-lg: 1280px;
     }
 }
 
+@mixin tablet-portrait {
+    @media screen and (min-width: #{$device-sm}) {
+        @content;
+    }
+}
+
 @mixin tablet-landscape {
     @media screen and (max-width: #{$device-md - 1px}) {
         @content;
@@ -26,9 +32,16 @@ $device-lg: 1280px;
 // HELPERS
 
 .App {
-    .desktop-only {
-        @include tablet-landscape {
-            display: none;
+    div {
+        .desktop-only {
+            @include tablet-landscape {
+                display: none;
+            }
+        }
+        .mobile-only {
+            @include tablet-portrait {
+                display: none;
+            }
         }
     }
 }

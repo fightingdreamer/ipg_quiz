@@ -32,6 +32,10 @@ $helper-space: 1rem;
   height: auto;
 }
 
+@mixin text-uppercase {
+  text-transform: uppercase;
+}
+
 // border & box-shadow
 
 @mixin border-all {
