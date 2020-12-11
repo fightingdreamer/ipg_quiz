@@ -5,6 +5,7 @@ import React, { useContext } from 'react';
 // React Context API
 
 import UserContext from '../context/UserContext';
+import PointsContext from '../context/PointsContext';
 
 // UI-Material components
 
@@ -26,13 +27,15 @@ export const QuizPanel = ({
   currentQuestion: any;
   totalQuestion: any;
 }) => {
-  const { user } = useContext(UserContext); // (setUser tbd) set active user
+  const { user } = useContext(UserContext);
+  const { totalPoints } = useContext(PointsContext);
   return (
     <>
       <div className="quiz-panel desktop-only">
         <div className="quiz-user">
           <AccountCircleTwoToneIcon fontSize="default" className="quiz-avatar" />
           <span className="quiz-player">{user}</span>
+          <span className="quiz-points">{totalPoints}</span>
         </div>
         <div className="quiz-counter">
           <span>{setCurrentTime}</span>

@@ -81,6 +81,12 @@
       }
     }
 
+    .quiz-user {
+      .quiz-points {
+        font-weight: 500;
+      }
+    }
+
     .quiz-select {
       width: $helper-space * 10;
       * {

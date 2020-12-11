@@ -5,6 +5,7 @@ import React, { useContext, useState } from 'react';
 // React Context API
 
 import ThemeContext from '../context/ThemeContext';
+import PointsContext from '../context/PointsContext';
 
 // custom components
 
@@ -29,6 +30,7 @@ export const ListQuestion = () => {
 
   // use React Context API
   const { isTerminal } = useContext(ThemeContext);
+  const { setPoints } = useContext(PointsContext);
 
   // time & question settings
   const [setCurrentTime, setTime] = useState(20);
@@ -52,6 +54,9 @@ export const ListQuestion = () => {
   const handleQuestion = (correctAnswer: boolean) => {
     if (correctAnswer) {
       setScore(currentScore + 1);
+      setPoints(setCurrentTime * 5);
+    } else {
+      setPoints(-1);
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -60,6 +65,7 @@ export const ListQuestion = () => {
     } else {
       setStatus(true);
     }
+    setTime(20);
   };
 
   return (
