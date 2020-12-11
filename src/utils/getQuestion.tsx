@@ -18,19 +18,34 @@ export interface ArrayQuestion {
 const currentJson = require(`${process.env.REACT_APP_TOKEN}`);
 
 // update
-let setJson: ArrayQuestion[] = [];
+const setJson: ArrayQuestion[] = [];
 currentJson.forEach((question) => {
+  // set wrong answers
+  const prefix = ['a', 'b', 'c', 'd'];
+  const answers = question.randomName.map((n, i) => {
+    return {
+      answer: n,
+      value: false,
+      lang: question.lang,
+      id: prefix[i] + question.id,
+    };
+  });
+
+  // set correct answer
+  const randCorrect = parseInt(((Math.random() * 100) % 4).toString(), 10);
+  answers[randCorrect] = {
+    answer: question.name,
+    value: true,
+    lang: question.lang,
+    id: prefix[randCorrect] + question.id,
+  };
+
   setJson.push({
     definition: question.definition,
     id: 'question id: ' + question.id,
     level: question.level,
     lang: question.lang,
-    options: [
-      { answer: question.name, value: true, lang: question.lang, id: question.id + 'a' },
-      { answer: question.randomName[0], value: false, lang: question.lang, id: question.id + 'b' },
-      { answer: question.randomName[1], value: false, lang: question.lang, id: question.id + 'c' },
-      { answer: question.randomName[2], value: false, lang: question.lang, id: question.id + 'd' },
-    ],
+    options: answers,
   });
 });
 

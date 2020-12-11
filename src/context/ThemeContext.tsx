@@ -2,9 +2,18 @@
 
 import React, { createContext, useState } from 'react';
 
+// types
+
+export interface IThemeContext {
+  isMaterial: boolean;
+  isTerminal: boolean;
+  theme: string;
+  setTheme: (name: string) => void;
+}
+
 // React Context API
 
-const ThemeContext = createContext();
+const ThemeContext = createContext({} as IThemeContext);
 
 const ThemeProvider = (props) => {
   const [theme, setTheme] = useState('material'); // default active theme
