@@ -25,8 +25,8 @@
       &.btn-cta {
         background: $nord10;
         span {
+          @include text-bold;
           color: $nord4;
-          font-weight: 500;
         }
       }
       &.btn-side {
@@ -36,8 +36,8 @@
           background: $nord13;
         }
         span {
+          @include text-bold;
           color: $nord10;
-          font-weight: 500;
         }
       }
     }
@@ -83,7 +83,7 @@
 
     .quiz-user {
       .quiz-points {
-        font-weight: 500;
+        @include text-bold;
       }
     }
 
@@ -179,7 +179,8 @@
           padding: 0;
         }
         h2 {
-          font-size: $helper-space;
+          @include text-fluid;
+          @include text-bold;
           @include mobile-portrait {
             padding: $helper-space / 2;
           }
@@ -225,7 +226,6 @@
           }
           @include mobile-portrait {
             height: 15vh;
-            font-size: $helper-space / 2;
           }
         }
       }

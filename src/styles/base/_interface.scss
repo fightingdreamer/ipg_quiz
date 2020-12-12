@@ -35,9 +35,9 @@
   }
   .quiz-counter {
     span {
+      @include text-bold;
       width: 2ch;
       text-align: right;
-      font-weight: 500;
     }
   }
   .quiz-status {
@@ -67,19 +67,16 @@
   position: relative;
 
   .quiz-definition {
-    @include grid-center;
+    display: grid;
     position: absolute;
     padding: $helper-space;
-    font-size: $helper-space;
     width: 100vw;
     @include border-default(top);
     @include border-default(bottom);
 
     h2 {
       padding: $helper-space;
-      font-size: $helper-space * 2;
       text-align: center;
-      font-weight: 500;
     }
   }
 
@@ -119,9 +116,9 @@
   padding: $helper-space * 2;
   h2 {
     @include text-uppercase;
+    @include text-bold;
     text-align: center;
     font-size: $helper-space * 1.75;
-    font-weight: 500;
   }
   h3 {
     font-size: $helper-space * 1.25;

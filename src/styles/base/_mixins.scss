@@ -36,6 +36,10 @@ $helper-space: 1rem;
   text-transform: uppercase;
 }
 
+@mixin text-fluid {
+  font-size: calc(#{$helper-space} + 2vw);
+}
+
 // border & box-shadow
 
 @mixin border-all {

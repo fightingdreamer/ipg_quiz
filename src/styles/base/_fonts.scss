@@ -16,3 +16,7 @@
 @mixin cyberpunk-font {
   font-family: "Titillium Web", sans-serif;
 }
+
+@mixin text-bold {
+  font-weight: 500;
+}
