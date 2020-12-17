@@ -14,7 +14,7 @@ export interface IUserContext {
 const UserContext = createContext({} as IUserContext);
 
 const UserProvider = (props) => {
-  const [user, setUser] = useState('user#0000'); // default active user
+  const [user, setUser] = useState('player#0001'); // default active user
 
   const createUser = (name: string) => {
     if (name.trim() === '') {

@@ -18,13 +18,20 @@ import { BtnCta } from './BtnSet';
 
 // code
 
-export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit }) => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
   const { createUser } = useContext(UserContext);
   const [name, setName] = useState('');
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setName(value);
+  };
+
+  const onHandleSubmit = (event) => {
+    event.preventDefault();
+    createUser(name);
+    onFormSubmit();
   };
 
   return (
@@ -38,7 +45,7 @@ export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
           {isMaterial && <LogoCube value="any" index="any" />}
           {isTerminal && <Logo />}
         </div>
-        <form className="quiz-form" noValidate autoComplete="off">
+        <form className="quiz-form" noValidate onSubmit={onHandleSubmit} autoComplete="off">
           <div className="quiz-input">
             <TextField
               id="quiz-name"
@@ -48,13 +55,7 @@ export const QuizStart: React.FC<{ onClick: () => void }> = ({ onClick }) => {
               variant="outlined"
             />
           </div>
-          <div
-            className="quiz-btn"
-            onClick={() => {
-              createUser(name);
-              onClick();
-            }}
-          >
+          <div className="quiz-btn" onClick={onHandleSubmit}>
             <BtnCta />
           </div>
         </form>

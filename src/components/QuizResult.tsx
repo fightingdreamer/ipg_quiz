@@ -7,6 +7,10 @@ import React from 'react';
 import { BtnCta, BtnSide } from './BtnSet';
 import { SocialSet } from './SocialSet';
 
+// UI-Material components
+
+import MaterialTable from './MaterialTable';
+
 // code
 
 export const QuizResult = ({
@@ -22,9 +26,10 @@ export const QuizResult = ({
       <h3>
         score: {currentScore} / {totalQuestion}
       </h3>
+      <SocialSet />
       <BtnCta />
       <BtnSide />
-      <SocialSet />
+      <MaterialTable />
     </div>
   );
 };

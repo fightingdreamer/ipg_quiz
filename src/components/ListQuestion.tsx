@@ -40,10 +40,10 @@ export const ListQuestion = () => {
     setQuestion: null,
     activeQuestion: '',
   });
-
+  let int;
   const timer = () => {
     let count = currentData.setCurrentTime;
-    const int = setInterval(() => {
+    int = setInterval(() => {
       setTime(count - 1);
       count = count - 1;
       if (count < 1) clearInterval(int);
@@ -52,6 +52,8 @@ export const ListQuestion = () => {
 
   // hooks update
   const handleQuestion = (correctAnswer: boolean) => {
+    setTime(20);
+    clearInterval(int);
     if (correctAnswer) {
       setScore(currentScore + 1);
       setPoints(setCurrentTime * 5);
@@ -66,6 +68,11 @@ export const ListQuestion = () => {
       setStatus(true);
     }
     setTime(20);
+  };
+
+  const onHandleSubmit = () => {
+    setData({ ...currentData, activeQuestion: 'q1' });
+    timer();
   };
 
   return (
@@ -96,12 +103,7 @@ export const ListQuestion = () => {
               />
             </div>
           ) : (
-            <QuizStart
-              onClick={() => {
-                setData({ ...currentData, activeQuestion: 'q1' });
-                timer();
-              }}
-            />
+            <QuizStart onFormSubmit={onHandleSubmit} />
           )}
         </>
       )}
