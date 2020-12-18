@@ -1,11 +1,17 @@
+// packages
+
 import React from 'react';
+
+// UI-Material components
+
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+
+// code
 
 function createData(rank: number, name: string, score: number) {
   return { rank, name, score };
@@ -19,7 +25,7 @@ const rows = [
 
 export default function MaterialTable() {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer className="quiz-table">
       <Table className="QuizTable" size="small" aria-label="Hall of fame">
         <TableHead>
           <TableRow>

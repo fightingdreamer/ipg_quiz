@@ -48,10 +48,6 @@
 
     // icons
 
-    .quiz-icons {
-      @include flex-center;
-    }
-
     .nes-icon {
       margin: 0 $helper-space / 2;
       @include terminal-pointer;

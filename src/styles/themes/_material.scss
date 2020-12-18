@@ -79,9 +79,20 @@
       @include mobile-portrait {
         height: 12vh;
       }
+      .quiz-helpers {
+        svg {
+          margin: 0 ($helper-space / 2);
+        }
+      }
     }
 
-    .quiz-user {
+    .quiz-details {
+      span {
+        margin: 0 $helper-space / 2;
+      }
+      svg {
+        margin-left: $helper-space / 2;
+      }
       .quiz-points {
         @include text-bold;
       }
@@ -238,6 +249,33 @@
         background: transparent;
         border-color: transparent;
         padding: $helper-space;
+      }
+    }
+
+    .quiz-table {
+      thead {
+        th {
+          @include material-font;
+          @include text-bold;
+          color: $nord0;
+        }
+      }
+      tbody {
+        tr {
+          th,
+          td {
+            @include material-font;
+            color: $nord10;
+            border-color: $nord10;
+          }
+          &:first-child {
+            background: $nord13;
+            th,
+            td {
+              @include text-bold;
+            }
+          }
+        }
       }
     }
 
