@@ -10,10 +10,10 @@ import PointsContext from '../context/PointsContext';
 // custom components
 
 import { QuizStart } from '../components/QuizStart';
-import QuizPanel from './QuizPanel';
-import QuizDefinition from './QuizDefinition';
-import ItemQuestion from './ItemQuestion';
-import QuizResult from './QuizResult';
+import QuizPanel from '../components/QuizPanel';
+import QuizDefinition from '../components/QuizDefinition';
+import ItemQuestion from '../components/ItemQuestion';
+import QuizResult from '../components/QuizResult';
 
 // utils
 
@@ -21,7 +21,7 @@ import { getQuestion } from '../utils/getQuestion';
 
 // code
 
-export const ListQuestion = () => {
+export const PageQuestion = () => {
   // hooks default
   const [currentScore, setScore] = useState(0);
   const [currentQuestion, setQuestion] = useState(0);

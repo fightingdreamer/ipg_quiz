@@ -32,16 +32,14 @@ $device-lg: 1280px;
 // HELPERS
 
 .App {
-    div {
-        .desktop-only {
-            @include tablet-landscape {
-                display: none;
-            }
+    .desktop-only {
+        @include tablet-landscape {
+            display: none;
         }
-        .mobile-only {
-            @include tablet-portrait {
-                display: none;
-            }
+    }
+    .mobile-only {
+        @include tablet-portrait {
+            display: none;
         }
     }
 }

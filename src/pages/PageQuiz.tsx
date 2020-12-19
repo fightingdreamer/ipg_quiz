@@ -5,7 +5,7 @@ import React from 'react';
 // components
 
 import ThemeRadio from '../components/ThemeRadio';
-import { ListQuestion } from '../components/ListQuestion';
+import { PageQuestion } from './PageQuestion';
 
 // code
 
@@ -14,7 +14,7 @@ export function PageQuiz() {
     <>
       <div className="quiz-noise"></div>
       <div className="quiz-overlay"></div>
-      <ListQuestion />
+      <PageQuestion />
       <div className="quiz-theme">
         <ThemeRadio />
       </div>
