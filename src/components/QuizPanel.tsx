@@ -13,6 +13,7 @@ import QuizProgress from './QuizProgress';
 
 // UI-Material components
 
+import MaterialToast from './MaterialToast';
 import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
 import HelpTwoToneIcon from '@material-ui/icons/HelpTwoTone';
@@ -50,6 +51,7 @@ export const QuizPanel = ({
           <TimerTwoToneIcon fontSize="default" className="quiz-timer material-icon" />
         </div>
         <div className="quiz-helpers">
+          <MaterialToast />
           <HelpTwoToneIcon fontSize="default" className="quiz-help material-icon" />
           <FullscreenTwoToneIcon fontSize="default" className="quiz-screen material-icon" />
         </div>

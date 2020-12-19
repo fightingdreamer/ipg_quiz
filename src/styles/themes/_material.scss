@@ -242,6 +242,28 @@
       }
     }
 
+    .quiz-toast {
+      .MuiAlert-root {
+        @include material-font;
+        font-weight: 500;
+      }
+      .MuiSnackbar-root {
+        top: $helper-space / 16;
+        bottom: auto;
+      }
+      .MuiAlert-filledSuccess {
+        background: $nord14;
+      }
+      .MuiAlert-filledError {
+        background: $nord11;
+      }
+      .MuiAlert-icon {
+        svg {
+          fill: $nord6;
+        }
+      }
+    }
+
     .quiz-result {
       background: $nord6;
       border-color: $nord10;
