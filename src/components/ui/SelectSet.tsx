@@ -4,15 +4,15 @@ import React, { useContext } from 'react';
 
 // React Context API
 
-import ThemeContext from '../context/ThemeContext';
+import ThemeContext from '../../context/ThemeContext';
 
 // UI-Material components
 
-import { MaterialSelect } from './select/MaterialSelect';
+import { MaterialSelect } from '../material/MaterialSelect';
 
 // UI-Terminal components
 
-import { TerminalSelect } from './select/TerminalSelect';
+import { TerminalSelect } from '../terminal/TerminalSelect';
 
 // code
 

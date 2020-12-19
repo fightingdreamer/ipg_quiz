@@ -13,7 +13,7 @@ import QuizProgress from './QuizProgress';
 
 // UI-Material components
 
-import MaterialToast from './MaterialToast';
+import MaterialToast from './material/MaterialToast';
 import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
 import HelpTwoToneIcon from '@material-ui/icons/HelpTwoTone';
@@ -21,6 +21,7 @@ import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
 import FullscreenTwoToneIcon from '@material-ui/icons/FullscreenTwoTone';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
+import CheckCircleTwoToneIcon from '@material-ui/icons/CheckCircleTwoTone';
 
 // code
 
@@ -43,7 +44,10 @@ export const QuizPanel = ({
           <span className="quiz-player">{user}</span>
           <StarTwoToneIcon fontSize="default" className="quiz-star material-icon" />
           <span className="quiz-points">{totalPoints}</span>
-          {/* <span className="quiz-status">{currentQuestion + 1}/{totalQuestion}</span> */}
+          <CheckCircleTwoToneIcon className="quiz-check material-icon"></CheckCircleTwoToneIcon>
+          <span className="quiz-status">
+            {currentQuestion + 1}/{totalQuestion}
+          </span>
         </div>
         <div className="quiz-counter">
           <span>{setCurrentTime}</span>

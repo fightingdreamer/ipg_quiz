@@ -105,6 +105,15 @@
       }
     }
 
+    .quiz-progress {
+      .MuiLinearProgress-colorPrimary {
+        background: $nord6;
+      }
+      .MuiLinearProgress-barColorPrimary {
+        background: $nord10;
+      }
+    }
+
     .quiz-start {
       padding: $helper-space * 1.5;
       background: $nord6;

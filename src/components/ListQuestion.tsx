@@ -51,7 +51,7 @@ export const ListQuestion = () => {
   };
 
   // hooks update
-  const handleQuestion = (correctAnswer: boolean) => {
+  const questionHandler = (correctAnswer: boolean) => {
     setTime(20);
     clearInterval(int);
     if (correctAnswer) {
@@ -70,7 +70,7 @@ export const ListQuestion = () => {
     setTime(20);
   };
 
-  const onHandleSubmit = () => {
+  const submitHandler = () => {
     setData({ ...currentData, activeQuestion: 'q1' });
     timer();
   };
@@ -98,12 +98,12 @@ export const ListQuestion = () => {
               <QuizDefinition definitionQuestion={objectQuestion.definition} />
               <ItemQuestion
                 options={objectQuestion.options}
-                handleValue={handleQuestion}
+                valueHandler={questionHandler}
                 isTerminal={isTerminal}
               />
             </div>
           ) : (
-            <QuizStart onFormSubmit={onHandleSubmit} />
+            <QuizStart onFormSubmit={submitHandler} />
           )}
         </>
       )}

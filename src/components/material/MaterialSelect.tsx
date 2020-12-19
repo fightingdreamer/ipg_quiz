@@ -12,7 +12,7 @@ import Select from '@material-ui/core/Select';
 
 export const MaterialSelect = () => {
   const [currentValue, setValue] = useState('default');
-  const handleChange = (event) => {
+  const changeHandler = (event) => {
     const value = event.target.value;
     setValue(value);
   };
@@ -20,7 +20,7 @@ export const MaterialSelect = () => {
   return (
     <div className="quiz-select desktop-only">
       <FormControl fullWidth>
-        <Select value={currentValue} onChange={handleChange}>
+        <Select value={currentValue} onChange={changeHandler}>
           <MenuItem hidden value={'default'}>
             Select...
           </MenuItem>

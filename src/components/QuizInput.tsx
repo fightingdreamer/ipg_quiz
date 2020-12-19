@@ -10,7 +10,7 @@ import TextField from '@material-ui/core/TextField';
 
 export default function QuizInput() {
   const [name, setName] = useState('');
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setName(value);
   };
@@ -20,7 +20,7 @@ export default function QuizInput() {
       id="quiz-name"
       label="Enter your name"
       value={name}
-      onChange={handleChange}
+      onChange={changeHandler}
       variant="outlined"
     />
   );

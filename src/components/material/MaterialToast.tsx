@@ -6,7 +6,6 @@ import React, { useState } from 'react';
 
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
-import CheckCircleTwoToneIcon from '@material-ui/icons/CheckCircleTwoTone';
 import ErrorTwoToneIcon from '@material-ui/icons/ErrorTwoTone';
 
 // code
@@ -18,11 +17,11 @@ function Alert(props: AlertProps) {
 export default function MaterialToast() {
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
+  const clickHandler = () => {
     setOpen(true);
   };
 
-  const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
+  const closeHandler = (event?: React.SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -31,9 +30,11 @@ export default function MaterialToast() {
 
   return (
     <div className="quiz-toast">
-      <CheckCircleTwoToneIcon onClick={handleClick}></CheckCircleTwoToneIcon>
-      <ErrorTwoToneIcon onClick={handleClose}></ErrorTwoToneIcon>
-      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+      <ErrorTwoToneIcon
+        onClick={clickHandler}
+        className="quiz-error material-icon"
+      ></ErrorTwoToneIcon>
+      <Snackbar open={open} autoHideDuration={3000} onClose={closeHandler}>
         <Alert severity="success">Success placeholder</Alert>
       </Snackbar>
       {/* <Alert severity="error">Error placeholder</Alert> */}

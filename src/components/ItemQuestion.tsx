@@ -6,11 +6,11 @@ import React from 'react';
 
 export const ItemQuestion = ({
   options,
-  handleValue,
+  valueHandler,
   isTerminal,
 }: {
   options: any;
-  handleValue: any;
+  valueHandler: any;
   isTerminal: any;
 }) => {
   return (
@@ -23,7 +23,7 @@ export const ItemQuestion = ({
           <li key={answer.id}>
             <button
               className="btn-side MuiButton-root MuiButton-outlined"
-              onClick={() => handleValue(answer.value)}
+              onClick={() => valueHandler(answer.value)}
             >
               <span
                 className="quiz-type"

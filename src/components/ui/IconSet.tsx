@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 
 // React Context API
 
-import ThemeContext from '../context/ThemeContext';
+import ThemeContext from '../../context/ThemeContext';
 
 // UI-Material components
 

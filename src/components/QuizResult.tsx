@@ -4,12 +4,12 @@ import React from 'react';
 
 // components
 
-import { BtnCta, BtnSide } from './BtnSet';
-import { SocialSet } from './SocialSet';
+import { BtnCta, BtnSide } from './ui/BtnSet';
+import { SocialSet } from './ui/SocialSet';
 
 // UI-Material components
 
-import MaterialTable from './MaterialTable';
+import MaterialTable from './material/MaterialTable';
 
 // code
 

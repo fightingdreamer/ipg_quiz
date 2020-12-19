@@ -10,11 +10,11 @@ import UserContext from '../context/UserContext';
 
 // components
 
-import { SelectSet } from './SelectSet';
-import { IconSet } from './IconSet';
+import { SelectSet } from './ui/SelectSet';
+import { IconSet } from './ui/IconSet';
 import { ReactComponent as Logo } from '../styles/img/cube-lines.svg';
-import { LogoCube } from './LogoCube';
-import { BtnCta } from './BtnSet';
+import { LogoCube } from './logo/LogoCube';
+import { BtnCta } from './ui/BtnSet';
 
 // code
 
@@ -23,12 +23,12 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
   const { createUser } = useContext(UserContext);
   const [name, setName] = useState('');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setName(value);
   };
 
-  const onHandleSubmit = (event) => {
+  const submitHandler = (event) => {
     event.preventDefault();
     createUser(name);
     onFormSubmit();
@@ -45,17 +45,17 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
           {isMaterial && <LogoCube value="any" index="any" />}
           {isTerminal && <Logo />}
         </div>
-        <form className="quiz-form" noValidate onSubmit={onHandleSubmit} autoComplete="off">
+        <form className="quiz-form" noValidate onSubmit={submitHandler} autoComplete="off">
           <div className="quiz-input">
             <TextField
               id="quiz-name"
               label="Enter your name"
               value={name}
-              onChange={handleChange}
+              onChange={changeHandler}
               variant="outlined"
             />
           </div>
-          <div className="quiz-btn" onClick={onHandleSubmit}>
+          <div className="quiz-btn" onClick={submitHandler}>
             <BtnCta />
           </div>
         </form>
