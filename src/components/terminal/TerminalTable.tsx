@@ -21,7 +21,7 @@ const rows = [
 export default function MaterialTable() {
   return (
     <div className="quiz-table">
-      <Table centered aria-label="Hall of Fame">
+      <Table aria-label="Hall of Fame">
         <thead>
           <tr>
             <th>Rank</th>
@@ -29,19 +29,15 @@ export default function MaterialTable() {
             <th>Score</th>
           </tr>
         </thead>
-        {rows.map((row) => (
-          <tbody key={row.rank}>
-            <tr>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.rank}>
               <td>{row.rank}</td>
-            </tr>
-            <tr>
               <td>{row.name}</td>
-            </tr>
-            <tr>
               <td>{row.score}</td>
             </tr>
-          </tbody>
-        ))}
+          ))}
+        </tbody>
       </Table>
     </div>
   );

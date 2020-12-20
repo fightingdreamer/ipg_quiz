@@ -13,7 +13,7 @@ export const TerminalSelect = () => {
   const [currentValue, setValue] = useState();
 
   return (
-    <div className="quiz-select">
+    <div className="quiz-select desktop-only">
       <Select
         value={currentValue}
         styles={nesTheme} // external theme object passed as a prop

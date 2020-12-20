@@ -16,6 +16,7 @@
 
     button {
       @include terminal-font;
+      margin: 0;
       padding: $helper-space / 2;
       &.btn-cta {
         @include terminal-background;
@@ -52,6 +53,9 @@
     .terminal-icon {
       @include terminal-pointer;
       margin: 0 $helper-space / 2;
+      @include tablet-landscape {
+        margin: 0 $helper-space / 4;
+      }
     }
 
     .quiz-audio,
@@ -59,6 +63,13 @@
     .quiz-arrow,
     .quiz-timer {
       fill: var(--default-dark);
+    }
+
+    .quiz-menu {
+      @include tablet-landscape {
+        width: $helper-space * 2;
+        height: $helper-space * 2;
+      }
     }
 
     // quiz content
@@ -71,9 +82,15 @@
       .quiz-counter,
       .quiz-helpers {
         padding: ($helper-space / 2) 0;
+        @include tablet-landscape {
+          padding: 0;
+        }
       }
       span {
         color: var(--terminal-green);
+        @include tablet-landscape {
+          font-size: $helper-space * 1.5;
+        }
       }
     }
 
@@ -84,10 +101,18 @@
       }
     }
 
+    .quiz-result,
     .quiz-start {
+      @include terminal-frame;
       @include terminal-background;
+      @include border-radius;
       padding: $helper-space;
-      border-color: var(--terminal-green);
+      .quiz-play {
+        transform: scale(0.75);
+        rect {
+          fill: var(--default-dark);
+        }
+      }
     }
 
     .quiz-theme {
@@ -105,12 +130,15 @@
     .quiz-wrapper {
       place-items: self-start;
       align-content: start;
-      height: calc(80vh - #{$helper-space});
+      height: calc(90vh - #{$helper-space});
+      @include tablet-landscape {
+        height: calc(90vh - #{$helper-space * 3});
+      }
       .quiz-definition {
         place-items: self-start;
         position: relative;
-        margin-top: $helper-space / 2;
         padding: 0;
+        border: 0;
         h2 {
           font-size: $helper-space * 1.5;
           text-align: left;
@@ -124,8 +152,9 @@
         @include auto-fit;
         place-items: self-start;
         grid-template-columns: repeat(1, 1fr);
+        grid-gap: $helper-space;
         position: relative;
-        padding: $helper-space;
+        padding: 0 $helper-space;
         li {
           @include auto-fit;
           font-size: $helper-space * 1.5;
@@ -150,10 +179,12 @@
             }
           }
           button {
-            border-color: transparent;
+            border: 0;
             padding: 0;
-            margin-left: -1ch;
-            margin-right: -1ch;
+            margin: 0 -1ch;
+            @include tablet-landscape {
+              justify-content: flex-start;
+            }
             .quiz-type {
               @include terminal-text;
               @include terminal-shadow;
@@ -174,7 +205,7 @@
             &:hover {
               .quiz-type {
                 @include terminal-light;
-                text-transform: uppercase;
+                @include text-uppercase;
                 &::before,
                 &::after {
                   opacity: 1;
@@ -186,14 +217,29 @@
       }
     }
 
-    .quiz-result {
-      @include terminal-background;
-      border-color: var(--terminal-green);
+    .quiz-social {
+      margin-bottom: $helper-space * 0.75;
     }
 
     .quiz-table {
+      margin-top: $helper-space;
       .nes-table {
         @include terminal-background;
+        width: 20vw;
+        @include tablet-landscape {
+          width: 75vw;
+        }
+        tr {
+          th,
+          td {
+            &:first-child {
+              width: 20%;
+            }
+            &:last-child {
+              width: 30%;
+            }
+          }
+        }
       }
     }
 
@@ -258,14 +304,23 @@
       @include terminal-frame;
       margin: 0;
     }
-    .nes-btn::before,
-    .nes-btn::after {
-      border-color: var(--terminal-green);
-    }
-    .nes-btn.is-success {
-      @include terminal-background;
-      @include terminal-frame;
-      height: $helper-space * 2;
+    .nes-btn {
+      box-shadow: unset;
+      &::before,
+      &::after {
+        border-color: var(--terminal-green);
+      }
+      &.is-success {
+        @include terminal-frame;
+        background: var(--terminal-green);
+        background: #80ff80;
+        color: var(--default-dark);
+        height: $helper-space * 2;
+      }
+      &.is-error {
+        @include terminal-background;
+        @include terminal-text;
+      }
     }
     .MuiButtonBase-root {
       @include terminal-pointer;
