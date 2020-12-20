@@ -26,7 +26,7 @@ const rows = [
 export default function MaterialTable() {
   return (
     <TableContainer className="quiz-table">
-      <Table className="QuizTable" size="small" aria-label="Hall of fame">
+      <Table size="small" aria-label="Hall of Fame">
         <TableHead>
           <TableRow>
             <TableCell>Rank</TableCell>

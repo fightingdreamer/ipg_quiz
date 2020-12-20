@@ -1,6 +1,10 @@
 // packages
 
-import React from 'react';
+import React, { useContext } from 'react';
+
+// React Context API
+
+import ThemeContext from '../context/ThemeContext';
 
 // components
 
@@ -11,6 +15,10 @@ import { SocialSet } from './ui/SocialSet';
 
 import MaterialTable from './material/MaterialTable';
 
+// UI-Terminal components
+
+import TerminalTable from './terminal/TerminalTable';
+
 // code
 
 export const QuizResult = ({
@@ -20,6 +28,7 @@ export const QuizResult = ({
   currentScore: any;
   totalQuestion: any;
 }) => {
+  const { isMaterial, isTerminal } = useContext(ThemeContext);
   return (
     <div className="quiz-result">
       <h2>Game over</h2>
@@ -29,7 +38,8 @@ export const QuizResult = ({
       <SocialSet />
       <BtnCta />
       <BtnSide />
-      <MaterialTable />
+      {isMaterial && <MaterialTable />}
+      {isTerminal && <TerminalTable />}
     </div>
   );
 };

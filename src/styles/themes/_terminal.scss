@@ -11,11 +11,12 @@
     // common
 
     line {
-      stroke: rgba(128, 255, 128, 1);
+      stroke: var(--terminal-green);
     }
 
     button {
       @include terminal-font;
+      padding: $helper-space / 2;
       &.btn-cta {
         @include terminal-background;
         span {
@@ -23,9 +24,9 @@
         }
       }
       &.btn-side {
-        border-color: rgba(128, 255, 128, 1);
+        border-color: var(--terminal-green);
         span {
-          color: rgba(128, 255, 128, 1);
+          color: var(--terminal-green);
         }
       }
     }
@@ -49,8 +50,8 @@
     // icons
 
     .terminal-icon {
-      margin: 0 $helper-space / 2;
       @include terminal-pointer;
+      margin: 0 $helper-space / 2;
     }
 
     .quiz-audio,
@@ -64,27 +65,38 @@
 
     .quiz-panel {
       @include terminal-background;
-      .quiz-select {
-        width: $helper-space * 12;
+      @include terminal-border(bottom);
+      padding: $helper-space / 2;
+      .quiz-details,
+      .quiz-counter,
+      .quiz-helpers {
+        padding: ($helper-space / 2) 0;
       }
       span {
-        color: var(--default-dark);
+        color: var(--terminal-green);
+      }
+    }
+
+    .quiz-details {
+      svg,
+      i {
+        margin-right: 0;
       }
     }
 
     .quiz-start {
-      .quiz-logo {
-        border: $helper-space / 8 solid rgba(128, 255, 128, 1);
-      }
+      @include terminal-background;
+      padding: $helper-space;
+      border-color: var(--terminal-green);
     }
 
     .quiz-theme {
       @include terminal-background;
-
+      @include terminal-border(top);
+      padding: $helper-space / 4;
       .MuiRadio-colorSecondary:not(.Mui-disabled) {
-        color: var(--default-dark);
+        color: var(--default-green);
       }
-
       .MuiIconButton-colorSecondary:hover {
         background-color: var(--material-hover);
       }
@@ -161,7 +173,7 @@
             }
             &:hover {
               .quiz-type {
-                color: var(--default-light);
+                @include terminal-light;
                 text-transform: uppercase;
                 &::before,
                 &::after {
@@ -175,18 +187,86 @@
     }
 
     .quiz-result {
+      @include terminal-background;
       border-color: var(--terminal-green);
+    }
+
+    .quiz-table {
+      .nes-table {
+        @include terminal-background;
+      }
     }
 
     // customization
 
     .quiz-select {
+      @include terminal-font;
+      width: $helper-space * 8;
+      .css-17mbc9c-control,
+      .css-8e9wle-control {
+        @include terminal-frame;
+        @include terminal-background;
+        @include border-radius;
+        min-height: $helper-space * 2;
+      }
       .css-8e9wle-control,
       .css-bmm19l-option {
         @include terminal-pointer;
       }
+      .css-1cf4uja-ValueContainer {
+        padding: 0 $helper-space / 2;
+        .css-1uccc91-singleValue,
+        .css-19uk7i0-placeholder {
+          @include terminal-text;
+        }
+      }
+      .css-g7jtzl-DropdownIndicator {
+        @include terminal-resize;
+      }
+      .css-1y20v6-menu {
+        @include terminal-frame;
+        @include terminal-background;
+        margin: $helper-space / 4 0;
+        .css-17ipih-option,
+        .css-bmm19l-option {
+          @include terminal-background;
+          @include terminal-text;
+        }
+        .css-bmm19l-option {
+          &::before {
+            @include terminal-text;
+            @include terminal-resize;
+            top: 11px;
+          }
+          &:hover {
+            @include terminal-light;
+            &::before {
+              @include terminal-light;
+            }
+          }
+        }
+      }
     }
 
+    .nes-field {
+      margin: 0;
+      & > label {
+        margin-bottom: $helper-space / 2;
+      }
+    }
+    .nes-input {
+      @include terminal-frame;
+      margin: 0;
+    }
+    .nes-btn::before,
+    .nes-btn::after {
+      border-color: var(--terminal-green);
+    }
+    .nes-btn.is-success {
+      @include terminal-background;
+      @include terminal-frame;
+      height: $helper-space * 2;
+    }
     .MuiButtonBase-root {
       @include terminal-pointer;
     }

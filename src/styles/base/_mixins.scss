@@ -234,15 +234,28 @@ $helper-space: 1rem;
 }
 
 @mixin terminal-background {
-  background: rgba(128, 255, 128, 1);
+  background: var(--default-dark);
+}
+
+@mixin terminal-text {
+  color: var(--terminal-green);
+}
+
+@mixin terminal-light {
+  color: var(--default-light);
 }
 
 @mixin terminal-shadow {
   text-shadow: 0 0 1ex rgba(51, 255, 51, 0.8), 0 0 $helper-space / 8 rgba(255, 255, 255, 0.8);
 }
 
-@mixin terminal-text {
-  color: var(--terminal-green);
+@mixin terminal-frame {
+  box-shadow: 0 4px var(--terminal-green), 0 -4px var(--terminal-green), 4px 0 var(--terminal-green),
+    -4px 0 var(--terminal-green);
+}
+
+@mixin terminal-resize {
+  transform: scale(0.5);
 }
 
 @mixin terminal-cursor {

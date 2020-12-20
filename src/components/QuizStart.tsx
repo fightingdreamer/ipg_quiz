@@ -1,7 +1,6 @@
 // packages
 
 import React, { useContext, useState } from 'react';
-import TextField from '@material-ui/core/TextField';
 
 // React Context API
 
@@ -15,6 +14,14 @@ import { IconSet } from './ui/IconSet';
 import { ReactComponent as Logo } from '../styles/img/cube-lines.svg';
 import { LogoCube } from './logo/LogoCube';
 import { BtnCta } from './ui/BtnSet';
+
+// UI-Material components
+
+import TextField from '@material-ui/core/TextField';
+
+// UI-Terminal components
+
+import { TextInput } from 'nes-react';
 
 // code
 
@@ -47,13 +54,24 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
         </div>
         <form className="quiz-form" noValidate onSubmit={submitHandler} autoComplete="off">
           <div className="quiz-input">
-            <TextField
-              id="quiz-name"
-              label="Enter your name"
-              value={name}
-              onChange={changeHandler}
-              variant="outlined"
-            />
+            {isMaterial && (
+              <TextField
+                id="quiz-name"
+                label="Enter your name"
+                value={name}
+                onChange={changeHandler}
+                variant="outlined"
+              />
+            )}
+            {isTerminal && (
+              <TextInput
+                id="quiz-name"
+                label="Enter your name"
+                value={name}
+                readOnly
+                // onChange={changeHandler}
+              />
+            )}
           </div>
           <div className="quiz-btn" onClick={submitHandler}>
             <BtnCta />

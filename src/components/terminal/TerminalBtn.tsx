@@ -12,7 +12,7 @@ import { ReactComponent as TerminalPlay } from '../../styles/img/terminal-play.s
 export const TerminalBtnCta = () => {
   return (
     <>
-      <Button primary>
+      <Button success>
         Play
         <TerminalPlay className="quiz-play terminal-icon" />
       </Button>

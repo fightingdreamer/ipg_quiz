@@ -90,8 +90,8 @@ export const QuizPanel = ({
               <FullscreenTwoToneIcon fontSize="default" className="quiz-screen material-icon" />
             </>
           )}
+          {isTerminal && <TerminalError className="quiz-error terminal-icon" />}
         </div>
-        {isTerminal && <TerminalError className="quiz-error terminal-icon" />}
       </div>
       <div className="quiz-panel mobile-only">
         <div className="quiz-details">
@@ -107,7 +107,7 @@ export const QuizPanel = ({
           )}
         </div>
       </div>
-      <QuizProgress />
+      {isMaterial && <QuizProgress />}
     </>
   );
 };

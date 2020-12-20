@@ -33,6 +33,9 @@
   }
   .quiz-details {
     justify-content: flex-start;
+    span {
+      margin: 0 $helper-space / 2;
+    }
   }
   .quiz-counter {
     span {
