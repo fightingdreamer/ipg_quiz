@@ -3,9 +3,9 @@
 .App {
   &.material {
     @include material-font;
-    @include material-cursor;
     background: $nord4;
     color: $nord0;
+    cursor: none;
 
     // common
 
@@ -14,13 +14,16 @@
       color: $nord6;
     }
 
+    a {
+      color: $nord10;
+    }
+
     line {
       stroke: $nord13;
     }
 
     button {
       @include material-font;
-      @include material-pointer;
       color: $nord10;
       &.btn-cta {
         background: $nord10;
@@ -54,8 +57,6 @@
     }
 
     .MuiSvgIcon-root {
-      @include material-pointer;
-      font-size: $helper-space * 1.75;
       fill: $nord10;
     }
 
@@ -68,6 +69,10 @@
       fill: $nord10;
       font-size: $helper-space * 2;
       margin: 0 ($helper-space / 2);
+    }
+
+    .quiz-credits {
+      margin-top: $helper-space;
     }
 
     // quiz content
@@ -98,7 +103,7 @@
     .quiz-select {
       width: $helper-space * 10;
       * {
-        @include material-pointer;
+        cursor: none;
       }
     }
 
@@ -166,11 +171,12 @@
       @include mobile-portrait {
         height: 12vh;
       }
-
+      .MuiButtonBase-root {
+        cursor: none;
+      }
       .MuiRadio-colorSecondary:not(.Mui-disabled) {
         color: $nord10;
       }
-
       .MuiIconButton-colorSecondary:hover {
         background-color: var(--material-hover);
       }
@@ -239,6 +245,11 @@
                   color: $nord4;
                 }
               }
+            }
+          }
+          button {
+            span {
+              @include text-uppercase;
             }
           }
           @include mobile-portrait {

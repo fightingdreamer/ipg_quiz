@@ -20,7 +20,7 @@ import './styles/App.scss';
 
 function App() {
   return (
-    <div className="App terminal">
+    <div className="App material">
       {/* default active theme */}
       <ThemeProvider>
         <UserProvider>

@@ -10,6 +10,10 @@
 
     // common
 
+    a {
+      @include terminal-light;
+    }
+
     line {
       stroke: var(--terminal-green);
     }
@@ -243,6 +247,12 @@
       }
     }
 
+    .quiz-credits {
+      .quiz-heart {
+        margin: 0;
+      }
+    }
+
     // customization
 
     .quiz-select {
@@ -273,11 +283,13 @@
         @include terminal-frame;
         @include terminal-background;
         margin: $helper-space / 4 0;
+        .css-5r04rb-option,
         .css-17ipih-option,
         .css-bmm19l-option {
           @include terminal-background;
           @include terminal-text;
         }
+        .css-5r04rb-option,
         .css-bmm19l-option {
           &::before {
             @include terminal-text;
@@ -303,8 +315,10 @@
     .nes-input {
       @include terminal-frame;
       margin: 0;
+      padding: $helper-space * 0.75;
     }
     .nes-btn {
+      @include text-uppercase;
       box-shadow: unset;
       &::before,
       &::after {

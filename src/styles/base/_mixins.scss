@@ -219,10 +219,6 @@ $helper-space: 1rem;
   border-#{$direction}: $width solid $nord10;
 }
 
-@mixin material-cursor {
-  cursor: url("./../img/material-cursor.svg"), default;
-}
-
 @mixin material-pointer {
   cursor: url("./../img/material-pointer.svg"), pointer;
 }

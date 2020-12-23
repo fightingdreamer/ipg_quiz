@@ -1,6 +1,7 @@
 // LAYERS
 
 :root {
+  --z-cursor: 4;
   --z-top: 3;
   --z-above: 2;
   --z-default: 1;
@@ -25,4 +26,9 @@
 .quiz-result,
 .quiz-progress {
   z-index: var(--z-top);
+}
+
+#cursor-dot,
+#cursor-dot-outline {
+  z-index: var(--z-cursor);
 }

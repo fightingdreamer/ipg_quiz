@@ -2,7 +2,6 @@
 
 button {
   @include flex-center;
-  @include text-uppercase;
   background: transparent;
   border: 0;
   padding: $helper-space;

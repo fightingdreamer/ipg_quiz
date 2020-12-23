@@ -20,7 +20,7 @@ export default function ThemeRadio() {
   const uiIsometric = 'isometric';
   const themes = [uiMaterial, uiTerminal, uiCyberpunk, uiIsometric];
   const { setTheme } = useContext(ThemeContext);
-  const [currentValue, setValue] = useState(uiTerminal); // default active theme
+  const [currentValue, setValue] = useState(uiMaterial); // default active theme
 
   // theme switch
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {

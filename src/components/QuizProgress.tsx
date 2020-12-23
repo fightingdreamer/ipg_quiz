@@ -1,6 +1,10 @@
 // packages
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
+// React Context API
+
+import ThemeContext from '../context/ThemeContext';
 
 // UI-Material components
 
@@ -21,6 +25,7 @@ function LinearProgressWithLabel(props: LinearProgressProps & { value: number })
 
 export default function QuizProgress() {
   const [progress, setProgress] = useState(10);
+  const { isMaterial } = useContext(ThemeContext);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -33,7 +38,7 @@ export default function QuizProgress() {
 
   return (
     <div className="quiz-progress">
-      <LinearProgressWithLabel variant="determinate" value={progress} />
+      {isMaterial && <LinearProgressWithLabel variant="determinate" value={progress} />}
     </div>
   );
 }
