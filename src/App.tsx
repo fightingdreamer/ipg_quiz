@@ -7,6 +7,7 @@ import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { UserProvider } from './context/UserContext';
 import { PointsProvider } from './context/PointsContext';
+import { TimeProvider } from './context/TimeContext';
 
 // pages
 
@@ -24,9 +25,11 @@ function App() {
       {/* default active theme */}
       <ThemeProvider>
         <UserProvider>
-          <PointsProvider>
-            <PageQuiz />
-          </PointsProvider>
+          <TimeProvider>
+            <PointsProvider>
+              <PageQuiz />
+            </PointsProvider>
+          </TimeProvider>
         </UserProvider>
       </ThemeProvider>
     </div>

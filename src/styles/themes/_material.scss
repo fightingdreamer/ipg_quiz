@@ -16,6 +16,7 @@
 
     a {
       color: $nord10;
+      cursor: none;
     }
 
     line {
@@ -25,6 +26,7 @@
     button {
       @include material-font;
       color: $nord10;
+      cursor: none;
       &.btn-cta {
         background: $nord10;
         span {
@@ -248,12 +250,20 @@
             }
           }
           button {
+            @include transition-all;
             span {
               @include text-uppercase;
             }
           }
           @include mobile-portrait {
             height: 15vh;
+          }
+        }
+        &:hover {
+          li:not(:hover) {
+            button {
+              @include material-filter;
+            }
           }
         }
       }

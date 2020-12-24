@@ -18,11 +18,15 @@ import { MaterialCursor } from '../components/material/MaterialCursor';
 // code
 
 export function PageQuiz() {
-  const { isMaterial } = useContext(ThemeContext);
+  const { isMaterial, isTerminal } = useContext(ThemeContext);
   return (
     <>
-      <div className="quiz-noise"></div>
-      <div className="quiz-overlay"></div>
+      {isTerminal && (
+        <>
+          <div className="quiz-noise"></div>
+          <div className="quiz-overlay"></div>
+        </>
+      )}
       <PageQuestion />
       <div className="quiz-theme">
         <ThemeRadio />

@@ -219,6 +219,10 @@ $helper-space: 1rem;
   border-#{$direction}: $width solid $nord10;
 }
 
+@mixin material-filter {
+  filter: opacity(50%) blur($helper-space / 8);
+}
+
 @mixin material-pointer {
   cursor: url("./../img/material-pointer.svg"), pointer;
 }

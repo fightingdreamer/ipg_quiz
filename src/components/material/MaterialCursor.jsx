@@ -1,6 +1,6 @@
 // packages
 
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // code
 
@@ -16,7 +16,7 @@ export const MaterialCursor = () => {
   let cursorEnlarged = useState(false);
 
   // mouse events handlers
-  const onMouseMove = event => {
+  const onMouseMove = (event) => {
     const { pageX: x, pageY: y } = event;
     setMousePosition({ x, y });
     positionDot(event);
@@ -37,29 +37,29 @@ export const MaterialCursor = () => {
     cursorEnlarged.current = false;
     toggleCursorSize();
   };
-  const onResize = event => {
+  const onResize = (event) => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
   };
 
   // hooks setup
   useEffect(() => {
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseenter", onMouseEnter);
-    document.addEventListener("mouseleave", onMouseLeave);
-    document.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("mouseup", onMouseUp);
-    window.addEventListener("resize", onResize);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseenter', onMouseEnter);
+    document.addEventListener('mouseleave', onMouseLeave);
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mouseup', onMouseUp);
+    window.addEventListener('resize', onResize);
     requestRef.current = requestAnimationFrame(animateDotOutline);
     linkHoverHandler();
 
     return () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseenter", onMouseEnter);
-      document.removeEventListener("mouseleave", onMouseLeave);
-      document.removeEventListener("mousedown", onMouseDown);
-      document.removeEventListener("mouseup", onMouseUp);
-      window.removeEventListener("resize", onResize);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseenter', onMouseEnter);
+      document.removeEventListener('mouseleave', onMouseLeave);
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('mouseup', onMouseUp);
+      window.removeEventListener('resize', onResize);
       cancelAnimationFrame(requestRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -77,8 +77,8 @@ export const MaterialCursor = () => {
     // dot position
     endX = e.pageX;
     endY = e.pageY;
-    cursorDot.current.style.top = endY + "px";
-    cursorDot.current.style.left = endX + "px";
+    cursorDot.current.style.top = endY + 'px';
+    cursorDot.current.style.left = endX + 'px';
   }
 
   // cursor show/hide
@@ -95,24 +95,22 @@ export const MaterialCursor = () => {
   // cursor size
   function toggleCursorSize() {
     if (cursorEnlarged.current) {
-      cursorDot.current.style.transform = "translate(-50%, -50%) scale(0.7)";
-      cursorDotOutline.current.style.transform =
-        "translate(-50%, -50%) scale(5)";
+      cursorDot.current.style.transform = 'translate(-50%, -50%) scale(0.7)';
+      cursorDotOutline.current.style.transform = 'translate(-50%, -50%) scale(5)';
     } else {
-      cursorDot.current.style.transform = "translate(-50%, -50%) scale(1)";
-      cursorDotOutline.current.style.transform =
-        "translate(-50%, -50%) scale(1)";
+      cursorDot.current.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursorDotOutline.current.style.transform = 'translate(-50%, -50%) scale(1)';
     }
   }
 
   // apply mouse events on links
   function linkHoverHandler() {
-    document.querySelectorAll("a").forEach(el => {
-      el.addEventListener("mouseover", () => {
+    document.querySelectorAll('a').forEach((el) => {
+      el.addEventListener('mouseover', () => {
         cursorEnlarged.current = true;
         toggleCursorSize();
       });
-      el.addEventListener("mouseout", () => {
+      el.addEventListener('mouseout', () => {
         cursorEnlarged.current = false;
         toggleCursorSize();
       });
@@ -120,12 +118,12 @@ export const MaterialCursor = () => {
   }
 
   // cursor with trail effect animation
-  const animateDotOutline = time => {
+  const animateDotOutline = (time) => {
     if (previousTimeRef.current !== undefined) {
       x += (endX - x) / 8;
       y += (endY - y) / 8;
-      cursorDotOutline.current.style.top = y + "px";
-      cursorDotOutline.current.style.left = x + "px";
+      cursorDotOutline.current.style.top = y + 'px';
+      cursorDotOutline.current.style.left = x + 'px';
     }
     previousTimeRef.current = time;
     requestRef.current = requestAnimationFrame(animateDotOutline);
@@ -137,4 +135,4 @@ export const MaterialCursor = () => {
       <div ref={cursorDot} id="cursor-dot" />
     </>
   );
-}
+};
