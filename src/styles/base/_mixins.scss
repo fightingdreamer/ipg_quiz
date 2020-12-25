@@ -1,5 +1,4 @@
-// helpers
-
+@import "animations";
 $helper-space: 1rem;
 
 // alignment
@@ -62,157 +61,6 @@ $helper-space: 1rem;
   box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
 }
 
-@mixin terminal-gradient {
-  background-image: linear-gradient(
-    0deg,
-    transparent 0%,
-    rgba(32, 128, 32, 0.2) 2%,
-    rgba(32, 128, 32, 0.8) 3%,
-    rgba(32, 128, 32, 0.2) 3%,
-    transparent 100%
-  );
-  background-repeat: no-repeat;
-}
-
-// overlays
-
-@mixin background-noise {
-  background-image: url("../img/terminal-noise.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.02;
-}
-
-@mixin background-overlay {
-  background: repeating-linear-gradient(
-    180deg,
-    var(--default-dark) 0,
-    rgba(var(--default-dark), 0.8) 50%,
-    var(--default-dark) 100%
-  );
-  background-size: auto $helper-space / 4;
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-}
-
-// animations
-
-@mixin animation-opacity {
-  animation: intro linear 0.35s;
-  @keyframes intro {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
-
-@mixin animation-blink {
-  border-left: 1ch solid transparent;
-  border-right: 1ch solid transparent;
-  @keyframes animation-blink {
-    50% {
-      border-right-color: var(--terminal-green);
-    }
-  }
-}
-
-@mixin animation-scan {
-  animation: terminal-scan 7.5s linear 0s infinite;
-  @keyframes terminal-scan {
-    0% {
-      background-position: 0 -100vh;
-    }
-    35%,
-    100% {
-      background-position: 0 100vh;
-    }
-  }
-}
-
-@keyframes animation-typing {
-  from {
-    width: 0;
-  }
-}
-
-@mixin transition-all {
-  transition: all 0.35s linear;
-}
-
-// cube layers animation
-
-@mixin animation-slice($x, $y, $z) {
-  .cube-x#{$x}.cube-y#{$y}.cube-z#{$z} {
-    z-index: (-#{$x});
-    animation-name: h#{$x}w#{$y}l#{$z};
-    animation-timing-function: ease;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-  }
-  @keyframes h#{$x}w#{$y}l#{$z} {
-    0% {
-      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
-    }
-    14% {
-      transform: translate(
-        ($y * -50% - 50%) + ($z * 100% - 50%),
-        ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 50 - 25%)
-      );
-    }
-    28% {
-      transform: translate(
-        ($y * -100% + 50%) + ($z * 100% - 50%),
-        ($x * 50 - 200%) + ($y * 50% - 75%) + ($z * 50 - 25%)
-      );
-    }
-    43% {
-      transform: translate(
-        ($y * -100% - 100%) + ($z * 100% + 100%),
-        ($x * 100 - 400%) + ($y * 50% - 50%) + ($z * 50 + 50%)
-      );
-    }
-    57% {
-      transform: translate(
-        ($y * -100% - 100%) + ($z * 50% + 200%),
-        ($x * 100 - 400%) + ($y * 50% - 50%) + ($z * 25 + 100%)
-      );
-    }
-    71% {
-      transform: translate(
-        ($y * -50% - 200%) + ($z * 50% + 200%),
-        ($x * 100 - 375%) + ($y * 25% - 25%) + ($z * 25 + 100%)
-      );
-    }
-    85% {
-      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
-    }
-    100% {
-      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
-    }
-  }
-}
-@mixin generate-slice() {
-  @for $x from 1 to 4 {
-    @for $y from 1 to 4 {
-      @for $z from 1 to 4 {
-        @include animation-slice($x, $y, $z);
-      }
-    }
-  }
-}
-
-@include generate-slice();
-
 // UI-Material
 
 @mixin material-border($direction, $width) {
@@ -237,16 +85,47 @@ $helper-space: 1rem;
   background: var(--default-dark);
 }
 
+@mixin terminal-gradient {
+  background-image: linear-gradient(
+    0deg,
+    transparent 0%,
+    rgba(32, 128, 32, 0.2) 2%,
+    rgba(32, 128, 32, 0.8) 3%,
+    rgba(32, 128, 32, 0.2) 3%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+}
+
+@mixin terminal-noise {
+  background-image: url("../img/terminal-noise.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.02;
+}
+
+@mixin terminal-overlay {
+  background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+  background-size: auto $helper-space / 4;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 @mixin terminal-text {
   color: var(--terminal-green);
+  text-shadow: 0 0 $helper-space / 4 rgba(51, 255, 51, 0.8), 0 0 $helper-space / 8 rgba(255, 255, 255, 0.8);
 }
 
 @mixin terminal-light {
   color: var(--default-light);
-}
-
-@mixin terminal-shadow {
-  text-shadow: 0 0 1ex rgba(51, 255, 51, 0.8), 0 0 $helper-space / 8 rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 $helper-space / 4 rgba(255, 255, 255, 0.8), 0 0 $helper-space / 8 rgba(255, 255, 255, 0.8);
 }
 
 @mixin terminal-frame {

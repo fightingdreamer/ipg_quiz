@@ -4,7 +4,6 @@
   &.terminal {
     @include terminal-font;
     @include terminal-text;
-    @include terminal-shadow;
     @include terminal-cursor;
     background-image: var(--terminal-gradient);
 
@@ -39,11 +38,11 @@
     // overlays
 
     .quiz-noise {
-      @include background-noise;
+      @include terminal-noise;
     }
 
     .quiz-overlay {
-      @include background-overlay;
+      @include terminal-overlay;
       &::before {
         @include full-screen;
         @include terminal-gradient;
@@ -191,7 +190,6 @@
             }
             .quiz-type {
               @include terminal-text;
-              @include terminal-shadow;
               @include animation-blink;
               font-size: $helper-space * 1.5;
               &::before,

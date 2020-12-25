@@ -6,8 +6,8 @@ import React from 'react';
 
 import { ThemeProvider } from './context/ThemeContext';
 import { UserProvider } from './context/UserContext';
-import { PointsProvider } from './context/PointsContext';
 import { TimeProvider } from './context/TimeContext';
+import { PointsProvider } from './context/PointsContext';
 
 // pages
 
@@ -21,7 +21,7 @@ import './styles/App.scss';
 
 function App() {
   return (
-    <div className="App material">
+    <div className="App terminal">
       {/* default active theme */}
       <ThemeProvider>
         <UserProvider>

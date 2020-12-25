@@ -1,0 +1,110 @@
+// animations
+
+@mixin animation-opacity {
+  animation: intro linear 0.35s;
+  @keyframes intro {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animation-blink {
+  border-left: 1ch solid transparent;
+  border-right: 1ch solid transparent;
+  @keyframes animation-blink {
+    50% {
+      border-right-color: var(--terminal-green);
+    }
+  }
+}
+
+@mixin animation-scan {
+  animation: terminal-scan 7.5s linear 0s infinite;
+  @keyframes terminal-scan {
+    0% {
+      background-position: 0 -100vh;
+    }
+    35%,
+    100% {
+      background-position: 0 100vh;
+    }
+  }
+}
+
+@keyframes animation-typing {
+  from {
+    width: 0;
+  }
+}
+
+@mixin transition-all {
+  transition: all 0.35s linear;
+}
+
+// cube layers animation
+
+@mixin animation-slice($x, $y, $z) {
+  .cube-x#{$x}.cube-y#{$y}.cube-z#{$z} {
+    z-index: (-#{$x});
+    animation-name: h#{$x}w#{$y}l#{$z};
+    animation-timing-function: ease;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes h#{$x}w#{$y}l#{$z} {
+    0% {
+      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
+    }
+    14% {
+      transform: translate(
+        ($y * -50% - 50%) + ($z * 100% - 50%),
+        ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 50 - 25%)
+      );
+    }
+    28% {
+      transform: translate(
+        ($y * -100% + 50%) + ($z * 100% - 50%),
+        ($x * 50 - 200%) + ($y * 50% - 75%) + ($z * 50 - 25%)
+      );
+    }
+    43% {
+      transform: translate(
+        ($y * -100% - 100%) + ($z * 100% + 100%),
+        ($x * 100 - 400%) + ($y * 50% - 50%) + ($z * 50 + 50%)
+      );
+    }
+    57% {
+      transform: translate(
+        ($y * -100% - 100%) + ($z * 50% + 200%),
+        ($x * 100 - 400%) + ($y * 50% - 50%) + ($z * 25 + 100%)
+      );
+    }
+    71% {
+      transform: translate(
+        ($y * -50% - 200%) + ($z * 50% + 200%),
+        ($x * 100 - 375%) + ($y * 25% - 25%) + ($z * 25 + 100%)
+      );
+    }
+    85% {
+      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
+    }
+    100% {
+      transform: translate(($y * -50% - 50%) + ($z * 50% + 50%), ($x * 50 - 200%) + ($y * 25% - 25%) + ($z * 25 + 25%));
+    }
+  }
+}
+@mixin generate-slice() {
+  @for $x from 1 to 4 {
+    @for $y from 1 to 4 {
+      @for $z from 1 to 4 {
+        @include animation-slice($x, $y, $z);
+      }
+    }
+  }
+}
+
+@include generate-slice();

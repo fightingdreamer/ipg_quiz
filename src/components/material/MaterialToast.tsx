@@ -29,7 +29,7 @@ export default function MaterialToast() {
   };
 
   return (
-    <div className="quiz-toast">
+    <div className="quiz-toast desktop-only">
       <ErrorTwoToneIcon
         onClick={clickHandler}
         className="quiz-error material-icon"

@@ -10,16 +10,14 @@ import PointsContext from '../context/PointsContext';
 
 // components
 
+import QuizHelpers from './QuizHelpers';
 import QuizProgress from './QuizProgress';
 
 // UI-Material components
 
-import MaterialToast from './material/MaterialToast';
 import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
-import HelpTwoToneIcon from '@material-ui/icons/HelpTwoTone';
 import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
-import FullscreenTwoToneIcon from '@material-ui/icons/FullscreenTwoTone';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
 import CheckCircleTwoToneIcon from '@material-ui/icons/CheckCircleTwoTone';
@@ -29,7 +27,6 @@ import CheckCircleTwoToneIcon from '@material-ui/icons/CheckCircleTwoTone';
 import { Icon } from 'nes-react';
 import { ReactComponent as TerminalBomb } from '../styles/img/terminal-bomb.svg';
 import { ReactComponent as TerminalCheck } from '../styles/img/terminal-check.svg';
-import { ReactComponent as TerminalError } from '../styles/img/terminal-error.svg';
 import { ReactComponent as TerminalMenu } from '../styles/img/terminal-menu.svg';
 import { ReactComponent as TerminalUser } from '../styles/img/terminal-user.svg';
 
@@ -82,16 +79,7 @@ export const QuizPanel = ({
             </>
           )}
         </div>
-        <div className="quiz-helpers">
-          {isMaterial && (
-            <>
-              <MaterialToast />
-              <HelpTwoToneIcon fontSize="default" className="quiz-help material-icon" />
-              <FullscreenTwoToneIcon fontSize="default" className="quiz-screen material-icon" />
-            </>
-          )}
-          {isTerminal && <TerminalError className="quiz-error terminal-icon" />}
-        </div>
+        <QuizHelpers />
       </div>
       <div className="quiz-panel mobile-only">
         <div className="quiz-details">
@@ -101,11 +89,7 @@ export const QuizPanel = ({
         <div className="quiz-counter">
           <span>{setCurrentTime}</span>
         </div>
-        <div className="quiz-helpers">
-          {isMaterial && (
-            <FullscreenTwoToneIcon fontSize="default" className="quiz-screen material-icon" />
-          )}
-        </div>
+        <QuizHelpers />
       </div>
       {isMaterial && <QuizProgress />}
     </>
