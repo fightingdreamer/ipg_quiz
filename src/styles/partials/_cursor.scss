@@ -16,6 +16,7 @@
   width: 10px;
   height: 10px;
   background-color: rgba($nord10, 1);
+  border: $helper-space / 16 solid $nord4;
 }
 
 #cursor-dot-outline {

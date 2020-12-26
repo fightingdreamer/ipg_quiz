@@ -21,7 +21,7 @@ const rows = [
 export default function MaterialTable() {
   return (
     <div className="quiz-table">
-      <Table aria-label="Hall of Fame">
+      <Table centered aria-label="Hall of Fame">
         <thead>
           <tr>
             <th>Rank</th>

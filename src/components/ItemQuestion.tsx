@@ -16,8 +16,8 @@ export const ItemQuestion = ({
   return (
     <ul>
       {options.map((answer) => {
-        const question = answer.answer;
-        const charCounter = question.length + (isTerminal ? 4 : 1); // UI-Terminal & UI-Material to fix
+        const question: string = answer.answer;
+        const charCounter: number = question.length + (isTerminal ? 4 : 1); // UI-Terminal & UI-Material to fix
 
         return (
           <li key={answer.id}>

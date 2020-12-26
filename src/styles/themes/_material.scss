@@ -3,9 +3,9 @@
 .App {
   &.material {
     @include material-font;
+    @include reset-cursor;
     background: $nord4;
     color: $nord0;
-    cursor: none;
 
     // common
 
@@ -15,8 +15,12 @@
     }
 
     a {
+      @include reset-cursor;
       color: $nord10;
-      cursor: none;
+    }
+
+    input {
+      @include reset-cursor;
     }
 
     line {
@@ -25,8 +29,9 @@
 
     button {
       @include material-font;
+      @include reset-cursor;
       color: $nord10;
-      cursor: none;
+      padding: $helper-space / 8;
       &.btn-cta {
         background: $nord10;
         span {
@@ -74,10 +79,16 @@
     }
 
     .quiz-credits {
-      margin-top: $helper-space;
+      margin-top: $helper-space * 0.75;
+      font-size: $helper-space * 0.75;
     }
 
     // quiz content
+
+    .fullscreen-enabled {
+      background: $nord4;
+      color: $nord0;
+    }
 
     .quiz-panel {
       @include strong-shadow;
@@ -105,7 +116,7 @@
     .quiz-select {
       width: $helper-space * 10;
       * {
-        cursor: none;
+        @include reset-cursor;
       }
     }
 
@@ -174,7 +185,7 @@
         height: 12vh;
       }
       .MuiButtonBase-root {
-        cursor: none;
+        @include reset-cursor;
       }
       .MuiRadio-colorSecondary:not(.Mui-disabled) {
         color: $nord10;
@@ -251,6 +262,7 @@
           }
           button {
             @include transition-all;
+            padding: $helper-space / 2;
             span {
               @include text-uppercase;
             }
@@ -294,6 +306,9 @@
     .quiz-result {
       background: $nord6;
       border-color: $nord10;
+      h3 {
+        font-size: $helper-space;
+      }
       @include mobile-portrait {
         background: transparent;
         border-color: transparent;
@@ -302,6 +317,9 @@
     }
 
     .quiz-table {
+      .MuiTableCell-root {
+        font-size: $helper-space * 0.75;
+      }
       thead {
         th {
           @include material-font;

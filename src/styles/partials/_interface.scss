@@ -121,12 +121,12 @@
 .quiz-result {
   @include border-radius;
   @include border-all;
-  padding: $helper-space * 2;
+  padding: $helper-space * 1.5;
   h2 {
     @include text-uppercase;
     @include text-bold;
     text-align: center;
-    font-size: $helper-space * 1.75;
+    font-size: $helper-space * 1.5;
   }
   h3 {
     font-size: $helper-space * 1.25;

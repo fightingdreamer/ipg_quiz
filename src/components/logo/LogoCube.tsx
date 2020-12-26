@@ -9,7 +9,7 @@ import { LogoLayers } from './LogoLayers';
 // code
 
 export const LogoCube = ({ value, index }: { value: any; index: any }) => {
-  const elements = ['1', '2', '3'];
+  const elements: Array<string> = ['1', '2', '3'];
   return (
     <>
       {elements.map((value, index) => {

@@ -63,7 +63,7 @@ export const PageQuestion = () => {
       setPoints(-1);
     }
 
-    const nextQuestion = currentQuestion + 1;
+    const nextQuestion: number = currentQuestion + 1;
     if (nextQuestion < getQuestion.length) {
       setQuestion(nextQuestion);
     } else {

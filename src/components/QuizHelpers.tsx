@@ -30,7 +30,7 @@ export const QuizHelpers = () => {
     <div className="quiz-helpers">
       {isMaterial && (
         <>
-          <FullScreen handle={FullScreenHandler}>Fullscreen placeholder</FullScreen>
+          <FullScreen handle={FullScreenHandler}>Placeholder</FullScreen>
           <MaterialToast />
           <HelpTwoToneIcon fontSize="default" className="quiz-help material-icon desktop-only" />
           <FullscreenTwoToneIcon

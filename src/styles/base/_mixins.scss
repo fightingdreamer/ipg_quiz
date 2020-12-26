@@ -31,12 +31,20 @@ $helper-space: 1rem;
   height: auto;
 }
 
+@mixin default-height {
+  line-height: 1;
+}
+
 @mixin text-uppercase {
   text-transform: uppercase;
 }
 
 @mixin text-fluid {
   font-size: calc(#{$helper-space} + 2vw);
+}
+
+@mixin reset-cursor {
+  cursor: none;
 }
 
 // border & box-shadow
@@ -51,6 +59,10 @@ $helper-space: 1rem;
 
 @mixin border-radius {
   border-radius: 0;
+}
+
+@mixin reset-shadow {
+  box-shadow: unset;
 }
 
 @mixin strong-shadow {

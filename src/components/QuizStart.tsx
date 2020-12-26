@@ -31,7 +31,7 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
   const [name, setName] = useState('');
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+    const value: string = event.target.value;
     setName(value);
   };
 

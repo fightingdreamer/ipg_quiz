@@ -21,7 +21,7 @@ const currentJson = require(`${process.env.REACT_APP_TOKEN}`);
 const setJson: ArrayQuestion[] = [];
 currentJson.forEach((question) => {
   // set all answers
-  const prefix = ['a', 'b', 'c', 'd'];
+  const prefix: Array<string> = ['a', 'b', 'c', 'd'];
   const answers = question.randomName.map((n, i) => {
     return {
       answer: n,
@@ -32,7 +32,7 @@ currentJson.forEach((question) => {
   });
 
   // randomize answers & set correct one
-  const setAnswers = parseInt(((Math.random() * 100) % 4).toString(), 10);
+  const setAnswers: number = parseInt(((Math.random() * 100) % 4).toString(), 10);
 
   answers[setAnswers] = {
     answer: question.name,

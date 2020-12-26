@@ -80,6 +80,7 @@
     .quiz-panel {
       @include terminal-background;
       @include terminal-border(bottom);
+      @include default-height;
       padding: $helper-space / 2;
       .quiz-details,
       .quiz-counter,
@@ -118,6 +119,12 @@
       }
     }
 
+    .quiz-result {
+      h2 {
+        font-size: $helper-space * 2;
+      }
+    }
+
     .quiz-theme {
       @include terminal-background;
       @include terminal-border(top);
@@ -143,8 +150,10 @@
         padding: 0;
         border: 0;
         h2 {
+          @include default-height;
           font-size: $helper-space * 1.5;
           text-align: left;
+          margin-bottom: 0;
           &::before {
             content: "Q:";
             margin-right: 1ch;
@@ -160,6 +169,7 @@
         padding: 0 $helper-space;
         li {
           @include auto-fit;
+          @include default-height;
           font-size: $helper-space * 1.5;
           &:nth-child(1) {
             &::before {
@@ -225,22 +235,12 @@
 
     .quiz-table {
       margin-top: $helper-space;
+      text-align: center;
       .nes-table {
         @include terminal-background;
-        width: 20vw;
+        width: 40vw;
         @include tablet-landscape {
           width: 75vw;
-        }
-        tr {
-          th,
-          td {
-            &:first-child {
-              width: 20%;
-            }
-            &:last-child {
-              width: 30%;
-            }
-          }
         }
       }
     }
@@ -267,6 +267,7 @@
       .css-bmm19l-option {
         @include terminal-pointer;
       }
+      .css-13tza3w,
       .css-1cf4uja-ValueContainer {
         padding: 0 $helper-space / 2;
         .css-1uccc91-singleValue,
@@ -274,6 +275,7 @@
           @include terminal-text;
         }
       }
+      .css-1wy0on6,
       .css-g7jtzl-DropdownIndicator {
         @include terminal-resize;
       }
@@ -286,6 +288,7 @@
         .css-bmm19l-option {
           @include terminal-background;
           @include terminal-text;
+          @include default-height;
         }
         .css-5r04rb-option,
         .css-bmm19l-option {
@@ -312,26 +315,34 @@
     }
     .nes-input {
       @include terminal-frame;
+      @include default-height;
       margin: 0;
       padding: $helper-space * 0.75;
     }
     .nes-btn {
       @include text-uppercase;
-      box-shadow: unset;
+      @include reset-shadow;
+      width: 20vw;
       &::before,
       &::after {
         border-color: var(--terminal-green);
       }
       &.is-success {
         @include terminal-frame;
+        @include default-height;
         background: var(--terminal-green);
         background: #80ff80;
         color: var(--default-dark);
-        height: $helper-space * 2;
+        height: auto;
       }
       &.is-error {
         @include terminal-background;
         @include terminal-text;
+        line-height: 1.25;
+        &:hover,
+        &:focus {
+          @include reset-shadow;
+        }
       }
     }
     .MuiButtonBase-root {

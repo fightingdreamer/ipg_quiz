@@ -13,7 +13,7 @@ import Select from '@material-ui/core/Select';
 export const MaterialSelect = () => {
   const [currentValue, setValue] = useState('default');
   const changeHandler = (event) => {
-    const value = event.target.value;
+    const value: string = event.target.value;
     setValue(value);
   };
 

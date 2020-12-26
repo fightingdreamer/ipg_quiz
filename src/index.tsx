@@ -10,7 +10,7 @@ import Cyberpunk from './Cyberpunk';
 
 // code
 
-const isCyberpunk = false;
+const isCyberpunk: boolean = false;
 
 if (isCyberpunk) {
   ReactDOM.render(

@@ -10,7 +10,7 @@ button {
   &.btn-side {
     @include border-all;
     @include border-radius;
-    margin: ($helper-space / 2) 0;
+    margin: ($helper-space / 4) 0;
     background: transparent;
   }
   &:focus {
@@ -32,6 +32,9 @@ button {
   button {
     width: auto;
     min-width: 50%;
+    &:focus {
+      outline: 0;
+    }
     @include mobile-portrait {
       width: calc(100vw - #{$helper-space * 2});
     }

@@ -118,11 +118,11 @@ section {
 }
 
 html {
-    cursor: none;
+    @include reset-cursor;
 }
 
 body {
-    line-height: 1;
+    @include default-height;
 }
 
 ol,

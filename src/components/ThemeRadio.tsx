@@ -14,18 +14,18 @@ import Radio from '@material-ui/core/Radio';
 
 export default function ThemeRadio() {
   // theme settings
-  const uiMaterial = 'material';
-  const uiTerminal = 'terminal';
-  const uiCyberpunk = 'cyberpunk';
-  const uiIsometric = 'isometric';
-  const themes = [uiMaterial, uiTerminal, uiCyberpunk, uiIsometric];
+  const uiMaterial: string = 'material';
+  const uiTerminal: string = 'terminal';
+  const uiCyberpunk: string = 'cyberpunk';
+  const uiIsometric: string = 'isometric';
+  const themes: Array<string> = [uiMaterial, uiTerminal, uiCyberpunk, uiIsometric];
   const { setTheme } = useContext(ThemeContext);
-  const [currentValue, setValue] = useState(uiTerminal); // default active theme
+  const [currentValue, setValue] = useState(uiMaterial); // default active theme
 
   // theme switch
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const app = document.querySelectorAll('.App');
-    const value = event.target.value;
+    const value: string = event.target.value;
     if (value === uiMaterial || uiTerminal || uiCyberpunk || uiIsometric) {
       app[0].classList.remove(...themes);
       app[0].classList.toggle(value);
