@@ -16,11 +16,11 @@ import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
 export const MaterialIcons = () => {
   return (
     <>
-      <StarTwoToneIcon fontSize="default" className="quiz-star material-icon desktop-only" />
-      <StarBorderTwoToneIcon fontSize="default" className="quiz-star material-icon desktop-only" />
-      <StarHalfTwoToneIcon fontSize="default" className="quiz-star material-icon desktop-only" />
-      <VolumeOffTwoToneIcon fontSize="default" className="quiz-audio material-icon desktop-only" />
-      <VolumeUpTwoToneIcon fontSize="default" className="quiz-audio material-icon desktop-only" />
+      <StarTwoToneIcon fontSize="default" className="quiz-star material-icon mobile-off" />
+      <StarBorderTwoToneIcon fontSize="default" className="quiz-star material-icon mobile-off" />
+      <StarHalfTwoToneIcon fontSize="default" className="quiz-star material-icon mobile-off" />
+      <VolumeOffTwoToneIcon fontSize="default" className="quiz-audio material-icon mobile-off" />
+      <VolumeUpTwoToneIcon fontSize="default" className="quiz-audio material-icon mobile-off" />
       <MenuTwoToneIcon fontSize="default" className="quiz-menu material-icon" />
     </>
   );

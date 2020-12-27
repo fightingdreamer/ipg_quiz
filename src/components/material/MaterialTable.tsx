@@ -25,7 +25,7 @@ const rows = [
 
 export default function MaterialTable() {
   return (
-    <TableContainer className="quiz-table">
+    <TableContainer className="quiz-table mobile-off">
       <Table size="small" aria-label="Hall of Fame">
         <TableHead>
           <TableRow>

@@ -20,7 +20,7 @@ const rows = [
 
 export default function MaterialTable() {
   return (
-    <div className="quiz-table">
+    <div className="quiz-table mobile-off">
       <Table centered aria-label="Hall of Fame">
         <thead>
           <tr>

@@ -25,14 +25,18 @@ import { ReactComponent as TerminalError } from '../styles/img/terminal-error.sv
 export const QuizHelpers = () => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
   const FullScreenHandler = useFullScreenHandle();
+  let placeholder: string = 'placeholder';
+  if (FullScreenHandler.active === false) {
+    placeholder = '';
+  }
 
   return (
     <div className="quiz-helpers">
       {isMaterial && (
         <>
-          <FullScreen handle={FullScreenHandler}>Placeholder</FullScreen>
+          <FullScreen handle={FullScreenHandler}>{placeholder}</FullScreen>
           <MaterialToast />
-          <HelpTwoToneIcon fontSize="default" className="quiz-help material-icon desktop-only" />
+          <HelpTwoToneIcon fontSize="default" className="quiz-help material-icon mobile-off" />
           <FullscreenTwoToneIcon
             onClick={FullScreenHandler.enter}
             fontSize="default"

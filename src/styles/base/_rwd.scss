@@ -5,25 +5,37 @@ $device-sm: 768px;
 $device-md: 960px;
 $device-lg: 1280px;
 
-@mixin mobile-portrait {
+@mixin max-xs {
     @media screen and (max-width: #{$device-xs - 1px}) {
         @content;
     }
 }
 
-@mixin mobile-landscape {
-    @media screen and (min-width: #{$device-xs}) {
-        @content;
-    }
-}
-
-@mixin tablet-portrait {
+@mixin min-sm {
     @media screen and (min-width: #{$device-sm}) {
         @content;
     }
 }
 
-@mixin tablet-landscape {
+@mixin max-sm {
+    @media screen and (max-width: #{$device-sm - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile-landscape {
+    @media screen and (min-width: #{$device-xs}) and (max-width: #{$device-sm - 1px}) {
+        @content;
+    }
+}
+
+@mixin min-md {
+    @media screen and (min-width: #{$device-md}) {
+        @content;
+    }
+}
+
+@mixin max-md {
     @media screen and (max-width: #{$device-md - 1px}) {
         @content;
     }
@@ -32,20 +44,21 @@ $device-lg: 1280px;
 // HELPERS
 
 .App {
-    .desktop-only {
-        @include tablet-landscape {
+    .mobile-off {
+        @include max-md {
             display: none;
         }
     }
-    .mobile-only {
-        @include tablet-portrait {
+    .desktop-off {
+        @include min-sm {
             display: none;
         }
     }
 }
 
 @mixin mobile-fit {
-    @include mobile-portrait {
+    @include max-sm {
         width: 100%;
+        height: auto;
     }
 }

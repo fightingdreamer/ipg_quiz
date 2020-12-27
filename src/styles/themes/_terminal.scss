@@ -56,7 +56,7 @@
     .terminal-icon {
       @include terminal-pointer;
       margin: 0 $helper-space / 2;
-      @include tablet-landscape {
+      @include max-md {
         margin: 0 $helper-space / 4;
       }
     }
@@ -69,7 +69,7 @@
     }
 
     .quiz-menu {
-      @include tablet-landscape {
+      @include max-md {
         width: $helper-space * 2;
         height: $helper-space * 2;
       }
@@ -86,13 +86,13 @@
       .quiz-counter,
       .quiz-helpers {
         padding: ($helper-space / 2) 0;
-        @include tablet-landscape {
+        @include max-md {
           padding: 0;
         }
       }
       span {
         color: var(--terminal-green);
-        @include tablet-landscape {
+        @include max-md {
           font-size: $helper-space * 1.5;
         }
       }
@@ -110,7 +110,7 @@
       @include terminal-frame;
       @include terminal-background;
       @include border-radius;
-      padding: $helper-space;
+      padding: $helper-space * 2;
       .quiz-play {
         transform: scale(0.75);
         rect {
@@ -122,6 +122,21 @@
     .quiz-result {
       h2 {
         font-size: $helper-space * 2;
+      }
+      @include mobile-landscape {
+        padding: $helper-space / 2 $helper-space * 2;
+        h2 {
+          font-size: $helper-space * 1.5;
+        }
+        h3 {
+          padding: $helper-space / 4;
+        }
+      }
+      .nes-btn {
+        width: 20vw;
+        @include max-sm {
+          width: 30vw;
+        }
       }
     }
 
@@ -141,7 +156,7 @@
       place-items: self-start;
       align-content: start;
       height: calc(90vh - #{$helper-space});
-      @include tablet-landscape {
+      @include max-md {
         height: calc(90vh - #{$helper-space * 3});
       }
       .quiz-definition {
@@ -154,48 +169,30 @@
           font-size: $helper-space * 1.5;
           text-align: left;
           margin-bottom: 0;
-          &::before {
-            content: "Q:";
-            margin-right: 1ch;
-          }
+        }
+        span {
+          margin-right: $helper-space * 0.75;
         }
       }
       ul {
         @include auto-fit;
         place-items: self-start;
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: $helper-space;
+        gap: $helper-space;
         position: relative;
         padding: 0 $helper-space;
+        @include mobile-landscape {
+          gap: 0;
+        }
         li {
           @include auto-fit;
           @include default-height;
           font-size: $helper-space * 1.5;
-          &:nth-child(1) {
-            &::before {
-              content: "A:";
-            }
-          }
-          &:nth-child(2) {
-            &::before {
-              content: "B:";
-            }
-          }
-          &:nth-child(3) {
-            &::before {
-              content: "C:";
-            }
-          }
-          &:nth-child(4) {
-            &::before {
-              content: "D:";
-            }
-          }
           button {
             border: 0;
             padding: 0;
             margin: 0 -1ch;
-            @include tablet-landscape {
+            @include max-md {
               justify-content: flex-start;
             }
             .quiz-type {
@@ -239,13 +236,16 @@
       .nes-table {
         @include terminal-background;
         width: 40vw;
-        @include tablet-landscape {
+        @include max-md {
           width: 75vw;
         }
       }
     }
 
     .quiz-credits {
+      @include max-md {
+        margin-top: $helper-space;
+      }
       .quiz-heart {
         margin: 0;
       }
@@ -311,6 +311,7 @@
       margin: 0;
       & > label {
         margin-bottom: $helper-space / 2;
+        font-size: $helper-space * 1.25;
       }
     }
     .nes-input {
@@ -322,7 +323,6 @@
     .nes-btn {
       @include text-uppercase;
       @include reset-shadow;
-      width: 20vw;
       &::before,
       &::after {
         border-color: var(--terminal-green);

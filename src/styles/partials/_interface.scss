@@ -16,6 +16,7 @@
 .quiz-noise {
   @include full-screen;
   position: absolute;
+  pointer-events: none;
 }
 
 .quiz-panel {
@@ -44,9 +45,19 @@
       width: 2ch;
       text-align: right;
     }
+    svg {
+      @include max-sm {
+        display: none;
+      }
+    }
   }
   .quiz-helpers {
     justify-content: flex-end;
+  }
+  .quiz-menu {
+    @include min-md {
+      display: none;
+    }
   }
 }
 

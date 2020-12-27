@@ -18,9 +18,11 @@ export const ItemQuestion = ({
       {options.map((answer) => {
         const question: string = answer.answer;
         const charCounter: number = question.length + (isTerminal ? 4 : 1); // UI-Terminal & UI-Material to fix
+        const terminalBullet: string = `${answer.id.slice(0, -1).toUpperCase()}:`;
 
         return (
           <li key={answer.id}>
+            {isTerminal && <span className="quiz-bullet">{terminalBullet}</span>}
             <button
               className="btn-side MuiButton-root MuiButton-outlined"
               onClick={() => valueHandler(answer.value)}

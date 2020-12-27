@@ -32,6 +32,12 @@
       @include reset-cursor;
       color: $nord10;
       padding: $helper-space / 8;
+      @include mobile-landscape {
+        padding: 0;
+        span {
+          font-size: $helper-space;
+        }
+      }
       &.btn-cta {
         background: $nord10;
         span {
@@ -42,7 +48,7 @@
       &.btn-side {
         background: $nord6;
         border-color: $nord13;
-        @include mobile-portrait {
+        @include max-sm {
           background: $nord13;
         }
         span {
@@ -57,7 +63,7 @@
     .quiz-icons {
       .material-icon {
         margin: 0 ($helper-space / 4);
-        @include mobile-portrait {
+        @include mobile-landscape {
           margin: 0;
         }
       }
@@ -70,17 +76,18 @@
     .quiz-play {
       font-size: $helper-space * 1.75;
       fill: $nord13;
+      @include mobile-landscape {
+        font-size: $helper-space * 1.5;
+      }
     }
 
     .MuiSvgIcon-fontSizeLarge {
       fill: $nord10;
       font-size: $helper-space * 2;
       margin: 0 ($helper-space / 2);
-    }
-
-    .quiz-credits {
-      margin-top: $helper-space * 0.75;
-      font-size: $helper-space * 0.75;
+      @include mobile-landscape {
+        font-size: $helper-space * 1.5;
+      }
     }
 
     // quiz content
@@ -93,10 +100,8 @@
     .quiz-panel {
       @include strong-shadow;
       @include material-border(bottom, $helper-space / 8);
+      @include mobile-fit;
       background: $nord6;
-      @include mobile-portrait {
-        height: 12vh;
-      }
       .quiz-helpers {
         svg {
           margin: 0 ($helper-space / 2);
@@ -133,10 +138,10 @@
       padding: $helper-space * 1.5;
       background: $nord6;
       border-color: $nord10;
-      @include mobile-landscape {
+      @include min-sm {
         @include strong-shadow;
       }
-      @include mobile-portrait {
+      @include max-sm {
         border: 0;
         background: transparent;
       }
@@ -180,10 +185,8 @@
     .quiz-theme {
       @include strong-shadow;
       @include material-border(top, $helper-space / 8);
+      @include mobile-fit;
       background: $nord6;
-      @include mobile-portrait {
-        height: 12vh;
-      }
       .MuiButtonBase-root {
         @include reset-cursor;
       }
@@ -196,38 +199,45 @@
     }
 
     .quiz-wrapper {
-      @include mobile-portrait {
+      @include mobile-fit;
+      @include max-sm {
         place-items: self-start;
         align-content: start;
-        height: 80vh;
       }
       .quiz-definition {
         @include strong-shadow;
         @include material-border(top, $helper-space / 8);
         @include material-border(bottom, $helper-space / 8);
+        @include mobile-fit;
         background: $nord6;
-        @include mobile-portrait {
+        @include max-sm {
           place-items: center;
           position: relative;
-          height: 16vh;
           background: $nord10;
           color: $nord6;
           padding: 0;
         }
+        @include max-xs {
+          margin-bottom: $helper-space;
+        }
         h2 {
           @include text-fluid;
           @include text-bold;
-          @include mobile-portrait {
+          @include max-sm {
             padding: $helper-space / 2;
+            font-size: $helper-space;
           }
         }
       }
       ul {
-        @include mobile-portrait {
+        @include mobile-fit;
+        @include max-sm {
           place-items: center;
           grid-template-columns: repeat(1, 1fr);
           position: relative;
-          height: 60vh;
+        }
+        @include max-xs {
+          gap: $helper-space;
         }
         li {
           @include light-shadow;
@@ -235,14 +245,14 @@
           &:nth-child(odd) {
             @include material-border(right, $helper-space / 16);
             @include material-border(left, $helper-space / 8);
-            @include mobile-portrait {
+            @include max-sm {
               border: 0;
             }
           }
           &:nth-child(even) {
             @include material-border(right, $helper-space / 8);
             @include material-border(left, $helper-space / 16);
-            @include mobile-portrait {
+            @include max-sm {
               border: 0;
             }
           }
@@ -262,13 +272,20 @@
           }
           button {
             @include transition-all;
+            @include mobile-fit;
             padding: $helper-space / 2;
+            @include max-sm {
+              margin: 0;
+            }
+            @include mobile-landscape {
+              padding: $helper-space / 4;
+            }
             span {
               @include text-uppercase;
+              @include max-sm {
+                font-size: $helper-space;
+              }
             }
-          }
-          @include mobile-portrait {
-            height: 15vh;
           }
         }
         &:hover {
@@ -309,10 +326,21 @@
       h3 {
         font-size: $helper-space;
       }
-      @include mobile-portrait {
-        background: transparent;
-        border-color: transparent;
+      @include mobile-landscape {
         padding: $helper-space;
+        h2 {
+          font-size: $helper-space * 1.25;
+        }
+        h3 {
+          font-size: $helper-space * 0.75;
+          padding: $helper-space / 4;
+        }
+      }
+    }
+
+    .quiz-social {
+      @include mobile-landscape {
+        padding: $helper-space / 4;
       }
     }
 
@@ -343,6 +371,14 @@
             }
           }
         }
+      }
+    }
+
+    .quiz-credits {
+      margin-top: $helper-space * 0.75;
+      font-size: $helper-space * 0.75;
+      @include mobile-landscape {
+        margin-top: $helper-space / 4;
       }
     }
 

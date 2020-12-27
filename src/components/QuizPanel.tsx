@@ -46,21 +46,28 @@ export const QuizPanel = ({
   const { totalPoints } = useContext(PointsContext);
   return (
     <>
-      <div className="quiz-panel desktop-only">
+      <div className="quiz-panel">
         <div className="quiz-details">
+          {isMaterial && <MenuTwoToneIcon fontSize="default" className="quiz-menu material-icon" />}
+          {isTerminal && <TerminalMenu className="quiz-menu terminal-icon" />}
           {isMaterial && (
-            <AccountCircleTwoToneIcon fontSize="default" className="quiz-avatar material-icon" />
+            <AccountCircleTwoToneIcon
+              fontSize="default"
+              className="quiz-avatar material-icon mobile-off"
+            />
           )}
-          {isTerminal && <TerminalUser className="quiz-avatar terminal-icon" />}
-          <span className="quiz-player">{user}</span>
-          {isMaterial && <StarTwoToneIcon fontSize="default" className="quiz-star material-icon" />}
-          {isTerminal && <Icon icon="star" small className="quiz-star terminal-icon" />}
-          <span className="quiz-points">{totalPoints}</span>
+          {isTerminal && <TerminalUser className="quiz-avatar terminal-icon mobile-off" />}
+          <span className="quiz-player mobile-off">{user}</span>
           {isMaterial && (
-            <CheckCircleTwoToneIcon className="quiz-check material-icon"></CheckCircleTwoToneIcon>
+            <StarTwoToneIcon fontSize="default" className="quiz-star material-icon mobile-off" />
           )}
-          {isTerminal && <TerminalCheck className="quiz-check terminal-icon" />}
-          <span className="quiz-status">
+          {isTerminal && <Icon icon="star" small className="quiz-star terminal-icon mobile-off" />}
+          <span className="quiz-points mobile-off">{totalPoints}</span>
+          {isMaterial && (
+            <CheckCircleTwoToneIcon className="quiz-check material-icon mobile-off"></CheckCircleTwoToneIcon>
+          )}
+          {isTerminal && <TerminalCheck className="quiz-check terminal-icon mobile-off" />}
+          <span className="quiz-status mobile-off">
             {currentQuestion + 1}/{totalQuestion}
           </span>
         </div>
@@ -78,16 +85,6 @@ export const QuizPanel = ({
               <span>{setCurrentTime}</span>
             </>
           )}
-        </div>
-        <QuizHelpers />
-      </div>
-      <div className="quiz-panel mobile-only">
-        <div className="quiz-details">
-          {isMaterial && <MenuTwoToneIcon fontSize="default" className="quiz-menu material-icon" />}
-          {isTerminal && <TerminalMenu className="quiz-menu terminal-icon" />}
-        </div>
-        <div className="quiz-counter">
-          <span>{setCurrentTime}</span>
         </div>
         <QuizHelpers />
       </div>

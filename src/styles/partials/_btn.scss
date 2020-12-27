@@ -35,7 +35,7 @@ button {
     &:focus {
       outline: 0;
     }
-    @include mobile-portrait {
+    @include max-sm {
       width: calc(100vw - #{$helper-space * 2});
     }
   }

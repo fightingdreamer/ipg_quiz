@@ -1,7 +1,7 @@
 // LAYERS
 
 :root {
-  --z-cursor: 4;
+  --z-surface: 4;
   --z-top: 3;
   --z-above: 2;
   --z-default: 1;
@@ -12,24 +12,24 @@
   z-index: var(--z-below);
 }
 
-.quiz-overlay {
+.quiz-wrapper {
   z-index: var(--z-default);
 }
 
-.quiz-wrapper,
-.quiz-theme,
-.quiz-start {
+.quiz-overlay,
+.quiz-definition,
+.quiz-result,
+.quiz-progress {
   z-index: var(--z-above);
 }
 
-.quiz-definition,
 .quiz-panel,
-.quiz-result,
-.quiz-progress {
+.quiz-theme,
+.quiz-start {
   z-index: var(--z-top);
 }
 
 #cursor-dot,
 #cursor-dot-outline {
-  z-index: var(--z-cursor);
+  z-index: var(--z-surface);
 }
