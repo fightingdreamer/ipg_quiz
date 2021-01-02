@@ -39,10 +39,6 @@ $helper-space: 1rem;
   text-transform: uppercase;
 }
 
-@mixin text-fluid {
-  font-size: calc(#{$helper-space} + 2vw);
-}
-
 @mixin reset-cursor {
   cursor: none;
 }

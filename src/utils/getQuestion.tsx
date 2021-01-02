@@ -4,6 +4,7 @@ export interface OptionQuestion {
   value: boolean;
   id: string;
   lang: string;
+  type: number;
 }
 
 export interface ArrayQuestion {
@@ -11,6 +12,7 @@ export interface ArrayQuestion {
   id: string;
   level: string;
   lang: string;
+  type: number;
   options: OptionQuestion[];
 }
 
@@ -27,6 +29,7 @@ currentJson.forEach((question) => {
       answer: n,
       value: false,
       lang: question.lang,
+      type: question.type,
       id: prefix[i] + question.id,
     };
   });
@@ -38,6 +41,7 @@ currentJson.forEach((question) => {
     answer: question.name,
     value: true,
     lang: question.lang,
+    type: question.type,
     id: prefix[setAnswers] + question.id,
   };
 
@@ -46,6 +50,7 @@ currentJson.forEach((question) => {
     id: 'question id: ' + question.id,
     level: question.level,
     lang: question.lang,
+    type: question.type,
     options: answers,
   });
 });

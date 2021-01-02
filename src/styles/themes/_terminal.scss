@@ -162,13 +162,20 @@
       .quiz-definition {
         place-items: self-start;
         position: relative;
+        margin-top: $helper-space;
         padding: 0;
         border: 0;
+        @include mobile-landscape {
+          margin-top: $helper-space / 2;
+        }
+        @include max-xs {
+          margin-top: 0;
+        }
         h2 {
           @include default-height;
           font-size: $helper-space * 1.5;
           text-align: left;
-          margin-bottom: 0;
+          margin: $helper-space;
         }
         span {
           margin-right: $helper-space * 0.75;
@@ -181,9 +188,6 @@
         gap: $helper-space;
         position: relative;
         padding: 0 $helper-space;
-        @include mobile-landscape {
-          gap: 0;
-        }
         li {
           @include auto-fit;
           @include default-height;
@@ -198,6 +202,7 @@
             .quiz-type {
               @include terminal-text;
               @include animation-blink;
+              @include default-height;
               font-size: $helper-space * 1.5;
               &::before,
               &::after {

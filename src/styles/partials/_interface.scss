@@ -43,7 +43,6 @@
       @include flex-center;
       @include text-bold;
       width: 2ch;
-      text-align: right;
     }
     svg {
       @include max-sm {
@@ -92,11 +91,6 @@
     width: 100vw;
     @include border-default(top);
     @include border-default(bottom);
-
-    h2 {
-      padding: $helper-space;
-      text-align: center;
-    }
   }
 
   ul {

@@ -9,12 +9,23 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 // code
 
-export const MaterialBtnCta = () => {
+export const MaterialBtnStart = () => {
   return (
-    <Button disableRipple className="btn-cta" variant="contained">
+    <Button className="btn-cta" variant="contained">
       Play
       <PlayArrowIcon fontSize="default" className="quiz-play" />
     </Button>
+  );
+};
+
+export const MaterialBtnCta = () => {
+  return (
+    <>
+      <Button className="btn-cta" variant="contained">
+        Replay
+        <PlayArrowIcon fontSize="default" className="quiz-play" />
+      </Button>
+    </>
   );
 };
 

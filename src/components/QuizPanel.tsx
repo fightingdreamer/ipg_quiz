@@ -12,6 +12,7 @@ import PointsContext from '../context/PointsContext';
 
 import QuizHelpers from './QuizHelpers';
 import QuizProgress from './QuizProgress';
+import QuizTimer from './QuizTimer';
 
 // UI-Material components
 
@@ -33,17 +34,16 @@ import { ReactComponent as TerminalUser } from '../styles/img/terminal-user.svg'
 // code
 
 export const QuizPanel = ({
-  setCurrentTime,
   currentQuestion,
   totalQuestion,
 }: {
-  setCurrentTime: any;
   currentQuestion: any;
   totalQuestion: any;
 }) => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
   const { user } = useContext(UserContext);
   const { totalPoints } = useContext(PointsContext);
+
   return (
     <>
       <div className="quiz-panel">
@@ -74,7 +74,7 @@ export const QuizPanel = ({
         <div className="quiz-counter">
           {isMaterial && (
             <>
-              <span>{setCurrentTime}</span>
+              <QuizTimer />
               <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow material-icon" />
               <TimerTwoToneIcon fontSize="default" className="quiz-timer material-icon" />
             </>
@@ -82,7 +82,7 @@ export const QuizPanel = ({
           {isTerminal && (
             <>
               <TerminalBomb className="quiz-timer terminal-icon" />
-              <span>{setCurrentTime}</span>
+              <QuizTimer />
             </>
           )}
         </div>

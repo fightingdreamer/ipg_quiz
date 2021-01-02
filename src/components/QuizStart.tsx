@@ -13,7 +13,7 @@ import { SelectSet } from './ui/SelectSet';
 import { IconSet } from './ui/IconSet';
 import { ReactComponent as Logo } from '../styles/img/cube-lines.svg';
 import { LogoCube } from './logo/LogoCube';
-import { BtnCta } from './ui/BtnSet';
+import { BtnStart } from './ui/BtnSet';
 
 // UI-Material components
 
@@ -74,7 +74,7 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
             )}
           </div>
           <div className="quiz-btn" onClick={submitHandler}>
-            <BtnCta />
+            <BtnStart />
           </div>
         </form>
       </div>

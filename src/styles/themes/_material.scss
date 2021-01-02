@@ -221,8 +221,9 @@
           margin-bottom: $helper-space;
         }
         h2 {
-          @include text-fluid;
           @include text-bold;
+          text-align: center;
+          font-size: $helper-space * 2;
           @include max-sm {
             padding: $helper-space / 2;
             font-size: $helper-space;
@@ -291,7 +292,9 @@
         &:hover {
           li:not(:hover) {
             button {
-              @include material-filter;
+              @include min-md {
+                @include material-filter;
+              }
             }
           }
         }
