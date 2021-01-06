@@ -1,10 +1,13 @@
 // packages
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 // React Context API
 
 import ThemeContext from '../context/ThemeContext';
+import UserContext from '../context/UserContext';
+import RankContext from '../context/RankContext';
+import PointsContext from '../context/PointsContext';
 
 // components
 
@@ -31,6 +34,16 @@ export const QuizResult = ({
   totalQuestion: any;
 }) => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
+  const { rank, addRank } = useContext(RankContext);
+  const { user } = useContext(UserContext);
+  const { totalPoints } = useContext(PointsContext);
+
+  useEffect(() => {
+    const data = { name: user, points: totalPoints, score: currentScore, questions: totalQuestion };
+    localStorage.setItem('rank', JSON.stringify([...rank, data]));
+    addRank(data);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <div className="quiz-result">
       <h2>Game over</h2>

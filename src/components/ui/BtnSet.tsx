@@ -12,14 +12,18 @@ import { MaterialBtnCta, MaterialBtnSide, MaterialBtnStart } from '../material/M
 
 // UI-Terminal components
 
-import { TerminalBtnCta, TerminalBtnSide } from '../terminal/TerminalBtn';
+import { TerminalBtnCta, TerminalBtnSide, TerminalBtnStart } from '../terminal/TerminalBtn';
 
 // code
 
 export const BtnStart = () => {
-  // const { isMaterial, isTerminal } = useContext(ThemeContext);
-
-  return <MaterialBtnStart />;
+  const { isMaterial, isTerminal } = useContext(ThemeContext);
+  return (
+    <>
+      {isMaterial && <MaterialBtnStart />}
+      {isTerminal && <TerminalBtnStart />}
+    </>
+  );
 };
 
 export const BtnCta = () => {

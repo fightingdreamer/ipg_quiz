@@ -133,6 +133,7 @@
         }
       }
       .nes-btn {
+        display: inline-block;
         width: 20vw;
         @include max-sm {
           width: 30vw;

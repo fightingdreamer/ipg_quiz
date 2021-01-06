@@ -1,6 +1,10 @@
 // packages
 
-import React from 'react';
+import React, { useContext } from 'react';
+
+// React Context API
+
+import RankContext from '../../context/RankContext';
 
 // UI-Material components
 
@@ -13,17 +17,8 @@ import TableRow from '@material-ui/core/TableRow';
 
 // code
 
-function createData(rank: number, name: string, score: number) {
-  return { rank, name, score };
-}
-
-const rows = [
-  createData(1, 'Player#0150', 3444),
-  createData(2, 'Player#0017', 2195),
-  createData(3, 'Player#0001', 552),
-];
-
 export default function MaterialTable() {
+  const { rank } = useContext(RankContext);
   return (
     <TableContainer className="quiz-table mobile-off">
       <Table size="small" aria-label="Hall of Fame">
@@ -35,13 +30,13 @@ export default function MaterialTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rank.map((row) => (
             <TableRow key={row.rank}>
               <TableCell component="th" scope="row">
                 {row.rank}
               </TableCell>
               <TableCell align="center">{row.name}</TableCell>
-              <TableCell align="right">{row.score}</TableCell>
+              <TableCell align="right">{row.points}</TableCell>
             </TableRow>
           ))}
         </TableBody>

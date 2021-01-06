@@ -5,6 +5,7 @@ import React from 'react';
 // React Context API
 
 import { ThemeProvider } from './context/ThemeContext';
+import { RankProvider } from './context/RankContext';
 import { UserProvider } from './context/UserContext';
 import { PointsProvider } from './context/PointsContext';
 
@@ -23,11 +24,13 @@ function App() {
     <div className="App material">
       {/* default active theme */}
       <ThemeProvider>
-        <UserProvider>
-          <PointsProvider>
-            <PageQuiz />
-          </PointsProvider>
-        </UserProvider>
+        <RankProvider>
+          <UserProvider>
+            <PointsProvider>
+              <PageQuiz />
+            </PointsProvider>
+          </UserProvider>
+        </RankProvider>
       </ThemeProvider>
     </div>
   );
