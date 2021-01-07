@@ -56,7 +56,7 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
           <div className="quiz-input">
             {isMaterial && (
               <TextField
-                id="quiz-name"
+                id="material-name"
                 label="Enter your name"
                 value={name}
                 onChange={changeHandler}
@@ -65,11 +65,11 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
             )}
             {isTerminal && (
               <TextInput
-                id="quiz-name"
+                id="terminal-name"
                 label="Enter your name"
                 value={name}
-                readOnly
-                // onChange={changeHandler}
+                // @ts-ignore
+                onChange={changeHandler}
               />
             )}
           </div>

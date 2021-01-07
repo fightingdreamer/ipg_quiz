@@ -17,7 +17,7 @@ import QuizResult from '../components/QuizResult';
 
 // utils
 
-import { getQuestion } from '../utils/getQuestion';
+import { getQuestion, trackQuestion } from '../utils/getQuestion';
 
 // code
 
@@ -26,7 +26,7 @@ export const PageQuestion = () => {
   const [currentScore, setScore] = useState(0);
   const [currentQuestion, setQuestion] = useState(0);
   const [currentStatus, setStatus] = useState(false);
-  const objectQuestion = getQuestion[currentQuestion];
+  const objectQuestion = trackQuestion(currentQuestion + 1);
 
   // use React Context API
   const { isTerminal } = useContext(ThemeContext);

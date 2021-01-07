@@ -14,14 +14,39 @@ export interface ArrayQuestion {
   lang: string;
   type: number;
   options: OptionQuestion[];
+  position: number;
 }
 
 // consume data
 const currentJson = require(`${process.env.REACT_APP_TOKEN}`);
 
-// update
+// auxiliary arrays
 const setJson: ArrayQuestion[] = [];
+const trackedId: any = [];
+
+// update
 currentJson.forEach((question) => {
+  const questionLength = currentJson.length + 1;
+  let randomId: number = 0;
+  let newId = false;
+
+  while (!newId) {
+    // randomize questions
+    randomId = parseInt(((Math.random() * 100) % questionLength).toString(), 10);
+    if (randomId !== 0) {
+      if (trackedId) {
+        // eslint-disable-next-line
+        if (!trackedId.find((id) => id === randomId)) {
+          trackedId.push(randomId);
+          newId = true;
+        }
+      } else {
+        trackedId.push(randomId);
+        newId = true;
+      }
+    }
+  }
+
   // set all answers
   const prefix: Array<string> = ['a', 'b', 'c', 'd'];
   const answers = question.randomName.map((n, i) => {
@@ -52,7 +77,9 @@ currentJson.forEach((question) => {
     lang: question.lang,
     type: question.type,
     options: answers,
+    position: randomId,
   });
 });
 
 export const getQuestion: ArrayQuestion[] = setJson;
+export const trackQuestion: any = (findId) => setJson.find((x) => x.position === findId);

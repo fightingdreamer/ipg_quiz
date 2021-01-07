@@ -1,3 +1,4 @@
+// @ts-nocheck
 // packages
 
 import React, { useEffect, useRef, useState } from 'react';
