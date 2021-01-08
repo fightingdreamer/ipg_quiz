@@ -1,4 +1,3 @@
-// @ts-nocheck
 // packages
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -6,15 +5,15 @@ import React, { useEffect, useRef, useState } from 'react';
 // code
 
 export const MaterialCursor = () => {
-  const cursorDotOutline = useRef();
-  const cursorDot = useRef();
-  const requestRef = useRef();
+  const cursorDotOutline = useRef<any>();
+  const cursorDot = useRef<any>();
+  const requestRef = useRef<any>();
   const previousTimeRef = useRef();
   let [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
-  let cursorVisible = useState(false);
-  let cursorEnlarged = useState(false);
+  let cursorVisible = useRef(false);
+  let cursorEnlarged = useRef(false);
 
   // mouse events handlers
   const onMouseMove = (event) => {
@@ -72,7 +71,7 @@ export const MaterialCursor = () => {
   let endY = winDimensions.height / 2;
 
   // cursor position
-  function positionDot(e) {
+  function positionDot(e: MouseEvent) {
     cursorVisible.current = true;
     toggleCursorVisibility();
     // dot position

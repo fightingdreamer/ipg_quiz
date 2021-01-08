@@ -7,6 +7,7 @@ import React, { createContext, useState } from 'react';
 export interface IPointsContext {
   totalPoints: number;
   setPoints: (name: number) => void;
+  reset: () => void;
 }
 
 // React Context API
@@ -21,6 +22,7 @@ const PointsProvider = (props) => {
       value={{
         totalPoints,
         setPoints: (newPoints) => setPoints((p) => p + newPoints),
+        reset: () => setPoints(0),
       }}
     >
       {props.children}

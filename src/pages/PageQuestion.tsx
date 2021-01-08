@@ -61,18 +61,36 @@ export const PageQuestion = () => {
     // timer placeholder
   };
 
+  const resetQuiz = () => {
+    setQuestion(0);
+    setData({ setQuestion: null, activeQuestion: '' });
+    setStatus(false);
+  };
+
   return (
     <>
       {currentStatus ? (
         <>
-          <QuizPanel currentQuestion={currentQuestion} totalQuestion={getQuestion.length} />
-          <QuizResult currentScore={currentScore} totalQuestion={getQuestion.length} />
+          <QuizPanel
+            quizStatus={currentStatus}
+            currentQuestion={currentQuestion}
+            totalQuestion={getQuestion.length}
+          />
+          <QuizResult
+            resetQuiz={resetQuiz}
+            currentScore={currentScore}
+            totalQuestion={getQuestion.length}
+          />
         </>
       ) : (
         <>
           {currentData && currentData.activeQuestion !== '' ? (
             <div className="quiz-wrapper">
-              <QuizPanel currentQuestion={currentQuestion} totalQuestion={getQuestion.length} />
+              <QuizPanel
+                quizStatus={currentStatus}
+                currentQuestion={currentQuestion}
+                totalQuestion={getQuestion.length}
+              />
               <QuizDefinition definitionQuestion={objectQuestion.definition} />
               <ItemQuestion
                 options={objectQuestion.options}

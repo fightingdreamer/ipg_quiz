@@ -36,9 +36,11 @@ import { ReactComponent as TerminalUser } from '../styles/img/terminal-user.svg'
 export const QuizPanel = ({
   currentQuestion,
   totalQuestion,
+  quizStatus,
 }: {
   currentQuestion: any;
   totalQuestion: any;
+  quizStatus: boolean;
 }) => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
   const { user } = useContext(UserContext);
@@ -72,21 +74,23 @@ export const QuizPanel = ({
             {currentQuestion + 1}/{totalQuestion}
           </span>
         </div>
-        <div className="quiz-counter">
-          {isMaterial && (
-            <>
-              <QuizTimer />
-              <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow material-icon" />
-              <TimerTwoToneIcon fontSize="default" className="quiz-timer material-icon" />
-            </>
-          )}
-          {isTerminal && (
-            <>
-              <TerminalBomb className="quiz-timer terminal-icon" />
-              <QuizTimer />
-            </>
-          )}
-        </div>
+        {!quizStatus && (
+          <div className="quiz-counter">
+            {isMaterial && (
+              <>
+                <QuizTimer />
+                <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow material-icon" />
+                <TimerTwoToneIcon fontSize="default" className="quiz-timer material-icon" />
+              </>
+            )}
+            {isTerminal && (
+              <>
+                <TerminalBomb className="quiz-timer terminal-icon" />
+                <QuizTimer />
+              </>
+            )}
+          </div>
+        )}
         <QuizHelpers />
       </div>
       {isMaterial && <QuizProgress value={progressValue} />}

@@ -6,10 +6,6 @@ import React, { useContext } from 'react';
 
 import ThemeContext from '../context/ThemeContext';
 
-// components
-
-import { FullScreen, useFullScreenHandle } from 'react-full-screen';
-
 // UI-Material components
 
 import MaterialToast from './material/MaterialToast';
@@ -22,23 +18,25 @@ import { ReactComponent as TerminalError } from '../styles/img/terminal-error.sv
 
 // code
 
+const toggleFullscreen = () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    document.documentElement.requestFullscreen();
+  }
+};
+
 export const QuizHelpers = () => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
-  const FullScreenHandler = useFullScreenHandle();
-  let placeholder: string = 'placeholder';
-  if (FullScreenHandler.active === false) {
-    placeholder = '';
-  }
 
   return (
     <div className="quiz-helpers">
       {isMaterial && (
         <>
-          <FullScreen handle={FullScreenHandler}>{placeholder}</FullScreen>
           <MaterialToast />
           <HelpTwoToneIcon fontSize="default" className="quiz-help material-icon mobile-off" />
           <FullscreenTwoToneIcon
-            onClick={FullScreenHandler.enter}
+            onClick={toggleFullscreen}
             fontSize="default"
             className="quiz-screen material-icon"
           />

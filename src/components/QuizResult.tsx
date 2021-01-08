@@ -29,14 +29,16 @@ import { Icon } from 'nes-react';
 export const QuizResult = ({
   currentScore,
   totalQuestion,
+  resetQuiz,
 }: {
   currentScore: any;
   totalQuestion: any;
+  resetQuiz: () => void;
 }) => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
   const { rank, addRank } = useContext(RankContext);
   const { user } = useContext(UserContext);
-  const { totalPoints } = useContext(PointsContext);
+  const { reset, totalPoints } = useContext(PointsContext);
 
   useEffect(() => {
     const data = { name: user, points: totalPoints, score: currentScore, questions: totalQuestion };
@@ -51,7 +53,15 @@ export const QuizResult = ({
         score: {currentScore} / {totalQuestion}
       </h3>
       <SocialSet />
-      <BtnCta />
+      <div
+        className="btn-wrapper"
+        onClick={() => {
+          reset();
+          resetQuiz();
+        }}
+      >
+        <BtnCta />
+      </div>
       <BtnSide />
       {isMaterial && <MaterialTable />}
       {isTerminal && <TerminalTable />}
