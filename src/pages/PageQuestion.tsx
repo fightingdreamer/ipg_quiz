@@ -44,7 +44,7 @@ export const PageQuestion = () => {
       setScore(currentScore + 1);
       setPoints(+1);
     } else {
-      setPoints(-1);
+      // setPoints(-1);
     }
 
     const nextQuestion: number = currentQuestion + 1;

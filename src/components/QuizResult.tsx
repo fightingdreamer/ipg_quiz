@@ -36,7 +36,8 @@ export const QuizResult = ({
   resetQuiz: () => void;
 }) => {
   const { isMaterial, isTerminal } = useContext(ThemeContext);
-  const { rank, addRank } = useContext(RankContext);
+  const { getRank, addRank } = useContext(RankContext);
+  const rank = getRank();
   const { user } = useContext(UserContext);
   const { reset, totalPoints } = useContext(PointsContext);
 
@@ -49,9 +50,7 @@ export const QuizResult = ({
   return (
     <div className="quiz-result">
       <h2>Game over</h2>
-      <h3>
-        score: {currentScore} / {totalQuestion}
-      </h3>
+      <h3>score: {totalPoints}</h3>
       <SocialSet />
       <div
         className="btn-wrapper"

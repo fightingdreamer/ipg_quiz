@@ -45,7 +45,7 @@ export const QuizPanel = ({
   const { isMaterial, isTerminal } = useContext(ThemeContext);
   const { user } = useContext(UserContext);
   const { totalPoints } = useContext(PointsContext);
-  const progressValue: number = (currentQuestion / totalQuestion) * 100;
+  const progressValue: number = ((currentQuestion + 1) / totalQuestion) * 100;
 
   return (
     <>

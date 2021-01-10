@@ -18,7 +18,8 @@ import TableRow from '@material-ui/core/TableRow';
 // code
 
 export default function MaterialTable() {
-  const { rank } = useContext(RankContext);
+  const { getRank } = useContext(RankContext);
+  const rank = getRank();
   return (
     <TableContainer className="quiz-table mobile-off">
       <Table size="small" aria-label="Hall of Fame">
@@ -30,10 +31,10 @@ export default function MaterialTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rank.map((row) => (
-            <TableRow key={row.rank}>
+          {rank.map((row, index) => (
+            <TableRow key={index}>
               <TableCell component="th" scope="row">
-                {row.rank}
+                {index + 1}
               </TableCell>
               <TableCell align="center">{row.name}</TableCell>
               <TableCell align="right">{row.points}</TableCell>

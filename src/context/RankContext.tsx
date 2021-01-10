@@ -1,10 +1,11 @@
 // packages
 
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 // types
 
 export interface IRankContext {
+  getRank: any;
   rank: any;
   addRank: ({
     name,
@@ -23,6 +24,8 @@ export interface IRankContext {
 
 const RankContext = createContext({} as IRankContext);
 
+// code
+
 const RankProvider = (props) => {
   const [rank, setRank] = useState<any>([]); // default active user
 
@@ -30,16 +33,29 @@ const RankProvider = (props) => {
     setRank([...rank, { name: name, points: points, score: score, questions: questions }]);
   };
 
-  useEffect(() => {
+  const getRank = () => {
     const data = localStorage.getItem('rank') || '';
-    data && setRank(JSON.parse(data));
-  }, []);
+    if (data) {
+      const filteredData = JSON.parse(data).sort((a, b) => {
+        if (a.points > b.points) {
+          return -1;
+        }
+        if (a.points < b.points) {
+          return 1;
+        }
+        return 0;
+      });
+      return filteredData;
+    }
+    return [];
+  };
 
   return (
     <RankContext.Provider
       value={{
         rank,
         addRank,
+        getRank,
       }}
     >
       {props.children}
