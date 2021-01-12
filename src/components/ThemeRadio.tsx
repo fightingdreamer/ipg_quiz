@@ -16,9 +16,7 @@ export default function ThemeRadio() {
   // theme settings
   const uiMaterial: string = 'material';
   const uiTerminal: string = 'terminal';
-  const uiCyberpunk: string = 'cyberpunk';
-  const uiIsometric: string = 'isometric';
-  const themes: Array<string> = [uiMaterial, uiTerminal, uiCyberpunk, uiIsometric];
+  const themes: Array<string> = [uiMaterial, uiTerminal];
   const { setTheme } = useContext(ThemeContext);
   const [currentValue, setValue] = useState(uiMaterial); // default active theme
 
@@ -26,7 +24,7 @@ export default function ThemeRadio() {
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const app = document.querySelectorAll('.App');
     const value: string = event.target.value;
-    if (value === uiMaterial || uiTerminal || uiCyberpunk || uiIsometric) {
+    if (value === uiMaterial || uiTerminal) {
       app[0].classList.remove(...themes);
       app[0].classList.toggle(value);
       setValue(value);
@@ -36,7 +34,6 @@ export default function ThemeRadio() {
 
   return (
     <div>
-      {/* UI-Material theme */}
       <Radio
         className="quiz-radio"
         checked={currentValue === uiMaterial}
@@ -45,7 +42,6 @@ export default function ThemeRadio() {
         name={`ui-${uiMaterial}-theme`}
         inputProps={{ 'aria-label': `User Interface Theme: ${uiMaterial}` }}
       />
-      {/* UI-Terminal theme */}
       <Radio
         className="quiz-radio"
         checked={currentValue === uiTerminal}
@@ -54,26 +50,6 @@ export default function ThemeRadio() {
         name={`ui-${uiTerminal}-theme`}
         inputProps={{ 'aria-label': `User Interface Theme: ${uiTerminal}` }}
       />
-      {/* UI-Cyberpunk theme placeholder */}
-      {/* <Radio
-        className="quiz-radio"
-        disabled
-        checked={currentValue === uiCyberpunk}
-        onChange={changeHandler}
-        value={uiCyberpunk}
-        name={`ui-${uiCyberpunk}-theme`}
-        inputProps={{ 'aria-label': `disabled User Interface Theme: ${uiCyberpunk}` }}
-      /> */}
-      {/* UI-Isometric theme placeholder */}
-      {/* <Radio
-        disabled
-        className="quiz-radio"
-        checked={currentValue === uiIsometric}
-        onChange={changeHandler}
-        value={uiIsometric}
-        name={`ui-${uiIsometric}-theme`}
-        inputProps={{ 'aria-label': `User Interface Theme: ${uiIsometric}` }}
-      /> */}
     </div>
   );
 }

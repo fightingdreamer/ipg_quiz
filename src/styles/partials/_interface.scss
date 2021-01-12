@@ -7,24 +7,21 @@
   @include animation-opacity;
   position: relative;
 }
-
 .quiz-icons {
   @include flex-center;
 }
-
 .quiz-overlay,
 .quiz-noise {
   @include full-screen;
   position: absolute;
   pointer-events: none;
 }
-
 .quiz-panel {
-  @include flex-row;
+  @include flex-center;
   position: fixed;
   top: 0;
   width: 100vw;
-  padding: $helper-space;
+  padding: $helper-space * 0.75;
   @include border-default(bottom);
   .quiz-details,
   .quiz-counter,
@@ -59,13 +56,6 @@
     }
   }
 }
-
-.quiz-progress {
-  width: 100vw;
-  position: fixed;
-  top: $helper-space * 3.5;
-}
-
 .quiz-start {
   @include grid-center;
   @include border-all;
@@ -73,17 +63,14 @@
     @include border-all;
   }
 }
-
 .quiz-input {
   @include mobile-fit;
   width: auto;
 }
-
 .quiz-wrapper {
   @include grid-center;
   @include full-screen;
   position: relative;
-
   .quiz-definition {
     display: grid;
     position: absolute;
@@ -92,7 +79,6 @@
     @include border-default(top);
     @include border-default(bottom);
   }
-
   ul {
     @include grid-center;
     @include full-screen;
@@ -110,19 +96,17 @@
     }
   }
 }
-
 .quiz-theme {
   @include grid-center;
   position: fixed;
   bottom: 0;
   width: 100vw;
   @include border-default(top);
-  padding: $helper-space / 2;
+  padding: $helper-space / 4;
   .MuiRadio-root {
     padding: $helper-space / 2;
   }
 }
-
 .quiz-result {
   @include border-radius;
   @include border-all;
@@ -139,17 +123,13 @@
     padding: $helper-space / 2;
   }
 }
-
 .quiz-social {
   @include flex-center;
   padding: $helper-space / 2;
 }
-
 .quiz-credits {
   text-align: center;
 }
-
 .quiz-table {
   max-height: 25vh;
-  overflow-y: scroll;
 }

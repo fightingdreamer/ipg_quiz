@@ -9,8 +9,6 @@ import UserContext from '../context/UserContext';
 
 // components
 
-import { SelectSet } from './ui/SelectSet';
-import { IconSet } from './ui/IconSet';
 import { ReactComponent as Logo } from '../styles/img/cube-lines.svg';
 import { LogoCube } from './logo/LogoCube';
 import { BtnStart } from './ui/BtnSet';
@@ -44,8 +42,7 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
   return (
     <>
       <div className="quiz-panel">
-        <SelectSet />
-        <IconSet />
+        <h1 className="quiz-title">QuizBox</h1>
       </div>
       <div className="quiz-start">
         <div className="quiz-logo mobile-off">

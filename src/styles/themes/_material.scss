@@ -8,25 +8,16 @@
     color: $nord0;
 
     // common
-
-    ::selection {
-      background: $nord10;
-      color: $nord6;
-    }
-
     a {
       @include reset-cursor;
       color: $nord10;
     }
-
     input {
       @include reset-cursor;
     }
-
     line {
       stroke: $nord13;
     }
-
     button {
       @include material-font;
       @include reset-cursor;
@@ -57,9 +48,12 @@
         }
       }
     }
+    ::selection {
+      background: $nord10;
+      color: $nord6;
+    }
 
     // icons
-
     .quiz-icons {
       .material-icon {
         margin: 0 ($helper-space / 4);
@@ -68,19 +62,14 @@
         }
       }
     }
-
     .MuiSvgIcon-root {
       fill: $nord10;
     }
-
     .quiz-play {
-      font-size: $helper-space * 1.75;
+      font-size: $helper-space * 1.5;
       fill: $nord13;
-      @include mobile-landscape {
-        font-size: $helper-space * 1.5;
-      }
+      margin-top: $helper-space / 8;
     }
-
     .MuiSvgIcon-fontSizeLarge {
       fill: $nord10;
       font-size: $helper-space * 2;
@@ -91,12 +80,6 @@
     }
 
     // quiz content
-
-    .fullscreen-enabled {
-      background: $nord4;
-      color: $nord0;
-    }
-
     .quiz-panel {
       @include strong-shadow;
       @include material-border(bottom, $helper-space / 8);
@@ -108,7 +91,11 @@
         }
       }
     }
-
+    .quiz-title {
+      @include text-uppercase;
+      @include text-bold;
+      font-size: $helper-space * 1.5;
+    }
     .quiz-details {
       svg {
         margin-left: $helper-space / 2;
@@ -117,15 +104,16 @@
         @include text-bold;
       }
     }
-
     .quiz-select {
       width: $helper-space * 10;
       * {
         @include reset-cursor;
       }
     }
-
     .quiz-progress {
+      width: 100vw;
+      position: fixed;
+      top: $helper-space * 3;
       .MuiLinearProgress-colorPrimary {
         background: $nord6;
       }
@@ -133,7 +121,6 @@
         background: $nord10;
       }
     }
-
     .quiz-start {
       padding: $helper-space * 1.5;
       background: $nord6;
@@ -166,13 +153,11 @@
         @include flex-row;
       }
     }
-
     .quiz-input {
       .MuiFormControl-root {
         @include mobile-fit;
       }
     }
-
     .quiz-btn {
       @include mobile-fit;
       button {
@@ -181,7 +166,6 @@
         line-height: 1.8;
       }
     }
-
     .quiz-theme {
       @include strong-shadow;
       @include material-border(top, $helper-space / 8);
@@ -197,7 +181,6 @@
         background-color: var(--material-hover);
       }
     }
-
     .quiz-wrapper {
       @include mobile-fit;
       @include max-sm {
@@ -300,7 +283,6 @@
         }
       }
     }
-
     .quiz-toast {
       .MuiAlert-root {
         @include material-font;
@@ -322,7 +304,6 @@
         }
       }
     }
-
     .quiz-result {
       background: $nord6;
       border-color: $nord10;
@@ -340,13 +321,11 @@
         }
       }
     }
-
     .quiz-social {
       @include mobile-landscape {
         padding: $helper-space / 4;
       }
     }
-
     .quiz-table {
       .MuiTableCell-root {
         font-size: $helper-space * 0.75;
@@ -375,8 +354,18 @@
           }
         }
       }
+      &::-webkit-scrollbar {
+        width: $helper-space / 2;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $nord10;
+        border-radius: $helper-space;
+      }
+      &::-webkit-scrollbar-track {
+        background: $nord4;
+        border-radius: $helper-space;
+      }
     }
-
     .quiz-credits {
       margin-top: $helper-space * 0.75;
       font-size: $helper-space * 0.75;
@@ -386,7 +375,6 @@
     }
 
     // customization
-
     .MuiInput-underline {
       &:before {
         border-color: $nord10;

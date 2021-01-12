@@ -8,7 +8,7 @@ import Countdown from 'react-countdown';
 
 // code
 
-const GameOver = () => <span>ok</span>;
+const GameOver = () => <span>0</span>;
 const renderer = ({ seconds, completed }) => {
   if (completed) {
     return <GameOver />;

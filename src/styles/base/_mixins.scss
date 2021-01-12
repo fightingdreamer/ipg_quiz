@@ -41,6 +41,9 @@ $helper-space: 1rem;
 
 @mixin reset-cursor {
   cursor: none;
+  @include max-md {
+    cursor: default;
+  }
 }
 
 // border & box-shadow
@@ -76,7 +79,7 @@ $helper-space: 1rem;
 }
 
 @mixin material-filter {
-  filter: opacity(50%) blur($helper-space / 8);
+  filter: opacity(50%) blur($helper-space / 16);
 }
 
 @mixin material-pointer {

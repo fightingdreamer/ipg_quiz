@@ -41,6 +41,12 @@ $device-lg: 1280px;
     }
 }
 
+@mixin max-lg {
+    @media screen and (max-width: #{$device-lg - 1px}) {
+        @content;
+    }
+}
+
 // HELPERS
 
 .App {

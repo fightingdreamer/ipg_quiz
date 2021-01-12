@@ -11,8 +11,7 @@ import PointsContext from '../context/PointsContext';
 
 // components
 
-import { BtnCta, BtnSide } from './ui/BtnSet';
-import { SocialSet } from './ui/SocialSet';
+import { BtnCta } from './ui/BtnSet';
 
 // UI-Material components
 
@@ -51,7 +50,6 @@ export const QuizResult = ({
     <div className="quiz-result">
       <h2>Game over</h2>
       <h3>score: {totalPoints}</h3>
-      <SocialSet />
       <div
         className="btn-wrapper"
         onClick={() => {
@@ -61,7 +59,6 @@ export const QuizResult = ({
       >
         <BtnCta />
       </div>
-      <BtnSide />
       {isMaterial && <MaterialTable />}
       {isTerminal && <TerminalTable />}
       <p className="quiz-credits">
@@ -70,7 +67,7 @@ export const QuizResult = ({
           <FavoriteTwoToneIcon fontSize="small" className="quiz-heart material-icon" />
         )}
         {isTerminal && <Icon small icon="heart" className="quiz-heart terminal-icon" />} by{' '}
-        <a href="http://ignet.com.pl">Ignet</a>
+        <a href="https://ignet.com.pl">Ignet</a>
       </p>
     </div>
   );

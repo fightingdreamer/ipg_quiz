@@ -17,10 +17,8 @@ const ThemeContext = createContext({} as IThemeContext);
 
 const ThemeProvider = (props) => {
   const [theme, setTheme] = useState('material'); // default active theme
-
   const isTerminal = theme === 'terminal';
   const isMaterial = theme === 'material';
-  // UI-Cyberpunk & UI-Isometric placeholders
 
   return (
     <ThemeContext.Provider

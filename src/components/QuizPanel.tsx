@@ -50,50 +50,60 @@ export const QuizPanel = ({
   return (
     <>
       <div className="quiz-panel">
-        <div className="quiz-details">
-          {isMaterial && <MenuTwoToneIcon fontSize="default" className="quiz-menu material-icon" />}
-          {isTerminal && <TerminalMenu className="quiz-menu terminal-icon" />}
-          {isMaterial && (
-            <AccountCircleTwoToneIcon
-              fontSize="default"
-              className="quiz-avatar material-icon mobile-off"
-            />
-          )}
-          {isTerminal && <TerminalUser className="quiz-avatar terminal-icon mobile-off" />}
-          <span className="quiz-player mobile-off">{user}</span>
-          {isMaterial && (
-            <StarTwoToneIcon fontSize="default" className="quiz-star material-icon mobile-off" />
-          )}
-          {isTerminal && <Icon icon="star" small className="quiz-star terminal-icon mobile-off" />}
-          <span className="quiz-points mobile-off">{totalPoints}</span>
-          {isMaterial && (
-            <CheckCircleTwoToneIcon className="quiz-check material-icon mobile-off"></CheckCircleTwoToneIcon>
-          )}
-          {isTerminal && <TerminalCheck className="quiz-check terminal-icon mobile-off" />}
-          <span className="quiz-status mobile-off">
-            {currentQuestion + 1}/{totalQuestion}
-          </span>
-        </div>
+        {quizStatus && <h1 className="quiz-title">QuizBox</h1>}
         {!quizStatus && (
-          <div className="quiz-counter">
-            {isMaterial && (
-              <>
-                <QuizTimer />
-                <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow material-icon" />
-                <TimerTwoToneIcon fontSize="default" className="quiz-timer material-icon" />
-              </>
-            )}
-            {isTerminal && (
-              <>
-                <TerminalBomb className="quiz-timer terminal-icon" />
-                <QuizTimer />
-              </>
-            )}
-          </div>
+          <>
+            <div className="quiz-details">
+              {isMaterial && (
+                <MenuTwoToneIcon fontSize="default" className="quiz-menu material-icon" />
+              )}
+              {isTerminal && <TerminalMenu className="quiz-menu terminal-icon" />}
+              {isMaterial && (
+                <AccountCircleTwoToneIcon
+                  fontSize="default"
+                  className="quiz-avatar material-icon mobile-off"
+                />
+              )}
+              {isTerminal && <TerminalUser className="quiz-avatar terminal-icon mobile-off" />}
+              <span className="quiz-player mobile-off">{user}</span>
+              {isMaterial && (
+                <StarTwoToneIcon
+                  fontSize="default"
+                  className="quiz-star material-icon mobile-off"
+                />
+              )}
+              {isTerminal && (
+                <Icon icon="star" small className="quiz-star terminal-icon mobile-off" />
+              )}
+              <span className="quiz-points mobile-off">{totalPoints}</span>
+              {isMaterial && (
+                <CheckCircleTwoToneIcon className="quiz-check material-icon mobile-off"></CheckCircleTwoToneIcon>
+              )}
+              {isTerminal && <TerminalCheck className="quiz-check terminal-icon mobile-off" />}
+              <span className="quiz-status mobile-off">
+                {currentQuestion + 1}/{totalQuestion}
+              </span>
+            </div>
+            <div className="quiz-counter">
+              {isMaterial && (
+                <>
+                  <QuizTimer />
+                  <ArrowRightTwoToneIcon fontSize="default" className="quiz-arrow material-icon" />
+                  <TimerTwoToneIcon fontSize="default" className="quiz-timer material-icon" />
+                </>
+              )}
+              {isTerminal && (
+                <>
+                  <TerminalBomb className="quiz-timer terminal-icon" />
+                  <QuizTimer />
+                </>
+              )}
+            </div>
+            <QuizHelpers />
+          </>
         )}
-        <QuizHelpers />
       </div>
-      {isMaterial && <QuizProgress value={progressValue} />}
+      {!quizStatus && isMaterial && <QuizProgress value={progressValue} />}
     </>
   );
 };
