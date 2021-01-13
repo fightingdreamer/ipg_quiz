@@ -1,6 +1,10 @@
 // packages
 
-import React from 'react';
+import React, { useContext } from 'react';
+
+// React Context API
+
+import RankContext from '../../context/RankContext';
 
 // UI-Terminal components
 
@@ -8,19 +12,12 @@ import { Table } from 'nes-react';
 
 // code
 
-function createData(rank: number, name: string, score: number) {
-  return { rank, name, score };
-}
-
-const rows = [
-  createData(1, 'Player#0150', 3444),
-  createData(2, 'Player#0017', 2195),
-  createData(3, 'Player#0001', 552),
-];
-
 export default function MaterialTable() {
+  const { getRank } = useContext(RankContext);
+  const rank = getRank();
+
   return (
-    <div className="quiz-table mobile-off">
+    <div className="quiz-table">
       <Table centered aria-label="Hall of Fame">
         <thead>
           <tr>
@@ -30,11 +27,11 @@ export default function MaterialTable() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((row) => (
-            <tr key={row.rank}>
-              <td>{row.rank}</td>
+          {rank.map((row, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
               <td>{row.name}</td>
-              <td>{row.score}</td>
+              <td>{row.points}</td>
             </tr>
           ))}
         </tbody>

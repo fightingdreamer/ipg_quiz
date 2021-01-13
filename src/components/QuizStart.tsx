@@ -45,7 +45,7 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
         <h1 className="quiz-title">QuizBox</h1>
       </div>
       <div className="quiz-start">
-        <div className="quiz-logo mobile-off">
+        <div className="quiz-logo">
           {isMaterial && <LogoCube value="any" index="any" />}
           {isTerminal && <Logo />}
         </div>

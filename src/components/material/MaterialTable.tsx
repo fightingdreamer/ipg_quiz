@@ -20,8 +20,9 @@ import TableRow from '@material-ui/core/TableRow';
 export default function MaterialTable() {
   const { getRank } = useContext(RankContext);
   const rank = getRank();
+
   return (
-    <TableContainer className="quiz-table mobile-off">
+    <TableContainer className="quiz-table">
       <Table size="small" aria-label="Hall of Fame">
         <TableHead>
           <TableRow>

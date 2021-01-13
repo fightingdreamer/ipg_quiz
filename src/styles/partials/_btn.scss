@@ -37,6 +37,7 @@
     }
   }
   .btn-wrapper {
-    margin: $helper-space / 2 0;
+    @include flex-center;
+    margin: $helper-space / 4 0;
   }
 }

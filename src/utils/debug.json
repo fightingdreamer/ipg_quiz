@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0",
+    "name": "correct answer",
+    "definition": "The quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog",
+    "level": "easy",
+    "lang": "en",
+    "randomName": ["wrong answer", "quartz sphinx", "20charsTxt20charsTxt", "Waltz nymph quick jigs vex"]
+  },
+  {
+    "id": "1",
+    "name": "dobra odpowiedź",
+    "definition": "Zażółć gęślą jaźń",
+    "level": "medium",
+    "lang": "pl",
+    "randomName": ["nóż pędź bóść", "20literTxt20literTxt", "zła odpowiedź", "Wójt dźgnął"]
+  },
+  {
+    "id": "2",
+    "name": "pravilen odgovor",
+    "definition": "Šerif bo za domačo vajo spet kuhal žgance",
+    "level": "hard",
+    "lang": "si",
+    "randomName": ["fraza20črkfraza20črk", "napačen odgovor", "Kožušček", "šest čudežnih"]
+  }
+]

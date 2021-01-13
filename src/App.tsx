@@ -21,7 +21,7 @@ import './styles/App.scss';
 
 function App() {
   return (
-    <div className="App material">
+    <div className="App terminal">
       {/* default active theme */}
       <ThemeProvider>
         <RankProvider>

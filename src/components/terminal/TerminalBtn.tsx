@@ -24,7 +24,7 @@ export const TerminalBtnCta = () => {
   return (
     <>
       <Button success>
-        Relay
+        Replay
         <TerminalPlay className="quiz-play terminal-icon" />
       </Button>
     </>

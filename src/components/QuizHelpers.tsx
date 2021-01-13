@@ -8,13 +8,11 @@ import ThemeContext from '../context/ThemeContext';
 
 // UI-Material components
 
-import MaterialToast from './material/MaterialToast';
-import HelpTwoToneIcon from '@material-ui/icons/HelpTwoTone';
 import FullscreenTwoToneIcon from '@material-ui/icons/FullscreenTwoTone';
 
 // UI-Terminal components
 
-import { ReactComponent as TerminalError } from '../styles/img/terminal-error.svg';
+import { ReactComponent as TerminalSquare } from '../styles/img/terminal-square.svg';
 
 // code
 
@@ -32,17 +30,15 @@ export const QuizHelpers = () => {
   return (
     <div className="quiz-helpers">
       {isMaterial && (
-        <>
-          <MaterialToast />
-          <HelpTwoToneIcon fontSize="default" className="quiz-help material-icon mobile-off" />
-          <FullscreenTwoToneIcon
-            onClick={toggleFullscreen}
-            fontSize="default"
-            className="quiz-screen material-icon"
-          />
-        </>
+        <FullscreenTwoToneIcon
+          onClick={toggleFullscreen}
+          fontSize="default"
+          className="quiz-screen material-icon"
+        />
       )}
-      {isTerminal && <TerminalError className="quiz-error terminal-icon" />}
+      {isTerminal && (
+        <TerminalSquare onClick={toggleFullscreen} className="quiz-screen terminal-icon" />
+      )}
     </div>
   );
 };

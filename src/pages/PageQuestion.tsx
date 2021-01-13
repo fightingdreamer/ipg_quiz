@@ -42,7 +42,7 @@ export const PageQuestion = () => {
   const questionHandler = (correctAnswer: boolean) => {
     if (correctAnswer) {
       setScore(currentScore + 1);
-      setPoints(+1);
+      setPoints(+10);
     } else {
       // setPoints(-1);
     }

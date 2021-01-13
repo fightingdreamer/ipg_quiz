@@ -19,7 +19,6 @@ import QuizTimer from './QuizTimer';
 import TimerTwoToneIcon from '@material-ui/icons/TimerTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
 import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
-import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
 import CheckCircleTwoToneIcon from '@material-ui/icons/CheckCircleTwoTone';
 
@@ -28,7 +27,6 @@ import CheckCircleTwoToneIcon from '@material-ui/icons/CheckCircleTwoTone';
 import { Icon } from 'nes-react';
 import { ReactComponent as TerminalBomb } from '../styles/img/terminal-bomb.svg';
 import { ReactComponent as TerminalCheck } from '../styles/img/terminal-check.svg';
-import { ReactComponent as TerminalMenu } from '../styles/img/terminal-menu.svg';
 import { ReactComponent as TerminalUser } from '../styles/img/terminal-user.svg';
 
 // code
@@ -55,17 +53,13 @@ export const QuizPanel = ({
           <>
             <div className="quiz-details">
               {isMaterial && (
-                <MenuTwoToneIcon fontSize="default" className="quiz-menu material-icon" />
-              )}
-              {isTerminal && <TerminalMenu className="quiz-menu terminal-icon" />}
-              {isMaterial && (
                 <AccountCircleTwoToneIcon
                   fontSize="default"
                   className="quiz-avatar material-icon mobile-off"
                 />
               )}
               {isTerminal && <TerminalUser className="quiz-avatar terminal-icon mobile-off" />}
-              <span className="quiz-player mobile-off">{user}</span>
+              <span className="quiz-player">{user}</span>
               {isMaterial && (
                 <StarTwoToneIcon
                   fontSize="default"
@@ -75,7 +69,7 @@ export const QuizPanel = ({
               {isTerminal && (
                 <Icon icon="star" small className="quiz-star terminal-icon mobile-off" />
               )}
-              <span className="quiz-points mobile-off">{totalPoints}</span>
+              <span className="quiz-points">{totalPoints}</span>
               {isMaterial && (
                 <CheckCircleTwoToneIcon className="quiz-check material-icon mobile-off"></CheckCircleTwoToneIcon>
               )}

@@ -17,8 +17,9 @@ export interface ArrayQuestion {
   position: number;
 }
 
-// consume data
-const currentJson = require(`${process.env.REACT_APP_TOKEN}`);
+// set questions
+// const currentJson = require(`${process.env.REACT_APP_TOKEN}`); // real data
+const currentJson = require('./debug.json'); // mocked data
 
 // auxiliary arrays
 const setJson: ArrayQuestion[] = [];

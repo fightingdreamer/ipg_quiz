@@ -33,6 +33,9 @@
     justify-content: flex-start;
     span {
       margin: 0 $helper-space / 2;
+      &.quiz-player {
+        @include text-ellipsis;
+      }
     }
   }
   .quiz-counter {
@@ -59,6 +62,7 @@
 .quiz-start {
   @include grid-center;
   @include border-all;
+  padding: $helper-space * 2;
   .quiz-logo {
     @include border-all;
   }
@@ -110,7 +114,7 @@
 .quiz-result {
   @include border-radius;
   @include border-all;
-  padding: $helper-space * 1.5;
+  padding: $helper-space * 2;
   h2 {
     @include text-uppercase;
     @include text-bold;
@@ -129,7 +133,16 @@
 }
 .quiz-credits {
   text-align: center;
+  a {
+    text-decoration: none;
+  }
 }
 .quiz-table {
-  max-height: 25vh;
+  max-height: 24vh;
+  td {
+    @include text-ellipsis;
+  }
+  &::-webkit-scrollbar {
+    width: $helper-space / 2;
+  }
 }

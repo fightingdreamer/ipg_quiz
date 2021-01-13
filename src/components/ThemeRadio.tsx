@@ -18,7 +18,7 @@ export default function ThemeRadio() {
   const uiTerminal: string = 'terminal';
   const themes: Array<string> = [uiMaterial, uiTerminal];
   const { setTheme } = useContext(ThemeContext);
-  const [currentValue, setValue] = useState(uiMaterial); // default active theme
+  const [currentValue, setValue] = useState(uiTerminal); // default active theme
 
   // theme switch
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,19 +36,19 @@ export default function ThemeRadio() {
     <div>
       <Radio
         className="quiz-radio"
-        checked={currentValue === uiMaterial}
-        onChange={changeHandler}
-        value={uiMaterial}
-        name={`ui-${uiMaterial}-theme`}
-        inputProps={{ 'aria-label': `User Interface Theme: ${uiMaterial}` }}
-      />
-      <Radio
-        className="quiz-radio"
         checked={currentValue === uiTerminal}
         onChange={changeHandler}
         value={uiTerminal}
         name={`ui-${uiTerminal}-theme`}
         inputProps={{ 'aria-label': `User Interface Theme: ${uiTerminal}` }}
+      />
+      <Radio
+        className="quiz-radio"
+        checked={currentValue === uiMaterial}
+        onChange={changeHandler}
+        value={uiMaterial}
+        name={`ui-${uiMaterial}-theme`}
+        inputProps={{ 'aria-label': `User Interface Theme: ${uiMaterial}` }}
       />
     </div>
   );
