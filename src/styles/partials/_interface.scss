@@ -59,6 +59,9 @@
     }
   }
 }
+.quiz-title {
+  margin-bottom: 0;
+}
 .quiz-start {
   @include grid-center;
   @include border-all;

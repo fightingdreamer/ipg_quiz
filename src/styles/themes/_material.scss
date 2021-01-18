@@ -85,6 +85,9 @@
       @include material-border(bottom, $helper-space / 8);
       @include mobile-fit;
       background: $nord6;
+      &.slim-panel {
+        padding: $helper-space * 0.375;
+      }
       .quiz-helpers {
         svg {
           margin: 0 ($helper-space / 2);

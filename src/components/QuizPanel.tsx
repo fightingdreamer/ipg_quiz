@@ -47,10 +47,14 @@ export const QuizPanel = ({
 
   return (
     <>
-      <div className="quiz-panel">
-        {quizStatus && <h1 className="quiz-title">QuizBox</h1>}
-        {!quizStatus && (
-          <>
+      {quizStatus && (
+        <div className="quiz-panel slim-panel">
+          <h1 className="quiz-title">QuizBox</h1>
+        </div>
+      )}
+      {!quizStatus && (
+        <>
+          <div className="quiz-panel">
             <div className="quiz-details">
               {isMaterial && (
                 <AccountCircleTwoToneIcon
@@ -94,10 +98,10 @@ export const QuizPanel = ({
               )}
             </div>
             <QuizHelpers />
-          </>
-        )}
-      </div>
-      {!quizStatus && isMaterial && <QuizProgress value={progressValue} />}
+          </div>
+          {isMaterial && <QuizProgress value={progressValue} />}
+        </>
+      )}
     </>
   );
 };

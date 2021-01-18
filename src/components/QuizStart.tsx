@@ -41,7 +41,7 @@ export const QuizStart: React.FC<{ onFormSubmit: () => void }> = ({ onFormSubmit
 
   return (
     <>
-      <div className="quiz-panel">
+      <div className="quiz-panel slim-panel">
         <h1 className="quiz-title">QuizBox</h1>
       </div>
       <div className="quiz-start">
