@@ -21,7 +21,7 @@ import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
 // UI-Terminal components
 
 import TerminalTable from './terminal/TerminalTable';
-import { Icon } from 'nes-react';
+import { Icon } from "@fightingdreamer/nes-react";
 
 // code
 

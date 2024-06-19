@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 // UI-Terminal components
 
 import Select from 'react-select'; // external input control
-import nesTheme from 'react-select-nes-css-theme'; // external theme object
+const nesTheme = require("react-select-nes-css-theme");
 
 // code
 
@@ -17,7 +17,7 @@ export const TerminalSelect = () => {
       <Select
         value={currentValue}
         styles={nesTheme} // external theme object passed as a prop
-        onChange={setValue}
+        onChange={(v) => setValue(v as any)}
         options={[
           { value: 'file', label: 'file' },
           { value: 'settings', label: 'settings' },

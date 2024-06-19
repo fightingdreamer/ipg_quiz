@@ -4,7 +4,7 @@ import React from 'react';
 
 // UI-Terminal components
 
-import { Icon } from 'nes-react';
+import { Icon } from "@fightingdreamer/nes-react";
 import { ReactComponent as TerminalMenu } from '../../styles/img/terminal-menu.svg';
 import { ReactComponent as TerminalPlay } from '../../styles/img/terminal-play.svg';
 import { ReactComponent as TerminalPause } from '../../styles/img/terminal-pause.svg';

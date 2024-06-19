@@ -19,7 +19,7 @@ import TextField from '@material-ui/core/TextField';
 
 // UI-Terminal components
 
-import { TextInput } from 'nes-react';
+import { TextInput } from "@fightingdreamer/nes-react";
 
 // code
 

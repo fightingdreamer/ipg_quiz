@@ -24,7 +24,7 @@ import CheckCircleTwoToneIcon from '@material-ui/icons/CheckCircleTwoTone';
 
 // UI-Terminal components
 
-import { Icon } from 'nes-react';
+import { Icon } from "@fightingdreamer/nes-react";
 import { ReactComponent as TerminalBomb } from '../styles/img/terminal-bomb.svg';
 import { ReactComponent as TerminalCheck } from '../styles/img/terminal-check.svg';
 import { ReactComponent as TerminalUser } from '../styles/img/terminal-user.svg';

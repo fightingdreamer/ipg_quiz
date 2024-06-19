@@ -15,7 +15,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 // UI-Terminal components
 
-import { Icon } from 'nes-react';
+import { Icon } from "@fightingdreamer/nes-react";
 
 // code
 

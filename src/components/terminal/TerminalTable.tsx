@@ -8,7 +8,7 @@ import RankContext from '../../context/RankContext';
 
 // UI-Terminal components
 
-import { Table } from 'nes-react';
+import { Table } from "@fightingdreamer/nes-react";
 
 // code
 
